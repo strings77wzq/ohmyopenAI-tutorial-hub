@@ -4,7 +4,8 @@ export default defineConfig({
   title: 'AI 编程教程',
   description: '系统学习 Skills、OpenSpec、Harness 等 AI 编程范式',
   lang: 'zh-CN',
-  
+  base: '/ohmyopenAI-tutorial-hub/',
+
   head: [
     ['link', { rel: 'icon', href: '/favicon.svg' }],
     ['meta', { name: 'theme-color', content: '#10b981' }],
