@@ -13,6 +13,7 @@ export default defineConfig({
     ['meta', { property: 'og:locale', content: 'zh_CN' }],
     ['meta', { property: 'og:title', content: 'AI 编程教程' }],
     ['meta', { property: 'og:description', content: '系统学习 Skills、OpenSpec、Harness 等 AI 编程范式' }],
+    ['link', { rel: 'stylesheet', href: '/custom.css' }],
   ],
 
   lastUpdated: true,
