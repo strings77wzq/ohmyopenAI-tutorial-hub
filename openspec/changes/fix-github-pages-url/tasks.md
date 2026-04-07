@@ -2,13 +2,13 @@
 
 ## 开发任务
 
-- [ ] 修改 `docs/.vitepress/config.ts`，添加 `base: '/ohmyopenAI-tutorial-hub/'`
-- [ ] 本地验证构建 (`npm run docs:build`)
-- [ ] 提交并推送代码
+- [x] 修改 `docs/.vitepress/config.ts`，添加 `base: '/ohmyopenAI-tutorial-hub/'`
+- [x] 本地验证构建 (`npm run docs:build`)
+- [x] 提交并推送代码
 - [ ] 验证 GitHub Actions 部署成功
 
 ## 验收标准
 
-- [ ] 配置文件中包含正确的 `base` 配置
-- [ ] 本地构建无错误
+- [x] 配置文件中包含正确的 `base` 配置
+- [x] 本地构建无错误
 - [ ] 站点可以正常访问
