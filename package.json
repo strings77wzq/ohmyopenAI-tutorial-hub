@@ -1,0 +1,26 @@
+{
+  "name": "ai-tutorial-hub",
+  "version": "1.0.0",
+  "description": "AI 编程教程文档 - Skills、OpenSpec、Harness 系统教学",
+  "type": "module",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "AI",
+    "OpenSpec",
+    "Skills",
+    "Harness",
+    "tutorial",
+    "documentation",
+    "VitePress"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "vitepress": "^1.6.4"
+  }
+}

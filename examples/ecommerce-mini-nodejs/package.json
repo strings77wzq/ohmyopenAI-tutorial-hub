@@ -1,0 +1,10 @@
+{
+  "name": "ecommerce-mini-nodejs",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node src/start.js",
+    "test": "node --test"
+  }
+}
