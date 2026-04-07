@@ -23,23 +23,23 @@
 ### 基本用法
 
 ```bash
-/opsx:propose "你想做什么"
+/opsx:propose（创建提案） "你想做什么"
 ```
 
 ### 示例
 
 ```bash
 # 添加新功能
-/opsx:propose "添加用户注册功能"
+/opsx:propose（创建提案） "添加用户注册功能"
 
 # 修复问题
-/opsx:propose "修复登录页面在移动端显示错乱的问题"
+/opsx:propose（创建提案） "修复登录页面在移动端显示错乱的问题"
 
 # 重构代码
-/opsx:propose "重构用户模块，拆分为独立的 service 层"
+/opsx:propose（创建提案） "重构用户模块，拆分为独立的 service 层"
 
 # 性能优化
-/opsx:propose "优化首页加载速度，目标 LCP < 2.5s"
+/opsx:propose（创建提案） "优化首页加载速度，目标 LCP < 2.5s"
 ```
 
 ### AI 会做什么
@@ -79,7 +79,7 @@ AI 生成文档后，你应该：
 ### 基本用法
 
 ```bash
-/opsx:apply
+/opsx:apply（应用规范）
 ```
 
 ### AI 会做什么
@@ -99,13 +99,13 @@ AI 生成文档后，你应该：
 
 ```bash
 # 只实现特定任务
-/opsx:apply task 1.1
+/opsx:apply（应用规范） task 1.1
 
 # 从某个任务开始
-/opsx:apply from 1.3
+/opsx:apply（应用规范） from 1.3
 
 # 只实现某个阶段
-/opsx:apply phase 2
+/opsx:apply（应用规范） phase 2
 ```
 
 ### 实现过程中
@@ -124,7 +124,7 @@ AI 生成文档后，你应该：
 ### 基本用法
 
 ```bash
-/opsx:archive
+/opsx:archive（归档变更）
 ```
 
 ### AI 会做什么
@@ -242,24 +242,24 @@ AI 会生成：
 
 ```bash
 # ❌ 太模糊
-/opsx:propose "改进用户体验"
+/opsx:propose（创建提案） "改进用户体验"
 
 # ✅ 具体明确
-/opsx:propose "在用户注册流程中添加邮箱验证步骤，用户注册后需要点击邮件中的链接才能激活账号"
+/opsx:propose（创建提案） "在用户注册流程中添加邮箱验证步骤，用户注册后需要点击邮件中的链接才能激活账号"
 ```
 
 ### 2. 一次只做一件事
 
 ```bash
 # ❌ 太多了
-/opsx:propose "添加登录、注册、找回密码、修改密码、绑定手机号功能"
+/opsx:propose（创建提案） "添加登录、注册、找回密码、修改密码、绑定手机号功能"
 
 # ✅ 拆分成多个变更
-/opsx:propose "添加用户登录功能"
+/opsx:propose（创建提案） "添加用户登录功能"
 # 完成后
-/opsx:propose "添加用户注册功能"
+/opsx:propose（创建提案） "添加用户注册功能"
 # 完成后
-/opsx:propose "添加找回密码功能"
+/opsx:propose（创建提案） "添加找回密码功能"
 ```
 
 ### 3. 在 apply 前仔细审查规范
@@ -283,25 +283,25 @@ apply 之前一定要确认规范是你想要的
 
 ```bash
 # 1. 创建提案
-/opsx:propose "添加用户评论功能"
+/opsx:propose（创建提案） "添加用户评论功能"
 
 # 2. AI 生成文档后，人工审查确认
 # （审查 proposal.md, design.md, specs/, tasks.md）
 
 # 3. 确认后，开始实现
-/opsx:apply
+/opsx:apply（应用规范）
 
 # 4. AI 实现过程中，如果需要调整
 # "design.md 里的方案需要修改，改用..."
 
 # 5. 实现完成后，验证
-/opsx:verify
+/opsx:verify（验证实现）
 
 # 6. 验证通过，归档
-/opsx:archive
+/opsx:archive（归档变更）
 
 # 7. 开始下一个功能
-/opsx:propose "添加评论点赞功能"
+/opsx:propose（创建提案） "添加评论点赞功能"
 ```
 
 ---

@@ -15,7 +15,7 @@
 ### Step 1：创建提案
 
 ```bash
-/opsx:propose "添加用户评论功能，支持发表评论、回复评论、分页显示"
+/opsx:propose（创建提案） "添加用户评论功能，支持发表评论、回复评论、分页显示"
 ```
 
 AI 生成以下文档：
@@ -49,9 +49,8 @@ AI 生成以下文档：
 ```
 
 **design.md**
-```markdown
-## 数据模型
 
+**数据模型**
 ```
 Comment
 ├── id: UUID
@@ -63,13 +62,14 @@ Comment
 └── deletedAt: DateTime?
 ```
 
-## API 设计
-
+**API 设计**
+```
 POST /api/v1/articles/{articleId}/comments
 GET /api/v1/articles/{articleId}/comments?page={page}
 DELETE /api/v1/comments/{commentId}
+```
 
-## 权限
+**权限**
 - 任何人可以查看评论
 - 登录用户可以发表评论
 - 只能删除自己的评论
@@ -155,7 +155,7 @@ AI 更新 design.md：
 确认无误后：
 
 ```bash
-/opsx:apply
+/opsx:apply（应用规范）
 ```
 
 AI 开始执行任务：
@@ -204,7 +204,7 @@ AI 开始执行任务：
 让 AI 继续：
 
 ```bash
-/opsx:apply
+/opsx:apply（应用规范）
 ```
 
 AI 读取更新后的规范，添加验证逻辑。
@@ -238,7 +238,7 @@ AI 验证结果：
 ### Step 6：补充测试
 
 ```bash
-/opsx:apply task 2.4
+/opsx:apply（应用规范） task 2.4
 ```
 
 AI 补充单元测试：
@@ -268,7 +268,7 @@ AI 补充单元测试：
 ### Step 7：归档
 
 ```bash
-/opsx:archive
+/opsx:archive（归档变更）
 ```
 
 AI 执行归档：
@@ -316,31 +316,31 @@ AI 执行归档：
 ## 时间线回顾
 
 ```
-T+0:00  /opsx:propose "添加用户评论功能"
+T+0:00  /opsx:propose（创建提案） "添加用户评论功能"
        AI 生成文档
        
 T+0:30  人工审查，发现问题
        更新 design.md（分页方案）
        
-T+0:45  /opsx:apply
+T+0:45  /opsx:apply（应用规范）
        AI 开始实现
        
 T+1:30  发现遗漏需求（内容验证）
        更新 spec.md
        
-T+1:45  /opsx:apply
+T+1:45  /opsx:apply（应用规范）
        AI 继续实现
        
 T+2:30  /opsx:verify
        发现测试不足
        
-T+2:45  /opsx:apply task 2.4
+T+2:45  /opsx:apply（应用规范） task 2.4
        补充测试
        
 T+3:00  /opsx:verify
        全部通过
        
-T+3:15  /opsx:archive
+T+3:15  /opsx:archive（归档变更）
        归档完成
 ```
 
@@ -367,9 +367,9 @@ T+3:15  /opsx:archive
 ### 变体 1：简单功能
 
 ```bash
-/opsx:propose "修复登录按钮样式"
-/opsx:apply
-/opsx:archive
+/opsx:propose（创建提案） "修复登录按钮样式"
+/opsx:apply（应用规范）
+/opsx:archive（归档变更）
 ```
 
 简单功能可以跳过复杂审查。
@@ -377,21 +377,21 @@ T+3:15  /opsx:archive
 ### 变体 2：手动实现部分
 
 ```bash
-/opsx:propose "添加复杂算法"
-/opsx:apply from 2.3  # AI 只实现部分
+/opsx:propose（创建提案） "添加复杂算法"
+/opsx:apply（应用规范） from 2.3  # AI 只实现部分
 # 手动实现核心算法
 /opsx:continue         # AI 继续剩余任务
-/opsx:archive
+/opsx:archive（归档变更）
 ```
 
 ### 变体 3：分阶段实现
 
 ```bash
-/opsx:propose "添加支付功能"
-/opsx:apply phase 1    # 只实现第一阶段（基础功能）
+/opsx:propose（创建提案） "添加支付功能"
+/opsx:apply（应用规范） phase 1    # 只实现第一阶段（基础功能）
 # 测试上线
-/opsx:apply phase 2    # 实现第二阶段（高级功能）
-/opsx:archive
+/opsx:apply（应用规范） phase 2    # 实现第二阶段（高级功能）
+/opsx:archive（归档变更）
 ```
 
 ## 下一步

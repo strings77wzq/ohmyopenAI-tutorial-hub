@@ -165,11 +165,13 @@ openspec/changes/<change-name>/
 - **算法**：关键算法说明
 
 **示例**：
-```markdown
-## 架构
-用户请求 → API Gateway → Auth Service → Email Service
 
-## 数据模型
+**架构**
+```
+用户请求 → API Gateway → Auth Service → Email Service
+```
+
+**数据模型**
 ```
 PasswordResetToken
 - userId: string
@@ -178,7 +180,8 @@ PasswordResetToken
 - usedAt: DateTime?
 ```
 
-## 接口
+**接口**
+```
 POST /api/v1/auth/forgot-password
 Request: { email: string }
 Response: { success: boolean, message: string }
@@ -270,7 +273,7 @@ Response: { success: boolean, message: string }
 
 **OpenSpec 方式**：
 ```
-1. /opsx:propose "添加用户评论功能"
+1. /opsx:propose（创建提案） "添加用户评论功能"
    AI 生成 proposal, design, specs, tasks
    
 2. 评审并确认规范
@@ -278,13 +281,13 @@ Response: { success: boolean, message: string }
    - 权限如何控制？✓
    - 边界情况？✓
    
-3. /opsx:apply
+3. /opsx:apply（应用规范）
    AI 按规范实现
    
 4. 验证符合规范
    - 检查清单自动验证
    
-5. /opsx:archive
+5. /opsx:archive（归档变更）
    保存完整历史
 ```
 

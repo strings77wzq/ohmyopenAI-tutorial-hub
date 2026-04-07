@@ -11,7 +11,7 @@
 ## Step 1：提出变更
 
 ```bash
-/opsx:propose "实现电商 MVP：商品、购物车、订单"
+/opsx:propose（创建提案） "实现电商 MVP：商品、购物车、订单"
 ```
 
 AI 生成：
@@ -45,7 +45,7 @@ AI 生成：
 ## Step 3：实现（Apply）
 
 ```bash
-/opsx:apply
+/opsx:apply（应用规范）
 ```
 
 建议实现顺序：
@@ -70,7 +70,7 @@ AI 生成：
 ## Step 5：归档
 
 ```bash
-/opsx:archive
+/opsx:archive（归档变更）
 ```
 
 归档后可得到完整变更历史，便于复盘与复用。
