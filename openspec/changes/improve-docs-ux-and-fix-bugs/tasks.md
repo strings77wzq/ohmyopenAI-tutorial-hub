@@ -33,7 +33,7 @@
   - 运行 `npm run docs:build`
   - 确认无错误和警告
 
-- [ ] **Task 8**: 提交和推送
+- [x] **Task 8**: 提交和推送
   - 提交所有更改
   - 推送到 GitHub
   - 验证 GitHub Pages 部署
