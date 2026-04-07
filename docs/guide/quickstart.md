@@ -38,7 +38,7 @@ AI: 这是一个简单的加法函数...
    4. 优化建议：可以添加类型检查...
 ```
 
-<span class="status-success"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> 完成！</span> 你已经成功创建并使用了第一个 Skill。
+✅ **完成！** 你已经成功创建并使用了第一个 Skill。
 
 ---
 
@@ -93,7 +93,7 @@ AI 会根据规范自动实现代码。
 
 保存完整的历史记录。
 
-<span class="status-success"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> 完成！</span> 你已经体验了完整的 OpenSpec 工作流。
+✅ **完成！** 你已经体验了完整的 OpenSpec 工作流。
 
 ---
 
@@ -137,10 +137,10 @@ Harness 是**测试基础设施**，用于评估 AI 输出质量：
 
 你已经掌握了 AI 编程的基础！接下来可以：
 
-- **<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;vertical-align:middle;margin-right:4px"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg> Skills**: 深入学习 [Skills 教程](/guide/skills/what-is-skill)
-- **<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;vertical-align:middle;margin-right:4px"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg> OpenSpec**: 掌握 [规范驱动开发](/guide/openspec/concepts)
-- **<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;vertical-align:middle;margin-right:4px"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg> Harness**: 了解 [测试基础设施](/guide/harness/intro)
-- **<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;vertical-align:middle;margin-right:4px"><path d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16 8l2-2"/></svg> 实战项目**: 动手实践 [电商 MVP](/examples/)
+- 📖 深入学习 [Skills 教程](/guide/skills/what-is-skill) - 创建更复杂的 Skill
+- 📋 掌握 [OpenSpec 规范驱动开发](/guide/openspec/concepts) - 理解完整工作流
+- 🧪 了解 [Harness 测试基础设施](/guide/harness/intro) - 确保 AI 输出质量
+- 🚀 动手实践 [示例项目](/examples/) - 电商 MVP 完整实战
 
 ## 常见问题
 
