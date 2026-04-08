@@ -7,20 +7,20 @@ export default defineConfig({
   base: '/ohmyopenAI-tutorial-hub/',
 
   head: [
-    ['link', { rel: 'icon', href: '/favicon.svg' }],
+    ['link', { rel: 'icon', href: '/ohmyopenAI-tutorial-hub/favicon.svg' }],
     ['meta', { name: 'theme-color', content: '#10b981' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:locale', content: 'zh_CN' }],
     ['meta', { property: 'og:title', content: 'AI 编程教程' }],
     ['meta', { property: 'og:description', content: '系统学习 Skills、OpenSpec、Harness 等 AI 编程范式' }],
-    ['link', { rel: 'stylesheet', href: '/custom.css' }],
+    ['link', { rel: 'stylesheet', href: '/ohmyopenAI-tutorial-hub/custom.css' }],
   ],
 
   lastUpdated: true,
   cleanUrls: true,
 
   themeConfig: {
-    logo: '/logo.svg',
+    logo: '/ohmyopenAI-tutorial-hub/logo.svg',
     
     nav: [
       { text: '首页', link: '/' },
@@ -150,10 +150,31 @@ export default defineConfig({
           ]
         },
       ],
+      '/en/reference/': [
+        {
+          text: 'Reference',
+          items: [
+            { text: 'Quick Reference', link: '/en/reference/' },
+            { text: 'Commands', link: '/en/reference/commands' },
+            { text: 'FAQ', link: '/en/reference/faq' },
+            { text: 'Troubleshooting', link: '/en/reference/troubleshooting' },
+          ]
+        }
+      ],
+      '/en/examples/': [
+        {
+          text: 'Example Projects',
+          items: [
+            { text: 'Overview', link: '/en/examples/' },
+            { text: 'E-commerce MVP (Node.js)', link: '/en/examples/ecommerce-nodejs' },
+            { text: 'E-commerce MVP (Python)', link: '/en/examples/ecommerce-python' },
+          ]
+        }
+      ],
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/strings77wzq/claude-code-Go' }
+      { icon: 'github', link: 'https://github.com/strings77wzq/ohmyopenAI-tutorial-hub' }
     ],
 
     search: {

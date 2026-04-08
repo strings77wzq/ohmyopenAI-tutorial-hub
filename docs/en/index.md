@@ -6,7 +6,7 @@ hero:
   text: ""
   tagline: Systematically learn Skills, OpenSpec, Harness and other AI programming paradigms
   image:
-    src: /logo.svg
+    src: /ohmyopenAI-tutorial-hub/logo.svg
     alt: AI Programming Tutorials
   actions:
     - theme: brand
@@ -17,7 +17,7 @@ hero:
       link: /en/guide/quickstart
     - theme: alt
       text: GitHub
-      link: https://github.com/strings77wzq/claude-code-Go
+      link: https://github.com/strings77wzq/ohmyopenAI-tutorial-hub
 
 features:
   - icon: 🧠
@@ -35,7 +35,7 @@ features:
   - icon: 🚀
     title: Practice Projects
     details: Experience the complete AI programming workflow from spec to code through e-commerce MVP projects
-    link: /examples/
+    link: /en/examples/
 ---
 
 ## Choose Your Role

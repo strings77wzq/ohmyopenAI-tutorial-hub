@@ -6,7 +6,7 @@ hero:
   text: ""
   tagline: 系统学习 Skills、OpenSpec、Harness 等 AI 编程范式
   image:
-    src: /logo.svg
+    src: /ohmyopenAI-tutorial-hub/logo.svg
     alt: AI 编程教程
   actions:
     - theme: brand
