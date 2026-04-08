@@ -17,20 +17,20 @@ export default defineConfig({
   ],
 
   lastUpdated: true,
-  // cleanUrls: true, // 禁用以修复 GitHub Pages 404 问题
+  cleanUrls: true,
 
   themeConfig: {
     logo: '/ohmyopenAI-tutorial-hub/logo.svg',
     
     nav: [
-      { text: '首页', link: '/' },
+      { text: '首页', link: '/zh/' },
       { text: '指南', link: '/guide/', activeMatch: '/guide/' },
       { text: '参考', link: '/reference/', activeMatch: '/reference/' },
       { text: '示例', link: '/examples/', activeMatch: '/examples/' },
       {
         text: '语言',
         items: [
-          { text: '简体中文', link: '/' },
+          { text: '简体中文', link: '/zh/' },
           { text: 'English', link: '/en/' },
         ]
       }
@@ -182,7 +182,7 @@ export default defineConfig({
     },
 
     editLink: {
-      pattern: 'https://github.com/strings77wzq/ai-tutorial-hub/edit/main/docs/:path'
+      pattern: 'https://github.com/strings77wzq/ohmyopenAI-tutorial-hub/edit/main/docs/:path'
     },
 
     footer: {

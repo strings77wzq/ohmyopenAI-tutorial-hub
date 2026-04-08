@@ -1,0 +1,43 @@
+---
+layout: home
+
+hero:
+  name: "AI 编程教程"
+  text: ""
+  tagline: 系统学习 Skills、OpenSpec、Harness 等 AI 编程范式
+  image:
+    src: /ohmyopenAI-tutorial-hub/logo.svg
+    alt: AI 编程教程
+  actions:
+    - theme: brand
+      text: 🚀 5 分钟快速开始
+      link: /guide/quickstart
+    - theme: alt
+      text: 📚 完整教程
+      link: /guide/
+    - theme: alt
+      text: GitHub
+      link: https://github.com/strings77wzq/ohmyopenAI-tutorial-hub
+
+features:
+  - icon: ⚡
+    title: 快速上手
+    details: 无需复杂配置，5 分钟内创建并运行你的第一个 AI Skill
+    link: /guide/quickstart
+  - icon: 🧠
+    title: Skills
+    details: 学习如何创建可复用的 AI 技能，通过结构化的 prompt 和示例提升开发效率
+    link: /guide/skills/what-is-skill
+  - icon: 📋
+    title: OpenSpec
+    details: 掌握规范驱动开发，在编码前定义规范，确保人与 AI 对需求达成一致
+    link: /guide/openspec/concepts
+  - icon: 🧪
+    title: Harness
+    details: 构建测试基础设施，使用 Evaluators 和 Mock Server 确保 AI 输出质量
+    link: /guide/harness/intro
+---
+
+> 这是中文入口页（/zh/），内容与主中文首页保持一致，用于对齐 Project Site 语言入口体验。
+
+→ [进入快速开始](/guide/quickstart)

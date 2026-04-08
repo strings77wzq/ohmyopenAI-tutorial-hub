@@ -2,6 +2,20 @@
 
 系统学习 Skills、OpenSpec、Harness 等 AI 编程范式
 
+## ⚠️ 站点迁移说明（根域名直达）
+
+- 新站点目标地址：`https://strings77wzq.github.io`
+- 目标关键路径：`https://strings77wzq.github.io/guide/quickstart`
+- 迁移完成前，历史 Project Site 路径可能仍被访问：`https://strings77wzq.github.io/ohmyopenAI-tutorial-hub/`
+
+### 回滚预案
+
+如果根域名迁移发布异常：
+
+1. 暂时恢复对外入口为历史 Project Site 地址
+2. 保留本 README 中的新旧地址说明，避免用户继续访问失效路径
+3. 修复后再次切换到根域名入口
+
 ## 🎯 学习目标
 
 本教程旨在帮助开发者系统掌握现代 AI 编程的核心范式：
@@ -99,4 +113,3 @@ openspec status --change tutorial-doc-site
 ```
 
 这样当 `~/md` 下有多个项目时，每个项目的规范互不影响。
-
