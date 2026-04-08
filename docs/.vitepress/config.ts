@@ -17,7 +17,7 @@ export default defineConfig({
   ],
 
   lastUpdated: true,
-  cleanUrls: true,
+  // cleanUrls: true, // 禁用以修复 GitHub Pages 404 问题
 
   themeConfig: {
     logo: '/ohmyopenAI-tutorial-hub/logo.svg',
