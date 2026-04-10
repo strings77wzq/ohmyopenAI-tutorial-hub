@@ -20,5 +20,5 @@
 
 - [x] 4.1 Run `npm run docs:build` and ensure success
 - [x] 4.2 Run `npm run docs:preview` smoke test for key paths
-- [ ] 4.3 Push to current repository and wait for Pages deployment
-- [ ] 4.4 Verify production URLs under `https://strings77wzq.github.io/ohmyopenAI-tutorial-hub/...`
+- [x] 4.3 Push to current repository and wait for Pages deployment
+- [x] 4.4 Verify production URLs under `https://strings77wzq.github.io/ohmyopenAI-tutorial-hub/...`
