@@ -59,15 +59,30 @@ features:
 
 → [查看完整快速开始指南](/guide/quickstart)
 
-### 方式二：系统学习
+## 选择你的角色
 
-根据你的背景选择学习路径：
+<div class="role-cards">
+  <a href="/guide/quickstart" class="role-card">
+    <div class="role-icon">👨‍💻</div>
+    <div class="role-title">Full-stack Developer</div>
+    <div class="role-desc">想立即动手实践。快速上手 → 工具使用 → 实战项目。</div>
+    <div class="role-link">开始开发之旅 →</div>
+  </a>
 
-| 如果你... | 推荐路径 |
-|-----------|----------|
-| 想立即动手实践 | [快速开始 →](/guide/quickstart) → [创建第一个 Skill →](/guide/skills/first-skill) |
-| 想了解完整概念 | [教程概览 →](/guide/) → [Skills 基础 →](/guide/skills/what-is-skill) |
-| 想深入架构设计 | [OpenSpec 核心概念 →](/guide/openspec/concepts) → [工作流 →](/guide/openspec/workflow) |
+  <a href="/guide/openspec/concepts" class="role-card">
+    <div class="role-icon">🏗️</div>
+    <div class="role-title">Architect</div>
+    <div class="role-desc">想深入架构设计。OpenSpec 核心概念 → Harness 测试基础设施。</div>
+    <div class="role-link">深入架构设计 →</div>
+  </a>
+
+  <a href="/guide/" class="role-card">
+    <div class="role-icon">🎓</div>
+    <div class="role-title">Student</div>
+    <div class="role-desc">想了解完整概念。从基础入门 → 逐步深入 → 练习。</div>
+    <div class="role-link">从零开始学习 →</div>
+  </a>
+</div>
 
 ## 为什么选择本教程？
 
@@ -76,21 +91,3 @@ features:
 - **📖 循序渐进**：从操作到原理，符合学习曲线
 - **🌏 中文友好**：专为中文开发者编写，降低学习门槛
 - **🔓 开源免费**：基于 MIT 许可，自由学习和贡献
-
-<style>
-.role-selection {
-  margin-top: 2rem;
-}
-
-.role-selection h3 {
-  margin-top: 1.5rem;
-  color: var(--vp-c-brand-1);
-}
-
-.role-selection a {
-  display: inline-block;
-  margin-top: 0.5rem;
-  color: var(--vp-c-brand-1);
-  font-weight: 500;
-}
-</style>

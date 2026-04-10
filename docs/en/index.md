@@ -40,45 +40,27 @@ features:
 
 ## Choose Your Role
 
-<div class="role-selection">
+<div class="role-cards">
+  <a href="/en/guide/quickstart" class="role-card">
+    <div class="role-icon">👨‍💻</div>
+    <div class="role-title">Full-stack Developer</div>
+    <div class="role-desc">For developers who want to quickly get started. Quick Start → Tool Usage → Projects.</div>
+    <div class="role-link">Start Learning →</div>
+  </a>
 
-### 👨‍💻 Full-stack Developer
+  <a href="/en/guide/openspec/concepts" class="role-card">
+    <div class="role-icon">🏗️</div>
+    <div class="role-title">Architect</div>
+    <div class="role-desc">For architects who want to understand system design. OpenSpec Deep Dive → Harness Testing.</div>
+    <div class="role-link">Deep Dive →</div>
+  </a>
 
-**For**: Developers who want to quickly get started with AI-assisted development
-
-**Learning Path**:
-1. [Quick Start](/en/guide/quickstart) - Get started in 5 minutes
-2. [Tool Usage](/en/guide/skills/first-skill) - Create your first Skill
-3. [Practice Projects](/examples/) - Hands-on practice
-
-[Start Learning →](/en/guide/quickstart)
-
----
-
-### 🏗️ Architect
-
-**For**: Architects who want to understand AI programming system design
-
-**Learning Path**:
-1. [Architecture Overview](/en/guide/openspec/concepts) - Understand spec-driven development
-2. [OpenSpec Deep Dive](/en/guide/openspec/workflow) - Master the workflow
-3. [Harness Testing](/en/guide/harness/intro) - Quality assurance
-
-[Deep Dive →](/en/guide/openspec/concepts)
-
----
-
-### 🎓 Student
-
-**For**: Students or beginners who want to systematically learn AI programming
-
-**Learning Path**:
-1. [Basic Concepts](/en/guide/) - Understand core concepts
-2. [Progressive Learning](/en/guide/skills/what-is-skill) - From beginner to advanced
-3. [Practice Exercises](/en/guide/skills/practice) - Hands-on exercises
-
-[Start from Zero →](/en/guide/)
-
+  <a href="/en/guide/" class="role-card">
+    <div class="role-icon">🎓</div>
+    <div class="role-title">Student</div>
+    <div class="role-desc">For students or beginners. Basic Concepts → Progressive Learning → Practice.</div>
+    <div class="role-link">Start from Zero →</div>
+  </a>
 </div>
 
 ## Why This Tutorial?
@@ -87,21 +69,3 @@ features:
 - **Practice-Oriented**: Learn through real projects, not just theory
 - **Chinese-Friendly**: Written specifically for Chinese developers
 - **Open Source**: MIT licensed, free to learn and contribute
-
-<style>
-.role-selection {
-  margin-top: 2rem;
-}
-
-.role-selection h3 {
-  margin-top: 1.5rem;
-  color: var(--vp-c-brand-1);
-}
-
-.role-selection a {
-  display: inline-block;
-  margin-top: 0.5rem;
-  color: var(--vp-c-brand-1);
-  font-weight: 500;
-}
-</style>

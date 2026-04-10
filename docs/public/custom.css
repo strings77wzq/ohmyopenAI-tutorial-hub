@@ -255,3 +255,52 @@ button:focus-visible {
   color: #a855f7;
   border: 1px solid rgba(168, 85, 247, 0.3);
 }
+
+/* Beautiful Role Cards (like claude-code-Go) */
+.role-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.role-card {
+  display: block;
+  padding: 1.5rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  background: var(--vp-c-bg-soft);
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+}
+
+.role-card:hover {
+  border-color: var(--vp-c-brand-1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.role-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.role-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+  margin-bottom: 0.5rem;
+}
+
+.role-desc {
+  font-size: 0.9rem;
+  color: var(--vp-c-text-2);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.role-link {
+  font-size: 0.85rem;
+  color: var(--vp-c-brand-1);
+  font-weight: 500;
+}
