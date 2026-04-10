@@ -17,7 +17,7 @@ export default defineConfig({
   ],
 
   lastUpdated: true,
-  cleanUrls: true,
+  cleanUrls: false, // MUST be false for GitHub Pages to avoid 404s on direct navigation
 
   themeConfig: {
     logo: '/ohmyopenAI-tutorial-hub/logo.svg',
