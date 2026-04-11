@@ -5,8 +5,8 @@ Thank you for improving Agent Engineering Hub. Contributions can include documen
 ## Local development
 
 ```bash
-git clone https://github.com/strings77wzq/ohmyopenAI-tutorial-hub.git
-cd ohmyopenAI-tutorial-hub
+git clone https://github.com/strings77wzq/agent-engineering-hub.git
+cd agent-engineering-hub
 npm install
 npm run docs:dev
 ```

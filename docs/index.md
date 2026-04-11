@@ -17,7 +17,7 @@ hero:
       link: /guide/
     - theme: alt
       text: GitHub
-      link: https://github.com/strings77wzq/ohmyopenAI-tutorial-hub
+      link: https://github.com/strings77wzq/agent-engineering-hub
 
 features:
   - title: OMO 工作流

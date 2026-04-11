@@ -45,7 +45,7 @@ AI输出质量保障
 
 ## 相关链接
 
-- 🌐 **在线教程**: https://strings77wzq.github.io/ohmyopenAI-tutorial-hub/
+- 🌐 **在线教程**: https://strings77wzq.github.io/agent-engineering-hub/
 - 📚 **OMO工作流**: https://github.com/code-yeongyu/oh-my-openagent
 - 💻 **golem项目**: https://github.com/strings77wzq/golem
 - 🛠️ **Skills社区**: https://skills.sh
