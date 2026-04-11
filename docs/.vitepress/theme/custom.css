@@ -316,10 +316,11 @@ button:focus-visible {
 
 .eyebrow {
   margin: 0 0 10px;
-  color: var(--hub-c-accent);
+  color: var(--vp-c-brand-1);
   font-size: 13px;
   font-weight: 800;
   text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 .lead {

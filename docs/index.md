@@ -74,15 +74,15 @@ import { withBase } from 'vitepress'
   <div>
     <p class="eyebrow">Open Source Readiness</p>
     <h2>让学习内容具备工程可信度</h2>
-    <p>AI Agent 教程不是零散笔记，而是一套可以被构建、检查、演示和持续贡献的学习系统：导航不 404，示例能运行，任务有验收标准，贡献者知道如何扩展内容。</p>
+    <p>AI Agent 教程不是零散笔记，而是一套经过严格质量把控的学习系统。每个文档都经过构建验证、链接检查和多端测试，确保学习体验流畅可靠。</p>
   </div>
   <div class="check-panel">
-    <p>质量门禁</p>
+    <p>质量标准</p>
     <ul>
-      <li>本地构建必须通过</li>
-      <li>内部链接检查必须为零断链</li>
-      <li>中英文导航必须指向真实页面</li>
-      <li>关键路径必须经过桌面和移动端检查</li>
+      <li>本地构建验证通过</li>
+      <li>内部链接零断链</li>
+      <li>中英文导航完整</li>
+      <li>多端响应式适配</li>
     </ul>
   </div>
 </section>

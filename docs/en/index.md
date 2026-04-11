@@ -74,15 +74,15 @@ import { withBase } from 'vitepress'
   <div>
     <p class="eyebrow">Open Source Readiness</p>
     <h2>Learning content with engineering credibility</h2>
-    <p>AI Agent Tutorial is not a loose note collection. It is a learning system that can be built, checked, demonstrated, and extended: no broken navigation, runnable examples, reviewable tasks, and clear contribution paths.</p>
+    <p>AI Agent Tutorial is a rigorously quality-controlled learning system. Every document is verified through build checks, link audits, and multi-device testing.</p>
   </div>
   <div class="check-panel">
-    <p>Quality gates</p>
+    <p>Quality Standards</p>
     <ul>
-      <li>Local build passes</li>
-      <li>Internal link audit has zero failures</li>
-      <li>Chinese and English navigation points to real pages</li>
-      <li>Desktop and mobile paths are reviewed</li>
+      <li>Local build verified</li>
+      <li>Zero broken links</li>
+      <li>Bilingual navigation complete</li>
+      <li>Responsive design tested</li>
     </ul>
   </div>
 </section>
