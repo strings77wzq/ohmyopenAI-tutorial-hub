@@ -102,7 +102,7 @@ Congratulations! You've learned the three core paradigms of AI programming. Next
 - 📖 Deep dive into [Skills Tutorial](/en/guide/skills/what-is-skill)
 - 📋 Master [OpenSpec Spec-Driven Development](/en/guide/openspec/concepts)
 - 🧪 Learn [Harness Testing Infrastructure](/en/guide/harness/intro)
-- 🚀 Practice with [Example Projects](/examples/)
+- Practice with [Example Projects](/en/examples/)
 
 ## FAQ
 

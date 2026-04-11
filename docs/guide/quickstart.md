@@ -135,12 +135,13 @@ Harness 是**测试基础设施**，用于评估 AI 输出质量：
 
 ## 下一步
 
-你已经掌握了 AI 编程的基础！接下来可以：
+你已经建立了智能体工程的最小反馈循环。接下来可以：
 
-- 📖 深入学习 [Skills 教程](/guide/skills/what-is-skill) - 创建更复杂的 Skill
-- 📋 掌握 [OpenSpec 规范驱动开发](/guide/openspec/concepts) - 理解完整工作流
-- 🧪 了解 [Harness 测试基础设施](/guide/harness/intro) - 确保 AI 输出质量
-- 🚀 动手实践 [示例项目](/examples/) - 电商 MVP 完整实战
+- 深入学习 [Skills 教程](/guide/skills/what-is-skill) - 创建更复杂的 Skill
+- 掌握 [MCP 入门](/guide/mcp/) - 将外部工具和上下文接入 Agent
+- 掌握 [OpenSpec 规范驱动开发](/guide/openspec/concepts) - 理解完整工作流
+- 了解 [Harness 测试基础设施](/guide/harness/intro) - 确保 AI 输出质量
+- 动手实践 [示例项目](/examples/) - 电商 MVP 完整实战
 
 ## 常见问题
 

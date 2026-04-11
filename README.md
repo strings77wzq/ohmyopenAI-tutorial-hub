@@ -1,6 +1,6 @@
-# AI 编程教程
+# Agent Engineering Hub
 
-系统学习 Skills、OpenSpec、Harness 等 AI 编程范式
+智能体工程学习枢纽：系统学习 Skills、MCP、OpenSpec、Harness、上下文工程、评测与安全发布。
 
 ## ⚠️ 站点迁移说明（根域名直达）
 
@@ -16,38 +16,40 @@
 2. 保留本 README 中的新旧地址说明，避免用户继续访问失效路径
 3. 修复后再次切换到根域名入口
 
-## 🎯 学习目标
+## 学习目标
 
-本教程旨在帮助开发者系统掌握现代 AI 编程的核心范式：
+本项目帮助开发者系统掌握现代智能体工程的核心能力：
 
-- **Skills**: 创建可复用的 AI 技能，提升开发效率
+- **Skills**: 创建可复用的 AI 能力模块，提升工程复用率
+- **MCP**: 用标准化上下文协议连接工具、资源和 Agent 工作流
 - **OpenSpec**: 规范驱动开发，确保人与 AI 对需求达成一致
 - **Harness**: 测试基础设施，确保 AI 输出质量
+- **Evaluation**: 将验收标准沉淀为回归检查和发布门禁
 
-## 🚀 快速开始
+## 快速开始
 
 ### 选择你的角色
 
 <div class="role-cards">
 
-#### 👨‍💻 Full-stack Developer
+#### Full-stack Developer
 快速上手 → 工具使用 → 实战项目
 
 [开始开发之旅](./guide/quickstart.html)
 
-#### 🏗️ Architect
+#### Architect
 架构深入 → OpenSpec → Harness
 
 [深入架构设计](./guide/openspec/concepts.html)
 
-#### 🎓 Student
+#### Student
 概念入门 → 逐步深入 → 练习
 
 [从零开始学习](./guide/)
 
 </div>
 
-## 📚 教程模块
+## 教程模块
 
 ### Skills 教程
 
@@ -69,9 +71,19 @@
 4. [编写高质量 Spec](./guide/openspec/writing-specs.md) - 技巧与模式
 5. [实战案例](./guide/openspec/practice.md) - 电商场景规范驱动开发
 
+### MCP 教程
+
+学习如何把工具、资源和上下文以标准协议暴露给 Agent：
+
+1. [MCP 入门](./guide/mcp/index.md) - 理解协议角色和能力边界
+2. [核心概念](./guide/mcp/concepts.md) - tools、resources、prompts
+3. [构建 MCP Server](./guide/mcp/server.md) - 设计可测试接口
+4. [实战练习](./guide/mcp/practice.md) - 设计文档搜索 tool
+5. [安全边界](./guide/mcp/safety.md) - 权限、密钥和危险操作
+
 ### Harness 教程
 
-构建 AI 编程的测试基础设施：
+构建智能体工程的质量基础设施：
 
 1. [测试基础设施](./guide/harness/intro.md) - Harness 核心概念
 2. [编写测试场景](./guide/harness/writing-tests.md) - 测试用例设计
@@ -79,16 +91,16 @@
 4. [Mock Server](./guide/harness/mock-server.md) - 无成本测试
 5. [实战案例](./guide/harness/practice.md) - 完整测试工作流
 
-## 🏗️ 示例项目
+## 示例项目
 
 - [电商 MVP (Node.js)](./examples/ecommerce-nodejs.md)
 - [电商 MVP (Python)](./examples/ecommerce-python.md)
 
-## 🤝 贡献
+## 贡献
 
 欢迎贡献！请查看[贡献指南](./contributing.md)。
 
-## 📄 许可
+## 许可
 
 [MIT](./LICENSE)
 

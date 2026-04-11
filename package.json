@@ -1,12 +1,13 @@
 {
   "name": "ai-tutorial-hub",
   "version": "1.0.0",
-  "description": "AI 编程教程文档 - Skills、OpenSpec、Harness 系统教学",
+  "description": "Agent Engineering Hub - 智能体工程学习枢纽",
   "type": "module",
   "scripts": {
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
+    "docs:check-links": "node scripts/check-doc-links.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

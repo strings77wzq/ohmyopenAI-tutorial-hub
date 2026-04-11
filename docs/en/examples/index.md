@@ -2,6 +2,8 @@
 
 Practical example projects demonstrating the complete workflow from specification to code.
 
+Each example should identify the skills taught, setup commands, expected behavior, quality checks, and extension ideas. Treat examples as learning harnesses, not just code samples.
+
 ## E-commerce MVP Project
 
 Based on the e-commerce scenario from [OpenSpec-practise](https://github.com/ForceInjection/OpenSpec-practise), we provide two implementations:
@@ -63,4 +65,22 @@ examples/
 
 - Explore the Node.js implementation: [E-commerce MVP (Node.js)](./ecommerce-nodejs)
 - Explore the Python implementation: [E-commerce MVP (Python)](./ecommerce-python)
-- Learn OpenSpec: [OpenSpec Tutorial](/guide/openspec/concepts)
+- Learn OpenSpec: [OpenSpec Tutorial](/en/guide/openspec/concepts)
+
+## Example acceptance criteria
+
+Every example project should state:
+
+- Which capabilities it teaches.
+- How to install, run, and test it.
+- What successful behavior looks like.
+- Which logs or settings to inspect first when it fails.
+- Which extension exercises come next.
+
+## Extension exercises
+
+1. Add an OpenSpec change for product search.
+2. Add integration tests for the new endpoint.
+3. Design an Evaluator for AI-generated product descriptions.
+4. Expose product lookup as an [MCP](/en/guide/mcp/) tool.
+5. Define release gates in [Evaluation and Quality](/en/guide/evaluation/).
