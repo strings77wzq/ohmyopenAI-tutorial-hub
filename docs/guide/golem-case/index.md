@@ -19,22 +19,22 @@
 ## 核心模块
 
 <div class="path-grid" style="grid-template-columns: repeat(2, 1fr);">
-  <a class="path-card" href="/guide/golem-case/skills-core">
+  <a class="path-card" href="/ohmyopenAI-tutorial-hub/guide/golem-case/skills-core">
     <span>01</span>
     <strong>Skill 系统</strong>
     <p>可复用 Agent 能力单元的设计与实现</p>
   </a>
-  <a class="path-card" href="/guide/golem-case/rag-core">
+  <a class="path-card" href="/ohmyopenAI-tutorial-hub/guide/golem-case/rag-core">
     <span>02</span>
     <strong>RAG 流程</strong>
     <p>检索增强实现的完整流程</p>
   </a>
-  <a class="path-card" href="/guide/golem-case/mcp-core">
+  <a class="path-card" href="/ohmyopenAI-tutorial-hub/guide/golem-case/mcp-core">
     <span>03</span>
     <strong>MCP 客户端</strong>
     <p>外部工具协议的连接与调用</p>
   </a>
-  <a class="path-card" href="/guide/golem-case/provider-core">
+  <a class="path-card" href="/ohmyopenAI-tutorial-hub/guide/golem-case/provider-core">
     <span>04</span>
     <strong>多 Provider</strong>
     <p>LLM 接口抽象与多模型适配</p>

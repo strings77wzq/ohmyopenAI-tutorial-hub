@@ -21,17 +21,23 @@ hero:
 
 features:
   - title: OMO Workflow
-    details: "Oh-My-OpenAgent multi-model orchestration. View GitHub →"
+    details: "Oh-My-OpenAgent multi-model orchestration. GitHub: github.com/code-yeongyu/oh-my-openagent"
     link: https://github.com/code-yeongyu/oh-my-openagent
   - title: golem Case Study
-    details: "Production-grade Go project: Agent Loop, Tool, RAG, MCP, Multi-Provider full pipeline. View GitHub →"
+    details: "Production-grade Go project. GitHub: github.com/strings77wzq/golem | Community: skills.sh"
     link: https://github.com/strings77wzq/golem
-  - title: Harness Engineering
-    details: "Scenario design, Mock Server, Evaluator, feedback loop, entropy management - quality assurance for AI output."
+  - title: MCP
+    details: "Model Context Protocol. Official: modelcontextprotocol.io | Community ecosystem"
+    link: https://modelcontextprotocol.io
+  - title: Harness
+    details: "AI output quality assurance. R.E.S.T model, six design principles."
     link: /en/guide/harness/intro
-  - title: Core Tools
-    details: "Skills, MCP, OpenSpec, context engineering - essential skills for building reliable agent systems."
-    link: /en/guide/skills/what-is-skill
+  - title: Skills Ecosystem
+    details: "Discover AI Skills: skills.sh - Community-driven AI capability library"
+    link: https://skills.sh
+  - title: OpenSpec
+    details: "Spec-Driven Development (SDD) - Three-phase docs: spec/tasks/checklist"
+    link: /en/guide/openspec/concepts
 ---
 
 <script setup>

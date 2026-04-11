@@ -21,17 +21,23 @@ hero:
 
 features:
   - title: OMO 工作流
-    details: "Oh-My-OpenAgent 多模型编排系统。点击查看 GitHub →"
+    details: "Oh-My-OpenAgent 多模型编排系统。GitHub: github.com/code-yeongyu/oh-my-openagent"
     link: https://github.com/code-yeongyu/oh-my-openagent
   - title: golem 案例
-    details: "生产级 Go 项目实战：Agent Loop、Tool、RAG、MCP、Multi-Provider 全链路。点击查看 →"
+    details: "生产级 Go 项目实战。GitHub: github.com/strings77wzq/golem | 社区: skills.sh"
     link: https://github.com/strings77wzq/golem
-  - title: Harness 工程
-    details: "场景设计、Mock Server、Evaluator、反馈循环、熵管理——AI 输出的质量保障。"
+  - title: MCP
+    details: "Model Context Protocol 标准化协议。官方: modelcontextprotocol.io | 社区生态"
+    link: https://modelcontextprotocol.io
+  - title: Harness
+    details: "AI 输出质量保障。R.E.S.T模型、六大设计原则。参考: mp.weixin.qq.com"
     link: /guide/harness/intro
-  - title: 核心工具
-    details: Skills、MCP、OpenSpec、上下文工程——构建可靠 Agent 系统的必备技能。
-    link: /guide/skills/what-is-skill
+  - title: Skills 生态
+    details: "发现 AI Skills: skills.sh - 社区驱动的 AI 能力库"
+    link: https://skills.sh
+  - title: OpenSpec
+    details: "规格驱动开发 SDD - 三阶段文档：spec/tasks/checklist"
+    link: /guide/openspec/concepts
 ---
 
 <script setup>
