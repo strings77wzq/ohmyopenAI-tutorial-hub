@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 
-const repoBase = '/ohmyopenAI-tutorial-hub/'
+const repoBase = '/agent-engineering-hub/'
+const repoName = 'agent-engineering-hub'
 
 const zhNav = [
   { text: '首页', link: '/zh/' },
@@ -289,14 +290,11 @@ export default defineConfig({
 
   themeConfig: {
     logo: `${repoBase}logo.svg`,
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/strings77wzq/ohmyopenAI-tutorial-hub' },
+socialLinks: [
+      { icon: 'github', link: 'https://github.com/strings77wzq/agent-engineering-hub' },
     ],
-    search: {
-      provider: 'local',
-    },
     editLink: {
-      pattern: 'https://github.com/strings77wzq/ohmyopenAI-tutorial-hub/edit/main/docs/:path',
+      pattern: 'https://github.com/strings77wzq/agent-engineering-hub/edit/main/docs/:path',
     },
     footer: {
       message: '基于 MIT 许可发布',
