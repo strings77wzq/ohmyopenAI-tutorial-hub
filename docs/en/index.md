@@ -2,36 +2,36 @@
 layout: home
 
 hero:
-  name: "Agent Engineering Hub"
-  text: "A field guide for production-grade agent systems"
-  tagline: An open-source learning system for Skills, MCP, OpenSpec, Harnesses, context engineering, evaluation, and safe release workflows.
+  name: "AI Agent Tutorial"
+  text: "Agent Engineering · Systematic Learning"
+  tagline: "From concepts to practice, tools to architecture. Complete learning path: OMO workflow + golem case study + Harness engineering."
   image:
     src: /logo.svg
-    alt: Agent Engineering Hub identity mark
+    alt: AI Agent Tutorial identity mark
   actions:
     - theme: brand
-      text: Start Learning
+      text: Quick Start
       link: /en/guide/quickstart
     - theme: alt
-      text: View Learning Map
+      text: Learning Map
       link: /en/guide/
     - theme: alt
       text: GitHub
       link: https://github.com/strings77wzq/ohmyopenAI-tutorial-hub
 
 features:
-  - title: Skills
-    details: Package repeated work into reusable, testable, evolvable AI capabilities.
-    link: /en/guide/skills/what-is-skill
-  - title: MCP
-    details: Connect tools, resources, and agent workflows through a standard context interface.
-    link: /en/guide/mcp/
-  - title: OpenSpec
-    details: Lock requirements, scenarios, and acceptance criteria before implementation.
-    link: /en/guide/openspec/concepts
-  - title: Harness
-    details: Validate AI output with scenarios, mocks, evaluators, and regression suites.
+  - title: OMO Workflow
+    details: "Oh-My-OpenAgent multi-model orchestration: 11 specialized agents, intent classification, task delegation, verification loops."
+    link: /en/guide/omo/
+  - title: golem Case Study
+    details: "Real production project anatomy: Skill system, RAG pipeline, MCP client, multi-provider adapter."
+    link: /en/guide/golem-case/
+  - title: Harness Engineering
+    details: "Scenario design, Mock Server, Evaluator, feedback loop, entropy management - quality assurance for AI output."
     link: /en/guide/harness/intro
+  - title: Core Tools
+    details: "Skills, MCP, OpenSpec, context engineering - essential skills for building reliable agent systems."
+    link: /en/guide/skills/what-is-skill
 ---
 
 <script setup>
@@ -74,7 +74,7 @@ import { withBase } from 'vitepress'
   <div>
     <p class="eyebrow">Open Source Readiness</p>
     <h2>Learning content with engineering credibility</h2>
-    <p>Agent Engineering Hub is not a loose note collection. It is a learning system that can be built, checked, demonstrated, and extended: no broken navigation, runnable examples, reviewable tasks, and clear contribution paths.</p>
+    <p>AI Agent Tutorial is not a loose note collection. It is a learning system that can be built, checked, demonstrated, and extended: no broken navigation, runnable examples, reviewable tasks, and clear contribution paths.</p>
   </div>
   <div class="check-panel">
     <p>Quality gates</p>
@@ -86,3 +86,78 @@ import { withBase } from 'vitepress'
     </ul>
   </div>
 </section>
+
+<section class="hub-section">
+  <p class="eyebrow">What's New</p>
+  <h2>Latest Updates</h2>
+  <div class="changelog-grid">
+    <div class="changelog-item">
+      <span class="version">v1.0.0</span>
+      <span class="date">2026-04-11</span>
+      <h3>OMO Workflow Module Released</h3>
+      <ul>
+        <li>New OMO workflow and architecture (8 articles)</li>
+        <li>New golem case study module (5 articles)</li>
+        <li>Harness engineering deep dive (feedback loop + entropy)</li>
+        <li>Sidebar navigation updated</li>
+      </ul>
+    </div>
+    <div class="changelog-item">
+      <span class="version">v0.9.0</span>
+      <span class="date">2026-03</span>
+      <h3>Initial Release</h3>
+      <ul>
+        <li>Skills tutorial module</li>
+        <li>MCP tutorial module</li>
+        <li>OpenSpec tutorial module</li>
+        <li>Harness engineering basics</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style scoped>
+.changelog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.changelog-item {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.changelog-item .version {
+  background: var(--vp-c-brand);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.changelog-item .date {
+  color: var(--vp-c-text-2);
+  font-size: 0.875rem;
+  margin-left: 0.75rem;
+}
+
+.changelog-item h3 {
+  margin: 1rem 0 0.5rem;
+  font-size: 1.125rem;
+}
+
+.changelog-item ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--vp-c-text-2);
+}
+
+.changelog-item li {
+  margin: 0.25rem 0;
+}
+</style>

@@ -2,36 +2,36 @@
 layout: home
 
 hero:
-  name: "Agent Engineering Hub"
-  text: "智能体工程学习枢纽"
-  tagline: 面向工程团队的开源学习系统，贯通 Skills、MCP、OpenSpec、Harness、上下文工程、评测与安全发布。
+  name: "AI Agent 教程"
+  text: "智能体工程 · 系统化学习"
+  tagline: "从概念到实战，从工具到架构。OMO 工作流 + golem 真实案例 + Harness 工程化的完整学习路径。"
   image:
     src: /logo.svg
-    alt: Agent Engineering Hub 智能体工程学习枢纽标识
+    alt: AI Agent 教程标识
   actions:
     - theme: brand
-      text: 开始学习
+      text: 快速开始
       link: /guide/quickstart
     - theme: alt
-      text: 查看学习地图
+      text: 学习地图
       link: /guide/
     - theme: alt
       text: GitHub
       link: https://github.com/strings77wzq/ohmyopenAI-tutorial-hub
 
 features:
-  - title: Skills
-    details: 把重复工作沉淀成可调用、可测试、可演进的 AI 能力模块。
-    link: /guide/skills/what-is-skill
-  - title: MCP
-    details: 用标准化上下文接口连接工具、资源和 Agent 工作流。
-    link: /guide/mcp/
-  - title: OpenSpec
-    details: 在编码前锁定需求、场景和验收标准，减少人机协作偏差。
-    link: /guide/openspec/concepts
-  - title: Harness
-    details: 用场景、Mock、Evaluator 和回归套件验证 AI 输出质量。
+  - title: OMO 工作流
+    details: "Oh-My-OpenAgent 多模型编排系统：11 大 Agent、意图分类、任务分发、验证回路。"
+    link: /guide/omo/
+  - title: golem 真实案例
+    details: "用真实生产项目解剖Skill系统、RAG流程、MCP客户端、多Provider适配。"
+    link: /guide/golem-case/
+  - title: Harness 工程
+    details: "场景设计、Mock Server、Evaluator、反馈循环、熵管理——AI 输出的质量保障。"
     link: /guide/harness/intro
+  - title: 核心工具
+    details: Skills、MCP、OpenSpec、上下文工程——构建可靠 Agent 系统的必备技能。
+    link: /guide/skills/what-is-skill
 ---
 
 <script setup>
@@ -74,7 +74,7 @@ import { withBase } from 'vitepress'
   <div>
     <p class="eyebrow">Open Source Readiness</p>
     <h2>让学习内容具备工程可信度</h2>
-    <p>Agent Engineering Hub 不是零散笔记，而是一套可以被构建、检查、演示和持续贡献的学习系统：导航不 404，示例能运行，任务有验收标准，贡献者知道如何扩展内容。</p>
+    <p>AI Agent 教程不是零散笔记，而是一套可以被构建、检查、演示和持续贡献的学习系统：导航不 404，示例能运行，任务有验收标准，贡献者知道如何扩展内容。</p>
   </div>
   <div class="check-panel">
     <p>质量门禁</p>
@@ -86,3 +86,78 @@ import { withBase } from 'vitepress'
     </ul>
   </div>
 </section>
+
+<section class="hub-section">
+  <p class="eyebrow">What's New</p>
+  <h2>最新更新</h2>
+  <div class="changelog-grid">
+    <div class="changelog-item">
+      <span class="version">v1.0.0</span>
+      <span class="date">2026-04-11</span>
+      <h3>OMO 工作流模块正式发布</h3>
+      <ul>
+        <li>新增 OMO 工作流和架构设计（8 篇）</li>
+        <li>新增 golem 真实案例模块（5 篇）</li>
+        <li>深化 Harness 工程（反馈循环 + 熵管理）</li>
+        <li>更新侧边栏导航</li>
+      </ul>
+    </div>
+    <div class="changelog-item">
+      <span class="version">v0.9.0</span>
+      <span class="date">2026-03</span>
+      <h3>初始版本</h3>
+      <ul>
+        <li>Skills 教程模块</li>
+        <li>MCP 教程模块</li>
+        <li>OpenSpec 教程模块</li>
+        <li>Harness 工程入门</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style scoped>
+.changelog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.changelog-item {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.changelog-item .version {
+  background: var(--vp-c-brand);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.changelog-item .date {
+  color: var(--vp-c-text-2);
+  font-size: 0.875rem;
+  margin-left: 0.75rem;
+}
+
+.changelog-item h3 {
+  margin: 1rem 0 0.5rem;
+  font-size: 1.125rem;
+}
+
+.changelog-item ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--vp-c-text-2);
+}
+
+.changelog-item li {
+  margin: 0.25rem 0;
+}
+</style>
