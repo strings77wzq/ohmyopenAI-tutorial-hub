@@ -9,15 +9,17 @@ MCP 是 Model Context Protocol 的缩写。它解决的问题是：当 Agent 需
 - 如何用 Harness 验证 MCP 工具返回值和错误处理。
 - 如何为权限、密钥和危险操作设置边界。
 
-## 最小心智模型
+## 核心设计模型
 
-| 角色 | 作用 |
+| 角色 | 职责 |
 | --- | --- |
-| Client | Agent 或宿主应用，用来发现并调用 server 暴露的能力 |
-| Server | 能力提供方，可以暴露 tools、resources 和 prompts |
-| Tool | 有副作用或计算逻辑的可调用动作 |
-| Resource | 可读取的数据，例如文件、记录、文档片段 |
-| Prompt | 可复用的任务说明或工作流模板 |
+| **Client** | Agent 或宿主应用，发现并调用 Server 暴露的能力 |
+| **Server** | 能力提供方，暴露 tools、resources 和 prompts |
+| **Tool** | 有副作用或计算逻辑的可调用动作 |
+| **Resource** | 可读取的数据（文件、记录、文档片段） |
+| **Prompt** | 可复用的任务说明或工作流模板 |
+
+> 设计 MCP 时，按此模型明确每个组件的职责边界，确保协议清晰。
 
 ## 一个 MCP 能力的设计步骤
 
@@ -34,5 +36,10 @@ MCP 是 Model Context Protocol 的缩写。它解决的问题是：当 Agent 需
 - 输入：`query` 和可选的 `limit`。
 - 输出：匹配标题、摘要、链接和置信度。
 - 验收：无结果时返回空数组和建议下一步；查询为空时返回明确错误。
+
+## 相关资源
+
+- [MCP 官方文档](https://modelcontextprotocol.io/) - 官方协议规范
+- [Awesome MCP Servers](https://github.com/topics/model-context-protocol) - 社区 MCP Server 集合
 
 下一步阅读 [核心概念](/guide/mcp/concepts)。

@@ -45,7 +45,7 @@
   <a href="https://github.com/strings77wzq/golem" target="_blank"><strong>golem</strong><span>生产级实战 → GitHub</span></a>
 </div>
 
-## 推荐���径
+## 推荐路径
 
 ### 初学者路径
 
