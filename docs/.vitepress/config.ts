@@ -1,6 +1,6 @@
 import { defineConfig } from 'vitepress'
 
-const repoBase = '/'
+const repoBase = '/ohmyopenAI-tutorial-hub/'
 
 const zhNav = [
   { text: '首页', link: '/zh/' },
