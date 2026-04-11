@@ -84,6 +84,33 @@ const zhGuideSidebar = [
       { text: 'Mock Server', link: '/guide/harness/mock-server' },
       { text: '实战案例', link: '/guide/harness/practice' },
       { text: '最佳实践', link: '/guide/harness/best-practices' },
+      { text: '反馈循环', link: '/guide/harness/feedback-loop' },
+      { text: '熵管理', link: '/guide/harness/entropy' },
+    ],
+  },
+  {
+    text: 'OMO 工作流',
+    collapsed: false,
+    items: [
+      { text: 'OMO 概述', link: '/guide/omo/' },
+      { text: '架构设计', link: '/guide/omo/architecture' },
+      { text: '主编排器', link: '/guide/omo/architecture/orchestrator' },
+      { text: 'Agent 分类', link: '/guide/omo/architecture/agents' },
+      { text: 'Category 路由', link: '/guide/omo/architecture/category' },
+      { text: '意图分类', link: '/guide/omo/workflow/intent' },
+      { text: '任务分发', link: '/guide/omo/workflow/delegation' },
+      { text: '验证回路', link: '/guide/omo/workflow/verification' },
+    ],
+  },
+  {
+    text: 'golem 案例',
+    collapsed: false,
+    items: [
+      { text: '案例概述', link: '/guide/golem-case/' },
+      { text: 'Skill 系统', link: '/guide/golem-case/skills-core' },
+      { text: 'RAG 流程', link: '/guide/golem-case/rag-core' },
+      { text: 'MCP 客户端', link: '/guide/golem-case/mcp-core' },
+      { text: '多 Provider', link: '/guide/golem-case/provider-core' },
     ],
   },
   {
@@ -153,6 +180,33 @@ const enGuideSidebar = [
       { text: 'Mock Server', link: '/en/guide/harness/mock-server' },
       { text: 'Practice', link: '/en/guide/harness/practice' },
       { text: 'Best Practices', link: '/en/guide/harness/best-practices' },
+      { text: 'Feedback Loop', link: '/en/guide/harness/feedback-loop' },
+      { text: 'Entropy Management', link: '/en/guide/harness/entropy' },
+    ],
+  },
+  {
+    text: 'OMO Workflow',
+    collapsed: false,
+    items: [
+      { text: 'OMO Overview', link: '/en/guide/omo/' },
+      { text: 'Architecture', link: '/en/guide/omo/architecture' },
+      { text: 'Orchestrator', link: '/en/guide/omo/architecture/orchestrator' },
+      { text: 'Agent Categories', link: '/en/guide/omo/architecture/agents' },
+      { text: 'Category Routing', link: '/en/guide/omo/architecture/category' },
+      { text: 'Intent Classification', link: '/en/guide/omo/workflow/intent' },
+      { text: 'Task Delegation', link: '/en/guide/omo/workflow/delegation' },
+      { text: 'Verification', link: '/en/guide/omo/workflow/verification' },
+    ],
+  },
+  {
+    text: 'golem Case Study',
+    collapsed: false,
+    items: [
+      { text: 'Overview', link: '/en/guide/golem-case/' },
+      { text: 'Skill System', link: '/en/guide/golem-case/skills-core' },
+      { text: 'RAG Pipeline', link: '/en/guide/golem-case/rag-core' },
+      { text: 'MCP Client', link: '/en/guide/golem-case/mcp-core' },
+      { text: 'Multi-Provider', link: '/en/guide/golem-case/provider-core' },
     ],
   },
   {
@@ -215,8 +269,8 @@ const enExamplesSidebar = [
 ]
 
 export default defineConfig({
-  title: 'Agent Engineering Hub',
-  description: '智能体工程学习枢纽：系统学习 Skills、MCP、OpenSpec、Harness、上下文工程、评测与安全发布',
+  title: 'AI Agent 教程',
+  description: 'AI Agent 智能体工程教程：OMO 工作流、Skills、MCP、OpenSpec、Harness、golem 实战案例',
   lang: 'zh-CN',
   base: repoBase,
 
