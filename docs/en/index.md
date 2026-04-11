@@ -119,7 +119,7 @@ import { withBase } from 'vitepress'
 <style scoped>
 .changelog-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
   margin-top: 2rem;
 }
@@ -129,21 +129,34 @@ import { withBase } from 'vitepress'
   border: 1px solid var(--vp-c-divider);
   border-radius: 12px;
   padding: 1.5rem;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.changelog-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px -16px var(--vp-c-brand);
+  border-color: var(--vp-c-brand-1);
+}
+
+.dark .changelog-item:hover {
+  box-shadow: 0 12px 32px -16px rgba(15, 159, 143, 0.3);
 }
 
 .changelog-item .version {
-  background: var(--vp-c-brand);
+  background: linear-gradient(135deg, var(--vp-c-brand-1), var(--vp-c-brand-2));
   color: white;
   padding: 0.25rem 0.75rem;
   border-radius: 999px;
   font-size: 0.875rem;
   font-weight: 600;
+  display: inline-block;
 }
 
 .changelog-item .date {
   color: var(--vp-c-text-2);
   font-size: 0.875rem;
   margin-left: 0.75rem;
+  vertical-align: middle;
 }
 
 .changelog-item h3 {
@@ -159,5 +172,11 @@ import { withBase } from 'vitepress'
 
 .changelog-item li {
   margin: 0.25rem 0;
+}
+
+@media (max-width: 640px) {
+  .changelog-grid {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
