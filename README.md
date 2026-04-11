@@ -1,30 +1,55 @@
-# Agent Engineering Hub
+# Agent Engineering Hub 🤖
 
-智能体工程学习枢纽：系统学习 Skills、MCP、OpenSpec、Harness、上下文工程、评测与安全发布。
+> 智能体工程学习系统：从概念到实战，从工具到架构
 
-## ⚠️ 站点迁移说明（根域名直达）
+## 技术发展历程
 
-- 新站点目标地址：`https://strings77wzq.github.io`
-- 目标关键路径：`https://strings77wzq.github.io/guide/quickstart`
-- 迁移完成前，历史 Project Site 路径可能仍被访问：`https://strings77wzq.github.io/ohmyopenAI-tutorial-hub/`
+```
+Prompt Engineering                    Skills (oh-my-openagent)
+       ↓                                  ↓
+ 解决Prompt冗余问题              可复用能力模块
+       ↓                                  ↓
+MCP (Model Context Protocol)     OpenSpec (Spec-Driven)
+       ↓                                  ↓
+标准化上下文协议                规格驱动开发
+       ↓                                  ↓
+Harness Engineering            golem (生产级实战)
+       ↓
+AI输出质量保障
+```
 
-### 回滚预案
+## 核心模块
 
-如果根域名迁移发布异常：
+| 模块 | 内容 | GitHub |
+|------|------|-------|
+| **OMO工作流** | 多模型编排系统，11大Agent | [oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent) |
+| **golem案例** | 生产级Go Agent项目 | [golem](https://github.com/strings77wzq/golem) |
+| **Skills** | 可复用AI能力模块 | [skills.sh](https://skills.sh) |
+| **MCP** | 标准化上下文协议 | [modelcontextprotocol.io](https://modelcontextprotocol.io) |
+| **OpenSpec** | 规格驱动开发SDD | [openspec](https://github.com/code-yeongyu/openspec) |
+| **Harness** | AI输出质量保障 | R.E.S.T模型 |
 
-1. 暂时恢复对外入口为历史 Project Site 地址
-2. 保留本 README 中的新旧地址说明，避免用户继续访问失效路径
-3. 修复后再次切换到根域名入口
+## 快速开始
 
-## 学习目标
+### 学习路径
+- [快速开始](./docs/guide/quickstart.md) - 5分钟建立第一个Skill
+- [学习地图](./docs/guide/) - 完整技术演进路径
+- [OMO工作流](./docs/guide/omo/) - 多模型编排系统
+- [golem案例](./docs/guide/golem-case/) - 生产级实战
 
-本项目帮助开发者系统掌握现代智能体工程的核心能力：
+## 为什么学习这个？
 
-- **Skills**: 创建可复用的 AI 能力模块，提升工程复用率
-- **MCP**: 用标准化上下文协议连接工具、资源和 Agent 工作流
-- **OpenSpec**: 规范驱动开发，确保人与 AI 对需求达成一致
-- **Harness**: 测试基础设施，确保 AI 输出质量
-- **Evaluation**: 将验收标准沉淀为回归检查和发布门禁
+1. **体系化**：从Prompt到生产级Agent系统的完整路径
+2. **实战导向**：基于golem真实生产项目教学
+3. **质量保障**：Harness工程确保AI输出可靠
+
+## 相关链接
+
+- 🌐 **在线教程**: https://strings77wzq.github.io/ohmyopenAI-tutorial-hub/
+- 📚 **OMO工作流**: https://github.com/code-yeongyu/oh-my-openagent
+- 💻 **golem项目**: https://github.com/strings77wzq/golem
+- 🛠️ **Skills社区**: https://skills.sh
+- 📖 **MCP协议**: https://modelcontextprotocol.io
 
 ## 快速开始
 
