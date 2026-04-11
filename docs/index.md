@@ -21,11 +21,11 @@ hero:
 
 features:
   - title: OMO 工作流
-    details: "Oh-My-OpenAgent 多模型编排系统：11 大 Agent、意图分类、任务分发、验证回路。"
-    link: /guide/omo/
-  - title: golem 真实案例
-    details: "用真实生产项目解剖Skill系统、RAG流程、MCP客户端、多Provider适配。"
-    link: /guide/golem-case/
+    details: "Oh-My-OpenAgent 多模型编排系统。点击查看 GitHub →"
+    link: https://github.com/code-yeongyu/oh-my-openagent
+  - title: golem 案例
+    details: "生产级 Go 项目实战：Agent Loop、Tool、RAG、MCP、Multi-Provider 全链路。点击查看 →"
+    link: https://github.com/strings77wzq/golem
   - title: Harness 工程
     details: "场景设计、Mock Server、Evaluator、反馈循环、熵管理——AI 输出的质量保障。"
     link: /guide/harness/intro

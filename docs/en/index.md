@@ -21,11 +21,11 @@ hero:
 
 features:
   - title: OMO Workflow
-    details: "Oh-My-OpenAgent multi-model orchestration: 11 specialized agents, intent classification, task delegation, verification loops."
-    link: /en/guide/omo/
+    details: "Oh-My-OpenAgent multi-model orchestration. View GitHub →"
+    link: https://github.com/code-yeongyu/oh-my-openagent
   - title: golem Case Study
-    details: "Real production project anatomy: Skill system, RAG pipeline, MCP client, multi-provider adapter."
-    link: /en/guide/golem-case/
+    details: "Production-grade Go project: Agent Loop, Tool, RAG, MCP, Multi-Provider full pipeline. View GitHub →"
+    link: https://github.com/strings77wzq/golem
   - title: Harness Engineering
     details: "Scenario design, Mock Server, Evaluator, feedback loop, entropy management - quality assurance for AI output."
     link: /en/guide/harness/intro
