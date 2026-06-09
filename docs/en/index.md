@@ -1,5 +1,7 @@
 ---
 layout: home
+title: Agent Engineering Hub
+---
 
 hero:
   name: "AI Agent Tutorial"
@@ -49,25 +51,25 @@ import { withBase } from 'vitepress'
   <h2>From reusable capability to verified release</h2>
   <p class="lead">Start with a tight feedback loop, then bring Skills, MCP, OpenSpec, Harnesses, retrieval, evaluation, and deployment safety into one engineering chain. Each module includes concepts, steps, practice, troubleshooting, and next links.</p>
   <div class="path-grid">
-    <a class="path-card" href="/en/guide/quickstart">
+    <a class="path-card" :href="withBase('/en/guide/quickstart')">
       <img class="module-icon" :src="withBase('/icons/skills.svg')" alt="" aria-hidden="true">
       <span>01 / Feedback Loop</span>
       <strong>Quick Start</strong>
       <p>Create your first Skill and establish a tight feedback loop.</p>
     </a>
-    <a class="path-card" href="/en/guide/mcp/">
+    <a class="path-card" :href="withBase('/en/guide/mcp/')">
       <img class="module-icon" :src="withBase('/icons/mcp.svg')" alt="" aria-hidden="true">
       <span>02 / Context Protocol</span>
       <strong>MCP and Context</strong>
       <p>Learn how tools, resources, prompts, and boundaries reach an agent.</p>
     </a>
-    <a class="path-card" href="/en/guide/harness/intro">
+    <a class="path-card" :href="withBase('/en/guide/harness/intro')">
       <img class="module-icon" :src="withBase('/icons/harness.svg')" alt="" aria-hidden="true">
       <span>03 / Quality Harness</span>
       <strong>Quality Harness</strong>
       <p>Use scenarios, mock servers, evaluators, and traces to protect quality.</p>
     </a>
-    <a class="path-card" href="/en/guide/evaluation/">
+    <a class="path-card" :href="withBase('/en/guide/evaluation/')">
       <img class="module-icon" :src="withBase('/icons/evaluation.svg')" alt="" aria-hidden="true">
       <span>04 / Release Gate</span>
       <strong>Evaluation and Release</strong>

@@ -1,5 +1,7 @@
 ---
 layout: home
+title: Agent Engineering Hub — 智能体工程学习枢纽
+---
 
 hero:
   name: "Agent Engineering Hub"

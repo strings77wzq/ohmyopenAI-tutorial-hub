@@ -1,5 +1,7 @@
 ---
 layout: home
+title: Agent Engineering Hub — 智能体工程学习枢纽
+---
 
 hero:
   name: "AI Agent 教程"
@@ -49,25 +51,25 @@ import { withBase } from 'vitepress'
   <h2>从可复用能力到可验证发布</h2>
   <p class="lead">先建立最小反馈循环，再把 Skills、MCP、OpenSpec、Harness、检索、评测和部署安全纳入同一条工程链路。每个模块都包含概念、步骤、练习、排错和下一步。</p>
   <div class="path-grid">
-    <a class="path-card" href="/guide/quickstart">
+    <a class="path-card" :href="withBase('/guide/quickstart')">
       <img class="module-icon" :src="withBase('/icons/skills.svg')" alt="" aria-hidden="true">
       <span>01 / Feedback Loop</span>
       <strong>快速开始</strong>
       <p>5 分钟创建第一个 Skill，建立最小反馈循环。</p>
     </a>
-    <a class="path-card" href="/guide/mcp/">
+    <a class="path-card" :href="withBase('/guide/mcp/')">
       <img class="module-icon" :src="withBase('/icons/mcp.svg')" alt="" aria-hidden="true">
       <span>02 / Context Protocol</span>
       <strong>MCP 与上下文</strong>
       <p>理解工具、资源、提示和上下文边界如何被 Agent 使用。</p>
     </a>
-    <a class="path-card" href="/guide/harness/intro">
+    <a class="path-card" :href="withBase('/guide/harness/intro')">
       <img class="module-icon" :src="withBase('/icons/harness.svg')" alt="" aria-hidden="true">
       <span>03 / Quality Harness</span>
       <strong>质量 Harness</strong>
       <p>用场景、Mock Server、Evaluator 和 trace 固化质量。</p>
     </a>
-    <a class="path-card" href="/guide/evaluation/">
+    <a class="path-card" :href="withBase('/guide/evaluation/')">
       <img class="module-icon" :src="withBase('/icons/evaluation.svg')" alt="" aria-hidden="true">
       <span>04 / Release Gate</span>
       <strong>评测与发布</strong>
