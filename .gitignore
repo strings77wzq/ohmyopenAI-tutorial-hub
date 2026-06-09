@@ -5,4 +5,6 @@ docs/.vitepress/dist/
 docs/.vitepress/cache/
 *.log
 .DS_Store
+.omc/
 .omx/
+.gstack/
