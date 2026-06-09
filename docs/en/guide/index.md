@@ -1,52 +1,99 @@
 # Learning Map
 
-This tutorial follows the order of real agent engineering work: build the smallest useful capability, then add requirements, context, tools, evaluation, and release gates to the same quality loop.
+> From Prompt to Production Loop: seven engineering dimensions forming a complete Agentic Engineering evolution path. Each new technology solves the limitations of the previous one.
+
+## Technology Evolution
+
+```
+┌──────────────────────────────────────────────────────────────────────────────────────────┐
+│  1. Prompt Engineering                                                     │
+│  "How to write effective prompts?"                                         │
+│         ↓ Solves prompt reuse and redundancy                                     │
+├──────────────────────────────────────────────────────────────────────────────────────────┤
+│  2. Skills                                                                 │
+│  "Encapsulate prompts into reusable capability modules"                     │
+│  📂 GitHub: https://github.com/code-yeongyu/oh-my-openagent                  │
+│         ↓ Solves context passing and state management                            │
+├──────────────────────────────────────────────────────────────────────────────────────────┤
+│  3. MCP (Model Context Protocol)                                           │
+│  "Standardized protocol for tools, resources, and context"                  │
+│         ↓ Solves tool exposure and security boundary issues                       │
+├──────────────────────────────────────────────────────────────────────────────────────────┤
+│  4. OpenSpec                                                               │
+│  "Lock requirements and acceptance criteria in specification documents"     │
+│  📂 GitHub: https://github.com/code-yeongyu/openspec                        │
+│         ↓ Solves human-AI collaboration intent alignment                         │
+├──────────────────────────────────────────────────────────────────────────────────────────┤
+│  5. Context Engineering                                                     │
+│  "Precise layered information injection within limited context windows"     │
+│         ↓ Solves lost-in-the-middle and context pollution problems                 │
+├──────────────────────────────────────────────────────────────────────────────────────────┤
+│  6. Harness Engineering                                                     │
+│  "Validate AI output with scenarios, mocks, and evaluators"                │
+│         ↓ Solves quality assurance                                              │
+├──────────────────────────────────────────────────────────────────────────────────────────┤
+│  7. Loop Engineering                                                        │
+│  "OODA cycles, exit mechanisms, error retry — converge reliably"            │
+│         ↓ Solves infinite loops, premature exits, and goal drift                  │
+├──────────────────────────────────────────────────────────────────────────────────────────┤
+│  golem (Production Case Study)                                              │
+│  "Complete Agent system implementation example"                              │
+│  📂 GitHub: https://github.com/strings77wzq/golem                          │
+└──────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+## Learning Paths
 
 <div class="learning-map">
-  <a href="/en/guide/quickstart"><strong>Quick Start</strong><span>Create the first Skill and feedback loop</span></a>
-  <a href="/en/guide/skills/what-is-skill"><strong>Skills</strong><span>Package reusable capabilities and prompt assets</span></a>
-  <a href="/en/guide/mcp/"><strong>MCP</strong><span>Expose tools, resources, and context to agents</span></a>
-  <a href="/en/guide/openspec/concepts"><strong>OpenSpec</strong><span>Lock requirements and acceptance criteria</span></a>
-  <a href="/en/guide/harness/intro"><strong>Harness</strong><span>Validate output with scenarios, mocks, and evaluators</span></a>
-  <a href="/en/guide/evaluation/"><strong>Evaluation</strong><span>Build regression suites and release gates</span></a>
+  <a href="/en/guide/quickstart"><strong>Quick Start</strong><span>Create your first Skill in 5 minutes</span></a>
+  <a href="/en/guide/skills/what-is-skill"><strong>Skills</strong><span>Reusable capability modules</span></a>
+  <a href="/en/guide/mcp/"><strong>MCP</strong><span>Standardized context protocol</span></a>
+  <a href="/en/guide/openspec/concepts"><strong>OpenSpec</strong><span>Spec-Driven Development</span></a>
+  <a href="/en/guide/context/"><strong>Context Engineering</strong><span>Context window design</span></a>
+  <a href="/en/guide/harness/intro"><strong>Harness</strong><span>AI output quality verification</span></a>
+  <a href="/en/guide/loop-engineering/"><strong>Loop Engineering</strong><span>Closed-loop iteration control</span></a>
+  <a href="https://github.com/strings77wzq/golem" target="_blank"><strong>golem</strong><span>Production case study → GitHub</span></a>
 </div>
 
-## Recommended paths
+## Recommended Routes
 
-### Beginner path
+### Beginner Path
 
-1. [Quick Start](/en/guide/quickstart) - Run a minimal example first.
-2. [What is Skill](/en/guide/skills/what-is-skill) - Understand reusable capability boundaries.
-3. [MCP Introduction](/en/guide/mcp/) - Learn how agents connect to external context.
-4. [OpenSpec Core Concepts](/en/guide/openspec/concepts) - Define intent before implementation.
-5. [Harness Testing Infrastructure](/en/guide/harness/intro) - Protect AI output quality with tests.
+1. [Quick Start](/en/guide/quickstart) — Run a minimal example
+2. [What is a Skill](/en/guide/skills/what-is-skill) — Understand reusable capabilities
+3. [MCP Introduction](/en/guide/mcp/) — How Agents connect to external tools
+4. [Harness Introduction](/en/guide/harness/intro) — Protect output quality with tests
+5. [Loop Engineering](/en/guide/loop-engineering/) — How Agents converge reliably
+6. [golem Case Study](/guide/golem-case/) — Real production project
 
-### Engineering path
+### Engineering Practice Path
 
-1. [Skill Practice](/en/guide/skills/practice) - Package a task into a reusable capability.
-2. [Build an MCP Server](/en/guide/mcp/server) - Expose tools, resources, and safety boundaries.
-3. [Complete Workflow](/en/guide/openspec/workflow) - Move from proposal to implementation to archive.
-4. [Evaluation and Quality](/en/guide/evaluation/) - Turn acceptance criteria into regression checks.
-5. [Deployment and Safety](/en/guide/deployment/) - Handle permissions, secrets, sandboxing, and rollback.
+1. [Skill Practice](/en/guide/skills/practice) — Encapsulate reusable capabilities
+2. [Build an MCP Server](/en/guide/mcp/server) — Expose tools with safety boundaries
+3. [OpenSpec Workflow](/en/guide/openspec/workflow) — Spec-Driven Development
+4. [Context Engineering](/en/guide/context/) — Context window design
+5. [Evaluation and Quality](/en/guide/evaluation/) — Turn acceptance criteria into regression checks
+6. [Loop Engineering](/en/guide/loop-engineering/) — Closed-loop control and error recovery
+7. [Deployment and Safety](/en/guide/deployment/) — Permissions, secrets, sandboxing
 
-### Architecture path
+### Architect Path
 
-1. [Context Engineering](/en/guide/context/) - Design context windows, memory, and information priority.
-2. [Workflow Orchestration](/en/guide/agent-workflows/) - Connect Skills, MCP, OpenSpec, and Harnesses.
-3. [Retrieval and Knowledge](/en/guide/agent-workflows/retrieval) - Bring docs and codebase knowledge into the agent.
-4. [Best Practices](/en/guide/skills/best-practices) - Avoid unmaintainable prompt and tool design.
-5. [Contributing](/en/contributing) - Extend the tutorial with the same quality bar.
+1. [Context Engineering](/en/guide/context/) — Five-layer context model
+2. [Workflow Orchestration](/en/guide/agent-workflows/) — Composing complete systems
+3. [Loop Engineering](/en/guide/loop-engineering/) — OODA Loop and exit mechanisms
+4. [Retrieval and Knowledge](/en/guide/agent-workflows/retrieval) — RAG knowledge injection
+5. [golem Production Code](https://github.com/strings77wzq/golem) — Complete architecture reference
 
-## Module standard
+## Module Standards
 
 | Standard | Meaning |
-| --- | --- |
-| Concept | Explain the problem and vocabulary |
-| Operation | Provide executable steps or minimal configuration |
-| Practice | Include a task learners can self-check |
-| Troubleshooting | Name common failure modes and diagnosis steps |
-| Next step | Link to the next chapter or example |
+|----------|---------|
+| Concepts | What problem does this solve? |
+| Steps | Actionable instructions |
+| Practice | Self-check exercises |
+| Troubleshooting | Common failure modes |
+| Next Steps | Points to subsequent chapters |
 
-## Start now
+## Start Now
 
-Begin with [Quick Start](/en/guide/quickstart). If you already know the basics, jump to [MCP Introduction](/en/guide/mcp/) or [Evaluation and Quality](/en/guide/evaluation/).
+Start with [Quick Start](/en/guide/quickstart) or jump to [golem](https://github.com/strings77wzq/golem).
