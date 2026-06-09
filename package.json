@@ -7,8 +7,13 @@
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
+    "docs:audit": "node scripts/check-doc-links.mjs",
     "docs:check-links": "node scripts/check-doc-links.mjs",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "docs:check-routes": "node scripts/check-routes.mjs",
+    "docs:check-frontmatter": "node scripts/check-frontmatter.mjs",
+    "docs:check-stale": "node scripts/check-stale-changes.mjs",
+    "test": "npm run docs:check-links && npm run docs:check-routes && npm run docs:check-frontmatter",
+    "test:all": "npm test && npm run docs:check-stale && npm run docs:build"
   },
   "keywords": [
     "AI",
