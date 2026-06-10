@@ -121,6 +121,25 @@ AI输出质量保障
 - [电商 MVP (Node.js)](./examples/ecommerce-nodejs.md)
 - [电商 MVP (Python)](./examples/ecommerce-python.md)
 
+## 质量门禁
+
+每次变更自动通过以下检查：
+
+| 检查项 | 工具 | 状态 |
+|--------|------|------|
+| 链接审计 | `npm run docs:check-links` | ✅ 121 页面，零断链 |
+| 路由验证 | `npm run docs:check-routes` | ✅ 所有侧边栏 link 可达 |
+| 前言检查 | `npm run docs:check-frontmatter` | ✅ 所有页面有结构化标题 |
+| 构建验证 | `npm run docs:build` | ✅ ~7s，零警告 |
+| 僵尸变更 | `npm run docs:check-stale` | ✅ 零活跃 openspec 变更 |
+| 本地搜索 | VitePress local search | ✅ 中英双语 |
+
+```bash
+npm test              # 运行全部自动化检查
+npm run docs:build    # 生产构建验证
+npm run test:all      # 全量检查 + 构建
+```
+
 ## 贡献
 
 欢迎贡献！请查看[贡献指南](./contributing.md)。

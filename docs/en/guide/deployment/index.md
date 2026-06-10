@@ -1,43 +1,55 @@
-# Deployment and Safety
+# Deployment & Safety
 
-Before releasing an agent engineering project, answer two questions: can it work reliably, and can it fail under control?
+Before an Agent engineering project goes live, answer two questions: **can it work reliably?** and **can it stay controllable when it fails?**
 
-## Pre-release checks
+## Pre-Release Checklist
 
-- Build passes.
-- Link audit passes.
-- Example project tests pass.
-- Permission boundaries are documented.
-- Secrets do not enter the repository or model context.
-- Failure paths have understandable errors.
-- Rollback path is clear.
+- Build passes
+- Link checks pass
+- Example project tests pass
+- Permission boundaries are documented
+- Secrets never enter the repo or model context
+- Failure paths have user-understandable errors
+- Rollback path is clear
 
-## Permission model
+## Permission Model
 
 | Permission | Risk | Recommendation |
-| --- | --- | --- |
-| Read files | Sensitive content exposure | Limit directories and filter secrets |
-| Write files | User work can be damaged | Show diff first and preserve rollback |
-| Run commands | Arbitrary side effects | Sandbox, allowlist, least privilege |
-| Network access | Data exfiltration | Use only required domains |
-| Deploy | Real users affected | Preview branches, confirmation, rollback |
+|------------|------|----------------|
+| Read files | Expose sensitive content | Restrict directories, filter secrets |
+| Write files | Destroy user work | Diff before write, keep rollback path |
+| Execute commands | Arbitrary side effects | Sandbox, allowlist, least privilege |
+| Network access | Data exfiltration | Only access required domains |
+| Deploy/release | Impact real users | Branch preview, human confirmation, rollback |
 
-## Observability and rollback
+## Module Content
 
-Keep:
+| Chapter | Content |
+|---------|---------|
+| [Permission Model](/guide/deployment/permission-model) | Filesystem, network, command execution, and API permissions. Allowlist vs denylist. Least-privilege principle applied to agents |
+| [Secret Governance](/guide/deployment/secret-governance) | Three-layer defense: source (never enter), process (auto-redact), post-hoc (detect + rotate) |
+| [Observability & Rollback](/guide/deployment/observability-rollback) | Build-level, runtime-level, and experience-level observability. Revert strategies. Smoke tests |
 
-- Build logs.
-- Key route smoke checks.
-- A path for users to report issues.
-- A rollback path to the last known-good version.
+> **Language note**: Detailed sub-pages are currently in [Chinese (简体中文)](/guide/deployment/). English translations are planned.
+
+## Observability & Rollback
+
+After release, maintain at minimum:
+
+- Build logs
+- Critical-path smoke checks
+- A user-reportable issue channel
+- Rollback path to the last known-good version
 
 ## Practice
 
-Write a safety note for an MCP tool that writes files:
+Write a security description for an MCP tool that writes files:
 
-1. Which directories can it write?
-2. How does it show a diff first?
-3. How does rollback work?
-4. How does the Harness verify permission denial?
+1. Which directories can it write to?
+2. How does it show a diff before writing?
+3. How does it roll back on failure?
+4. How does Harness verify that permission denials are enforced?
 
-Next: return to the [Learning Map](/en/guide/) or open [Examples](/en/examples/).
+## Next Step
+
+Start with the [Permission Model](/guide/deployment/permission-model) (Chinese) to understand the four dimensions of Agent permissions.

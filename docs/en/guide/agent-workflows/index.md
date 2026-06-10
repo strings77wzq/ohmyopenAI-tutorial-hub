@@ -1,32 +1,52 @@
-# Workflow Orchestration
+# Agent Workflow Orchestration
 
-A stable agent workflow does not ask a model to solve everything in one pass. It breaks intent, context, tools, and verification into recoverable steps.
+A stable Agent workflow is not "let the model solve everything in one shot." It's about decomposing intent, context, tools, and verification into recoverable steps.
 
-## Basic loop
+## The Core Loop
 
-1. Clarify the goal, scope, and acceptance criteria.
-2. Read local project context and official docs.
-3. Plan small verifiable tasks.
-4. Make focused changes that follow project conventions.
-5. Verify with builds, tests, link checks, or visual review.
-6. Record state, evidence, and remaining risk.
+1. **Clarify the Goal**: Write down user intent, scope, and acceptance criteria
+2. **Read Context**: Prioritize local project files and official documentation
+3. **Make a Plan**: Break into verifiable sub-tasks
+4. **Execute Changes**: Keep diffs small, follow project conventions
+5. **Verify**: Run checks, compare against acceptance criteria
+6. **Recover or Complete**: Fix failures or report completion
 
-## How the modules connect
+## Module Content
 
-| Module | Workflow role |
-| --- | --- |
-| Skills | Package repeatable operations |
-| MCP | Provide tools, resources, and external context |
-| OpenSpec | Record requirements, design, and tasks |
-| Harness | Validate behavior, failure modes, and regressions |
-| Evaluation | Decide whether release criteria are met |
+| Chapter | Content |
+|---------|---------|
+| [Orchestration Patterns](/guide/agent-workflows/orchestration-patterns) | Sequential chains, fan-out/fan-in, DAGs, state machines. When to use each. Partial failure handling |
+| [Error Recovery](/guide/agent-workflows/error-recovery) | Transient vs permanent vs ambiguous errors. Checkpoint & resume. Compensating actions. Dead letter queues |
+| [Multi-Agent Coordination](/guide/agent-workflows/multi-agent) | Task decomposition along file boundaries. Shared state vs message passing vs orchestrator. Anti-patterns |
+| [Retrieval & Knowledge](/guide/agent-workflows/retrieval) | RAG integration patterns for agent workflows |
 
-## Orchestration checklist
+> **Language note**: Detailed sub-pages are currently in [Chinese (简体中文)](/guide/agent-workflows/). English translations are planned.
 
-- Every step has input and output.
-- Tool calls have permission boundaries.
-- Failures can recover or roll back.
-- Critical behavior has Harness or build evidence.
-- Final reports include evidence, not only completion claims.
+## Orchestration Topology
 
-Next: [Retrieval and Knowledge](/en/guide/agent-workflows/retrieval).
+```
+┌──────────┐     ┌──────────┐     ┌──────────┐
+│  Clarify  │────▶│  Execute  │────▶│  Verify  │
+│  Goal     │     │  Changes  │     │  Output  │
+└──────────┘     └──────────┘     └─────┬────┘
+                                        │
+                                   ┌────┴────┐
+                                   ▼         ▼
+                                 PASS      FAIL
+                                   │         │
+                                   ▼         └──▶ Recover → Execute
+                               Complete
+```
+
+## Practice
+
+Design a workflow for "add 3 sub-pages to the Context Engineering module":
+
+1. Which steps must be sequential?
+2. Which steps can run in parallel?
+3. What checkpoints should be saved for recovery?
+4. What signals indicate the workflow should stop and ask for human input?
+
+## Next Step
+
+Start with [Orchestration Patterns](/guide/agent-workflows/orchestration-patterns) (Chinese) to understand the four core topologies.
