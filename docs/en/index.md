@@ -86,7 +86,7 @@ import { withBase } from 'vitepress'
 
 <style>
 /* ===== Homepage Minimal ===== */
-.Home { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+.Home { max-width: 800px; margin: 0 auto; padding: 0 24px; background: linear-gradient(180deg, rgba(192,122,94,0.04) 0%, transparent 400px); }
 
 .Hero { padding: 120px 0 80px; }
 .Hero-eyebrow { margin: 0 0 16px; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--vp-c-brand-1); }

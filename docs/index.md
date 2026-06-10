@@ -92,6 +92,7 @@ import { withBase } from 'vitepress'
   max-width: 800px;
   margin: 0 auto;
   padding: 0 24px;
+  background: linear-gradient(180deg, rgba(192,122,94,0.04) 0%, transparent 400px);
 }
 
 /* ---- Hero ---- */
@@ -196,6 +197,10 @@ import { withBase } from 'vitepress'
 
 .Module-item:hover {
   background: var(--vp-c-bg-soft);
+}
+
+.Module-item:hover .Module-num {
+  color: var(--vp-c-brand-1);
 }
 
 .Module-num {

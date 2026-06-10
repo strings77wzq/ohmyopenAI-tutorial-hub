@@ -311,7 +311,7 @@ export default defineConfig({
 
   head: [
     ['link', { rel: 'icon', href: `${repoBase}favicon.svg` }],
-    ['meta', { name: 'theme-color', content: '#CC785C' }],
+    ['meta', { name: 'theme-color', content: '#C07A5E' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:locale', content: 'zh_CN' }],
     ['meta', { property: 'og:title', content: 'Agent Engineering Hub' }],

@@ -93,7 +93,7 @@ import { withBase } from 'vitepress'
 </div>
 
 <style>
-.Home { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+.Home { max-width: 800px; margin: 0 auto; padding: 0 24px; background: linear-gradient(180deg, rgba(192,122,94,0.04) 0%, transparent 400px); }
 .Hero { padding: 120px 0 80px; }
 .Hero-eyebrow { margin: 0 0 16px; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--vp-c-brand-1); }
 .Hero-title { margin: 0 0 24px; font-size: clamp(2.25rem, 1.5rem + 4vw, 3.75rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.03em; color: var(--vp-c-text-1); }
