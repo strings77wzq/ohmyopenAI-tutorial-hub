@@ -1,0 +1,42 @@
+/**
+ * Typography tokens
+ * =================
+ *
+ * Font weights, sizes, line-heights, and letter-spacing used across the site.
+ * Values match the originals from custom.css to preserve zero visual drift.
+ *
+ * Pairing/family tokens (`--font-display`, `--font-body`) will be added by
+ * the next PR (`homepage-anthropic-style-redesign`). For now the site relies
+ * on the VitePress default font stack.
+ */
+
+:root {
+  /* Font weights */
+  --font-weight-medium: 600;
+  --font-weight-semibold: 650;
+  --font-weight-bold: 700;
+  --font-weight-heavy: 750;
+  --font-weight-black: 800;
+
+  /* Type scale (current site values; redesign PR will introduce display scale) */
+  --text-meta: 12px;
+  --text-eyebrow: 13px;
+  --text-label: 14px;
+  --text-body: 17px;
+  --text-section-h2: 30px;
+  --text-section-h2-mobile: 24px;
+  --text-lead-mobile: 16px;
+
+  /* Line heights */
+  --line-snug: 1.25;
+  --line-normal: 1.5;
+  --line-comfortable: 1.6;
+  --line-relaxed: 1.65;
+  --line-loose: 1.7;
+  --line-airy: 1.8;
+
+  /* Letter spacing */
+  --tracking-tight: -0.02em;
+  --tracking-loose: 0.08em;
+  --tracking-flat: 0;
+}

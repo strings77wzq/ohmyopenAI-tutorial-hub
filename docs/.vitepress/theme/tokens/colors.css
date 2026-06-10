@@ -1,0 +1,75 @@
+/**
+ * Color tokens
+ * ============
+ *
+ * Single source of truth for all color values in the site theme.
+ *
+ * Light theme uses warm-neutral surfaces with a teal accent (legacy from
+ * pre-anthropic-redesign palette). The PR `homepage-anthropic-style-redesign`
+ * will replace `--vp-c-brand-*` and accent variables here; component CSS
+ * stays untouched because everything goes through these names.
+ *
+ * Rule: every color value lives here. Component CSS must reference these
+ * tokens via `var(--name)` and never hardcode hex/rgb/hsl.
+ */
+
+:root {
+  /* Brand Colors - Modern Teal */
+  --vp-c-brand-1: #0f9f8f;
+  --vp-c-brand-2: #0b7f73;
+  --vp-c-brand-3: #075e55;
+  --vp-c-brand-soft: rgba(15, 159, 143, 0.14);
+  --hub-c-accent: #d64f45;
+  --hub-c-warn: #b88212;
+
+  /* Light Theme Base */
+  --vp-c-bg: #ffffff;
+  --vp-c-bg-soft: #f8f9f8;
+  --vp-c-bg-mute: #ecefee;
+  --vp-c-text-1: #1a1d1c;
+  --vp-c-text-2: #4a4e4c;
+  --vp-c-text-3: #7a7e7c;
+  --vp-c-divider: #e2e4e2;
+  --vp-c-border: #d8dad8;
+  --vp-c-gutter: #e8ebe8;
+
+  /* Light Theme Accents */
+  --vp-c-bg-alt: #f4f5f4;
+  --vp-c-bg-elv: #ffffff;
+  --vp-c-bg-softx: #fafbfb;
+  --vp-c-inverse: #1a1d1c;
+  --vp-c-inverse-soft: #2a2d2c;
+
+  /* Hero Gradient */
+  --hub-hero-gradient: linear-gradient(135deg, rgba(15, 159, 143, 0.08) 0%, rgba(15, 159, 143, 0.03) 50%, transparent 100%);
+  --hub-glow: rgba(15, 159, 143, 0.15);
+  --hub-shadow: rgba(15, 159, 143, 0.12);
+
+  /* Hero gradient secondary stop for dark .name (used in component) */
+  --hub-dark-name-stop: #14b8a6;
+}
+
+.dark {
+  /* Dark Theme - Rich Charcoal */
+  --vp-c-bg: #0c0d0c;
+  --vp-c-bg-soft: #161816;
+  --vp-c-bg-mute: #1e211e;
+  --vp-c-text-1: #f2f3f0;
+  --vp-c-text-2: #b6bab4;
+  --vp-c-text-3: #828682;
+  --vp-c-divider: #2a2d2a;
+  --vp-c-border: #303330;
+  --vp-c-gutter: #222422;
+
+  /* Dark Theme Accents */
+  --vp-c-bg-alt: #121312;
+  --vp-c-bg-elv: #1a1c1a;
+  --vp-c-bg-softx: #1c1f1c;
+  --vp-c-inverse: #f2f3f0;
+  --vp-c-inverse-soft: #d6d9d4;
+
+  /* Dark Hero Gradient */
+  --hub-hero-gradient: linear-gradient(135deg, rgba(15, 159, 143, 0.12) 0%, rgba(15, 159, 143, 0.05) 40%, transparent 100%);
+  --hub-glow: rgba(15, 159, 143, 0.25);
+  --hub-shadow: rgba(15, 159, 143, 0.2);
+}

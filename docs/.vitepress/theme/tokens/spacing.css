@@ -1,0 +1,44 @@
+/**
+ * Spacing tokens
+ * ==============
+ *
+ * Layout dimensions: radius, section padding, max-widths, grid gaps.
+ * Mirrors the values currently inlined in custom.css selectors.
+ *
+ * The next PR (`homepage-anthropic-style-redesign`) will widen
+ * `--space-section-padding` to 80-120px clamp for anthropic-style whitespace.
+ */
+
+:root {
+  /* Radius */
+  --hub-radius: 8px;
+  --hub-radius-pill: 6px;
+  --hub-radius-card: 12px;
+
+  /* Layout containers */
+  --space-section-max-width: 1120px;
+  --space-section-margin-top: 32px;
+  --space-section-padding: 32px 24px;
+  --space-section-padding-mobile: 24px 16px;
+
+  /* Card / panel padding */
+  --space-card-padding: 18px;
+  --space-panel-padding: 20px;
+  --space-card-min-height: 132px;
+  --space-card-gap: 8px;
+
+  /* Grid */
+  --space-grid-gap: 14px;
+  --space-split-gap: 24px;
+
+  /* Sidebar / hero */
+  --space-sidebar-depth-pad: 16px;
+  --space-hero-padding-bottom: 48px;
+  --space-h2-padding-top: 28px;
+
+  /* Hairline / icon sizes */
+  --size-feature-icon: 44px;
+  --size-feature-icon-glyph: 26px;
+  --size-module-icon: 34px;
+  --size-module-icon-pad: 6px;
+}

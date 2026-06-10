@@ -1,61 +1,22 @@
-:root {
-  /* Brand Colors - Modern Teal */
-  --vp-c-brand-1: #0f9f8f;
-  --vp-c-brand-2: #0b7f73;
-  --vp-c-brand-3: #075e55;
-  --vp-c-brand-soft: rgba(15, 159, 143, 0.14);
-  --hub-c-accent: #d64f45;
-  --hub-c-warn: #b88212;
-  --hub-radius: 8px;
-  
-  /* Light Theme Base */
-  --vp-c-bg: #ffffff;
-  --vp-c-bg-soft: #f8f9f8;
-  --vp-c-bg-mute: #ecefee;
-  --vp-c-text-1: #1a1d1c;
-  --vp-c-text-2: #4a4e4c;
-  --vp-c-text-3: #7a7e7c;
-  --vp-c-divider: #e2e4e2;
-  --vp-c-border: #d8dad8;
-  --vp-c-gutter: #e8ebe8;
-  
-  /* Light Theme Accents */
-  --vp-c-bg-alt: #f4f5f4;
-  --vp-c-bg-elv: #ffffff;
-  --vp-c-bg-softx: #fafbfb;
-  --vp-c-inverse: #1a1d1c;
-  --vp-c-inverse-soft: #2a2d2c;
-  
-  /* Hero Gradient */
-  --hub-hero-gradient: linear-gradient(135deg, rgba(15, 159, 143, 0.08) 0%, rgba(15, 159, 143, 0.03) 50%, transparent 100%);
-  --hub-glow: rgba(15, 159, 143, 0.15);
-  --hub-shadow: rgba(15, 159, 143, 0.12);
-}
+/**
+ * VitePress theme component CSS.
+ *
+ * Token values live in ./tokens/*.css and are imported first so every
+ * selector below resolves variables to the same pixels as the pre-refactor
+ * single-file version. Adding/changing color, type, spacing, or motion
+ * should happen in the token files; this file only carries selectors.
+ *
+ * Import order matters: colors → typography → spacing → motion → rules.
+ * Matches the declaration order of the original custom.css to preserve
+ * cascade specificity.
+ */
 
-.dark {
-  /* Dark Theme - Rich Charcoal */
-  --vp-c-bg: #0c0d0c;
-  --vp-c-bg-soft: #161816;
-  --vp-c-bg-mute: #1e211e;
-  --vp-c-text-1: #f2f3f0;
-  --vp-c-text-2: #b6bab4;
-  --vp-c-text-3: #828682;
-  --vp-c-divider: #2a2d2a;
-  --vp-c-border: #303330;
-  --vp-c-gutter: #222422;
-  
-  /* Dark Theme Accents */
-  --vp-c-bg-alt: #121312;
-  --vp-c-bg-elv: #1a1c1a;
-  --vp-c-bg-softx: #1c1f1c;
-  --vp-c-inverse: #f2f3f0;
-  --vp-c-inverse-soft: #d6d9d4;
-  
-  /* Dark Hero Gradient */
-  --hub-hero-gradient: linear-gradient(135deg, rgba(15, 159, 143, 0.12) 0%, rgba(15, 159, 143, 0.05) 40%, transparent 100%);
-  --hub-glow: rgba(15, 159, 143, 0.25);
-  --hub-shadow: rgba(15, 159, 143, 0.2);
-}
+@import './tokens/colors.css';
+@import './tokens/typography.css';
+@import './tokens/spacing.css';
+@import './tokens/motion.css';
+
+/* ====== Global ====== */
 
 html {
   scroll-behavior: smooth;
@@ -63,7 +24,11 @@ html {
 
 a,
 button {
-  transition: color 0.18s ease, background-color 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+  transition: color var(--dur-fast) var(--ease-default),
+    background-color var(--dur-fast) var(--ease-default),
+    border-color var(--dur-fast) var(--ease-default),
+    box-shadow var(--dur-fast) var(--ease-default),
+    transform var(--dur-fast) var(--ease-default);
 }
 
 a:focus-visible,
@@ -71,6 +36,8 @@ button:focus-visible {
   outline: 2px solid var(--vp-c-brand-1);
   outline-offset: 2px;
 }
+
+/* ====== Hero ====== */
 
 .VPHero {
   border-bottom: 1px solid var(--vp-c-divider);
@@ -106,7 +73,7 @@ button:focus-visible {
 }
 
 .dark .VPHero .name {
-  background: linear-gradient(135deg, #14b8a6 0%, var(--vp-c-brand-1) 100%);
+  background: linear-gradient(135deg, var(--hub-dark-name-stop) 0%, var(--vp-c-brand-1) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -115,7 +82,7 @@ button:focus-visible {
 .VPHero .image-src {
   filter: drop-shadow(0 18px 28px rgba(15, 159, 143, 0.18));
   transform-origin: center;
-  transition: filter 0.22s ease, transform 0.22s ease;
+  transition: filter var(--dur-normal) var(--ease-default), transform var(--dur-normal) var(--ease-default);
 }
 
 .VPHero .image-src:hover {
@@ -124,8 +91,10 @@ button:focus-visible {
 }
 
 .VPHome .VPHero {
-  padding-bottom: 48px;
+  padding-bottom: var(--space-hero-padding-bottom);
 }
+
+/* ====== Buttons ====== */
 
 .VPButton {
   border-radius: var(--hub-radius) !important;
@@ -134,7 +103,9 @@ button:focus-visible {
 .VPButton.brand {
   background: var(--vp-c-brand-1) !important;
   border-color: var(--vp-c-brand-1) !important;
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
+  position: relative;
+  overflow: hidden;
 }
 
 .VPButton.brand:hover {
@@ -144,10 +115,27 @@ button:focus-visible {
   transform: translateY(-1px);
 }
 
+.VPButton.brand::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left var(--dur-slow) var(--ease-default);
+}
+
+.VPButton.brand:hover::before {
+  left: 100%;
+}
+
 .VPButton.alt {
   border: 1px solid var(--vp-c-divider) !important;
-  font-weight: 650;
+  font-weight: var(--font-weight-semibold);
 }
+
+/* ====== Feature cards ====== */
 
 .VPFeature {
   border: 1px solid var(--vp-c-divider);
@@ -155,7 +143,9 @@ button:focus-visible {
   background: var(--vp-c-bg-soft);
   position: relative;
   overflow: hidden;
-  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+  transition: transform var(--dur-normal) var(--ease-default),
+    border-color var(--dur-normal) var(--ease-default),
+    box-shadow var(--dur-normal) var(--ease-default);
 }
 
 .VPFeature::before {
@@ -168,7 +158,7 @@ button:focus-visible {
   background: linear-gradient(90deg, var(--vp-c-brand-1), var(--vp-c-brand-2));
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.22s ease;
+  transition: transform var(--dur-normal) var(--ease-default);
 }
 
 .VPFeature::after {
@@ -182,7 +172,7 @@ button:focus-visible {
   opacity: 0;
   transform: scaleX(0.5);
   transform-origin: right;
-  transition: opacity 0.18s ease, transform 0.18s ease;
+  transition: opacity var(--dur-fast) var(--ease-default), transform var(--dur-fast) var(--ease-default);
 }
 
 .VPFeature:hover {
@@ -202,8 +192,8 @@ button:focus-visible {
 
 .VPFeature .icon {
   display: inline-flex;
-  width: 44px;
-  height: 44px;
+  width: var(--size-feature-icon);
+  height: var(--size-feature-icon);
   align-items: center;
   justify-content: center;
   border: 1px solid var(--vp-c-divider);
@@ -217,25 +207,27 @@ button:focus-visible {
   position: absolute;
   inset: 0;
   border-radius: var(--hub-radius);
-  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
   pointer-events: none;
 }
 
 .VPFeature .icon img {
-  width: 26px;
-  height: 26px;
+  width: var(--size-feature-icon-glyph);
+  height: var(--size-feature-icon-glyph);
   position: relative;
   z-index: 1;
 }
 
 .VPFeature .title {
-  font-weight: 750;
-  letter-spacing: 0;
+  font-weight: var(--font-weight-heavy);
+  letter-spacing: var(--tracking-flat);
 }
 
 .VPFeature .details {
-  line-height: 1.7;
+  line-height: var(--line-loose);
 }
+
+/* ====== Chrome ====== */
 
 .VPNavBar {
   backdrop-filter: blur(12px);
@@ -244,8 +236,8 @@ button:focus-visible {
 }
 
 .VPNavBar .title {
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-tight);
 }
 
 .VPSidebar {
@@ -255,7 +247,7 @@ button:focus-visible {
 
 .VPSidebar .item {
   border-radius: var(--hub-radius);
-  transition: background 0.18s ease, color 0.18s ease;
+  transition: background var(--dur-fast) var(--ease-default), color var(--dur-fast) var(--ease-default);
 }
 
 .VPSidebar .item:hover {
@@ -265,7 +257,7 @@ button:focus-visible {
 .VPSidebar .item.is-active {
   background: var(--vp-c-brand-soft);
   color: var(--vp-c-brand-1);
-  font-weight: 600;
+  font-weight: var(--font-weight-medium);
 }
 
 .VPSidebar .depth-2 {
@@ -273,12 +265,14 @@ button:focus-visible {
 }
 
 .VPSidebar .depth-2 .item {
-  padding-left: 16px;
+  padding-left: var(--space-sidebar-depth-pad);
 }
+
+/* ====== Doc content ====== */
 
 .vp-doc h2 {
   border-top: 1px solid var(--vp-c-divider);
-  padding-top: 28px;
+  padding-top: var(--space-h2-padding-top);
 }
 
 .vp-doc a {
@@ -293,41 +287,85 @@ button:focus-visible {
 
 .vp-doc th {
   background: var(--vp-c-bg-soft);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 }
 
 .vp-doc td {
-  line-height: 1.65;
+  line-height: var(--line-relaxed);
 }
 
+.vp-doc div[class*='language-'] {
+  position: relative;
+}
+
+.vp-doc div[class*='language-']::before {
+  content: attr(data-language);
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 4px 12px;
+  background: var(--vp-c-bg-mute);
+  border-bottom-left-radius: var(--hub-radius);
+  font-size: 11px;
+  font-weight: var(--font-weight-medium);
+  color: var(--vp-c-text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.vp-doc a:not(.VPButton):not([class*='icon']) {
+  color: var(--vp-c-brand-1);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--dur-fast) var(--ease-default);
+}
+
+.vp-doc a:not(.VPButton):not([class*='icon']):hover {
+  border-bottom-color: var(--vp-c-brand-1);
+}
+
+.vp-doc h2:hover .header-anchor,
+.vp-doc h3:hover .header-anchor {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.header-anchor {
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: opacity var(--dur-fast) var(--ease-default), transform var(--dur-fast) var(--ease-default);
+}
+
+/* ====== Hub sections ====== */
+
 .hub-section {
-  max-width: 1120px;
-  margin: 32px auto 0;
-  padding: 32px 24px;
+  max-width: var(--space-section-max-width);
+  margin: var(--space-section-margin-top) auto 0;
+  padding: var(--space-section-padding);
 }
 
 .hub-section h2 {
   margin: 0 0 12px;
   border-top: 0;
   padding-top: 0;
-  font-size: 30px;
-  line-height: 1.25;
+  font-size: var(--text-section-h2);
+  line-height: var(--line-snug);
 }
 
 .eyebrow {
   margin: 0 0 10px;
   color: var(--vp-c-brand-1);
-  font-size: 13px;
-  font-weight: 800;
+  font-size: var(--text-eyebrow);
+  font-weight: var(--font-weight-black);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: var(--tracking-loose);
 }
 
 .lead {
   max-width: 760px;
   color: var(--vp-c-text-2);
-  font-size: 17px;
-  line-height: 1.8;
+  font-size: var(--text-body);
+  line-height: var(--line-airy);
 }
 
 .path-grid,
@@ -335,7 +373,7 @@ button:focus-visible {
 .not-found-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
+  gap: var(--space-grid-gap);
   margin: 24px 0;
 }
 
@@ -343,10 +381,10 @@ button:focus-visible {
 .learning-map a,
 .not-found-grid a {
   display: flex;
-  min-height: 132px;
+  min-height: var(--space-card-min-height);
   flex-direction: column;
-  gap: 8px;
-  padding: 18px;
+  gap: var(--space-card-gap);
+  padding: var(--space-card-padding);
   border: 1px solid var(--vp-c-divider);
   border-radius: var(--hub-radius);
   background: var(--vp-c-bg-soft);
@@ -372,9 +410,9 @@ button:focus-visible {
 }
 
 .module-icon {
-  width: 34px;
-  height: 34px;
-  padding: 6px;
+  width: var(--size-module-icon);
+  height: var(--size-module-icon);
+  padding: var(--size-module-icon-pad);
   border: 1px solid var(--vp-c-divider);
   border-radius: var(--hub-radius);
   background: var(--vp-c-bg);
@@ -384,38 +422,38 @@ button:focus-visible {
 .learning-map span,
 .not-found-grid span {
   color: var(--vp-c-text-2);
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: var(--text-label);
+  line-height: var(--line-normal);
 }
 
 .path-card > span:first-child {
   color: var(--hub-c-warn);
-  font-weight: 800;
+  font-weight: var(--font-weight-black);
 }
 
 .path-card p {
   margin: 0;
   color: var(--vp-c-text-2);
-  line-height: 1.6;
+  line-height: var(--line-comfortable);
 }
 
 .split-section {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
-  gap: 24px;
+  gap: var(--space-split-gap);
   align-items: start;
 }
 
 .check-panel {
   border: 1px solid var(--vp-c-divider);
   border-radius: var(--hub-radius);
-  padding: 20px;
+  padding: var(--space-panel-padding);
   background: var(--vp-c-bg-soft);
 }
 
 .check-panel p {
   margin: 0 0 12px;
-  font-weight: 800;
+  font-weight: var(--font-weight-black);
 }
 
 .check-panel ul {
@@ -436,122 +474,32 @@ button:focus-visible {
   align-items: center;
   padding: 3px 8px;
   border: 1px solid var(--vp-c-divider);
-  border-radius: 6px;
+  border-radius: var(--hub-radius-pill);
   color: var(--vp-c-brand-1);
-  font-size: 12px;
-  font-weight: 700;
-}
-
-@media (max-width: 960px) {
-  .path-grid,
-  .learning-map,
-  .not-found-grid,
-  .split-section {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 640px) {
-  .hub-section {
-    padding: 24px 16px;
-  }
-
-  .hub-section h2 {
-    font-size: 24px;
-  }
-
-  .lead {
-    font-size: 16px;
-  }
-
-  .path-grid,
-  .learning-map,
-  .not-found-grid,
-  .split-section {
-    grid-template-columns: 1fr;
-  }
-
-  .path-card,
-  .learning-map a,
-  .not-found-grid a {
-    min-height: auto;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-  }
-
-  .VPHero .image-src:hover,
-  .VPButton.brand:hover,
-  .VPFeature:hover,
-  .path-card:hover,
-  .learning-map a:hover,
-  .not-found-grid a:hover {
-    transform: none;
-  }
-}
-
-/* ====== Additional Visual Enhancements ====== */
-
-/* Badge styling upgrade */
-.badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 3px 8px;
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 6px;
-  color: var(--vp-c-brand-1);
-  font-size: 12px;
-  font-weight: 700;
+  font-size: var(--text-meta);
+  font-weight: var(--font-weight-bold);
   background: var(--vp-c-brand-soft);
 }
 
-/* Button glow effect */
-.VPButton.brand {
-  position: relative;
-  overflow: hidden;
-}
+/* ====== Changelog ====== */
 
-.VPButton.brand::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-  transition: left 0.4s ease;
-}
-
-.VPButton.brand:hover::before {
-  left: 100%;
-}
-
-/* Changelog item enhancements */
 .changelog-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
 }
 
-.dark .changelog-item {
-  background: var(--vp-c-bg-soft);
-  border-color: var(--vp-c-divider);
-}
-
 .changelog-item {
   background: var(--vp-c-bg-soft);
   border: 1px solid var(--vp-c-divider);
-  border-radius: 12px;
+  border-radius: var(--hub-radius-card);
   padding: 1.5rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.2s var(--ease-default), box-shadow 0.2s var(--ease-default), border-color 0.2s var(--ease-default);
+}
+
+.dark .changelog-item {
+  background: var(--vp-c-bg-soft);
+  border-color: var(--vp-c-divider);
 }
 
 .changelog-item:hover {
@@ -566,7 +514,7 @@ button:focus-visible {
   padding: 0.25rem 0.75rem;
   border-radius: 999px;
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-medium);
 }
 
 .changelog-item .date {
@@ -590,47 +538,40 @@ button:focus-visible {
   margin: 0.25rem 0;
 }
 
-/* Code block enhancements */
-.vp-doc div[class*='language-'] {
-  position: relative;
+/* ====== Responsive ====== */
+
+@media (max-width: 960px) {
+  .path-grid,
+  .learning-map,
+  .not-found-grid,
+  .split-section {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
-.vp-doc div[class*='language-']::before {
-  content: attr(data-language);
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 4px 12px;
-  background: var(--vp-c-bg-mute);
-  border-bottom-left-radius: var(--hub-radius);
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--vp-c-text-3);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
+@media (max-width: 640px) {
+  .hub-section {
+    padding: var(--space-section-padding-mobile);
+  }
 
-/* Link enhancements */
-.vp-doc a:not(.VPButton):not([class*="icon"]) {
-  color: var(--vp-c-brand-1);
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.18s ease;
-}
+  .hub-section h2 {
+    font-size: var(--text-section-h2-mobile);
+  }
 
-.vp-doc a:not(.VPButton):not([class*="icon"]):hover {
-  border-bottom-color: var(--vp-c-brand-1);
-}
+  .lead {
+    font-size: var(--text-lead-mobile);
+  }
 
-/* Heading anchor link */
-.vp-doc h2:hover .header-anchor,
-.vp-doc h3:hover .header-anchor {
-  opacity: 1;
-  transform: translateX(0);
-}
+  .path-grid,
+  .learning-map,
+  .not-found-grid,
+  .split-section {
+    grid-template-columns: 1fr;
+  }
 
-.header-anchor {
-  opacity: 0;
-  transform: translateX(-8px);
-  transition: opacity 0.18s ease, transform 0.18s ease;
+  .path-card,
+  .learning-map a,
+  .not-found-grid a {
+    min-height: auto;
+  }
 }
