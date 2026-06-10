@@ -1,90 +1,131 @@
 ---
-layout: home
+layout: page
 title: Agent Engineering Hub — 智能体工程学习枢纽
----
-
-hero:
-  name: "Agent Engineering Hub"
-  text: "智能体工程学习枢纽"
-  tagline: 面向工程团队的开源学习系统，贯通 Skills、MCP、OpenSpec、Harness、上下文工程、评测与安全发布。
-  image:
-    src: /logo.svg
-    alt: Agent Engineering Hub 智能体工程学习枢纽标识
-  actions:
-    - theme: brand
-      text: 开始学习
-      link: /guide/quickstart
-    - theme: alt
-      text: 查看学习地图
-      link: /guide/
-    - theme: alt
-      text: GitHub
-      link: https://github.com/strings77wzq/agent-engineering-hub
-
-features:
-  - title: Skills
-    details: 把重复工作沉淀成可调用、可测试、可演进的 AI 能力模块。
-    link: /guide/skills/what-is-skill
-  - title: MCP
-    details: 用标准化上下文接口连接工具、资源和 Agent 工作流。
-    link: /guide/mcp/
-  - title: OpenSpec
-    details: 在编码前锁定需求、场景和验收标准，减少人机协作偏差。
-    link: /guide/openspec/concepts
-  - title: Harness
-    details: 用场景、Mock、Evaluator 和回归套件验证 AI 输出质量。
-    link: /guide/harness/intro
+titleTemplate: false
 ---
 
 <script setup>
 import { withBase } from 'vitepress'
 </script>
 
-<section class="hub-section">
-  <p class="eyebrow">Agent Engineering System</p>
-  <h2>从可复用能力到可验证发布</h2>
-  <p class="lead">先建立最小反馈循环，再把 Skills、MCP、OpenSpec、Harness、检索、评测和部署安全纳入同一条工程链路。每个模块都包含概念、步骤、练习、排错和下一步。</p>
-  <div class="path-grid">
-    <a class="path-card" href="/guide/quickstart">
-      <img class="module-icon" :src="withBase('/icons/skills.svg')" alt="" aria-hidden="true">
-      <span>01 / Feedback Loop</span>
-      <strong>快速开始</strong>
-      <p>5 分钟创建第一个 Skill，建立最小反馈循环。</p>
-    </a>
-    <a class="path-card" href="/guide/mcp/">
-      <img class="module-icon" :src="withBase('/icons/mcp.svg')" alt="" aria-hidden="true">
-      <span>02 / Context Protocol</span>
-      <strong>MCP 与上下文</strong>
-      <p>理解工具、资源、提示和上下文边界如何被 Agent 使用。</p>
-    </a>
-    <a class="path-card" href="/guide/harness/intro">
-      <img class="module-icon" :src="withBase('/icons/harness.svg')" alt="" aria-hidden="true">
-      <span>03 / Quality Harness</span>
-      <strong>质量 Harness</strong>
-      <p>用场景、Mock Server、Evaluator 和 trace 固化质量。</p>
-    </a>
-    <a class="path-card" href="/guide/evaluation/">
-      <img class="module-icon" :src="withBase('/icons/evaluation.svg')" alt="" aria-hidden="true">
-      <span>04 / Release Gate</span>
-      <strong>评测与发布</strong>
-      <p>把验收标准变成回归检查，安全地把教程和示例交付出去。</p>
-    </a>
-  </div>
-</section>
+<div class="Home">
 
-<section class="hub-section split-section">
-  <div>
-    <p class="eyebrow">Open Source Readiness</p>
-    <h2>让学习内容具备工程可信度</h2>
-    <p>Agent Engineering Hub 不是零散笔记，而是一套可以被构建、检查、演示和持续贡献的学习系统：导航不 404，示例能运行，任务有验收标准，贡献者知道如何扩展内容。</p>
-  </div>
-  <div class="check-panel">
-    <p>质量门禁</p>
-    <ul>
-      <li>本地构建必须通过</li>
-      <li>内部链接检查必须为零断链</li>
-      <li>中英文导航必须指向真实页面</li>
-      <li>关键路径必须经过桌面和移动端检查</li>
-    </ul>
-  </div>
-</section>
+  <section class="Hero">
+    <p class="Hero-eyebrow">Agent Engineering Hub</p>
+    <h1 class="Hero-title">从 Prompt 到 Production Loop<br>系统化学习智能体工程</h1>
+    <p class="Hero-lead">覆盖 Skills · MCP · OpenSpec · Harness · Context · Loop 七大维度。每个模块解决上一层的遗留问题，形成完整的 Agentic Engineering 技术演进路径。</p>
+    <div class="Hero-actions">
+      <a class="Hero-cta" :href="withBase('/guide/')">开始学习</a>
+      <a class="Hero-link" href="https://github.com/strings77wzq/agent-engineering-hub" target="_blank" rel="noopener">GitHub →</a>
+    </div>
+  </section>
+
+  <section class="Modules">
+    <h2 class="Modules-title">学习路径</h2>
+    <div class="Modules-grid">
+      <a class="Module-item" :href="withBase('/guide/quickstart')">
+        <span class="Module-num">00</span>
+        <div><strong class="Module-name">快速开始</strong><span class="Module-desc">5 分钟创建第一个 Skill</span></div>
+      </a>
+      <a class="Module-item" :href="withBase('/guide/skills/what-is-skill')">
+        <span class="Module-num">01</span>
+        <div><strong class="Module-name">Skills</strong><span class="Module-desc">可复用 AI 能力模块</span></div>
+      </a>
+      <a class="Module-item" :href="withBase('/guide/mcp/')">
+        <span class="Module-num">02</span>
+        <div><strong class="Module-name">MCP</strong><span class="Module-desc">标准化上下文协议</span></div>
+      </a>
+      <a class="Module-item" :href="withBase('/guide/openspec/concepts')">
+        <span class="Module-num">03</span>
+        <div><strong class="Module-name">OpenSpec</strong><span class="Module-desc">规格驱动开发</span></div>
+      </a>
+      <a class="Module-item" :href="withBase('/guide/harness/intro')">
+        <span class="Module-num">04</span>
+        <div><strong class="Module-name">Harness</strong><span class="Module-desc">AI 输出质量验证</span></div>
+      </a>
+      <a class="Module-item" :href="withBase('/guide/context/')">
+        <span class="Module-num">05</span>
+        <div><strong class="Module-name">Context</strong><span class="Module-desc">上下文窗口设计</span></div>
+      </a>
+      <a class="Module-item" :href="withBase('/guide/loop-engineering/')">
+        <span class="Module-num">06</span>
+        <div><strong class="Module-name">Loop</strong><span class="Module-desc">闭环迭代控制</span></div>
+      </a>
+      <a class="Module-item" :href="withBase('/guide/evaluation/')">
+        <span class="Module-num">07</span>
+        <div><strong class="Module-name">评测与发布</strong><span class="Module-desc">验收标准变回归检查</span></div>
+      </a>
+    </div>
+    <p class="Modules-more">
+      <a :href="withBase('/guide/')">查看完整学习地图 →</a>
+      <span class="Modules-more-note">含部署、工作流编排、OMO、golem 案例等</span>
+    </p>
+  </section>
+
+  <section class="Case">
+    <h2 class="Case-title">实战案例</h2>
+    <div class="Case-grid">
+      <a class="Case-card" href="https://github.com/strings77wzq/golem" target="_blank" rel="noopener">
+        <span class="Case-label">Open Source</span>
+        <strong class="Case-name">golem</strong>
+        <p class="Case-desc">Go 实现的生产级 Agent 系统。Skills · RAG · MCP 客户端 · 多 Provider 适配。核心代码 150-200 行，教学友好。</p>
+        <span class="Case-link">GitHub →</span>
+      </a>
+      <a class="Case-card" :href="withBase('/guide/golem-case/')">
+        <span class="Case-label">Case Study</span>
+        <strong class="Case-name">架构解读</strong>
+        <p class="Case-desc">深入分析 golem 的 Skill 系统设计、RAG 管道实现、MCP 集成模式和多 Provider 路由策略。</p>
+        <span class="Case-link">阅读文档 →</span>
+      </a>
+    </div>
+  </section>
+
+  <footer class="Foot">
+    <p>
+      <span>121 页文档</span>
+      <span>零断链</span>
+      <span>零构建警告</span>
+      <span>中英双语</span>
+      <span>MIT 许可</span>
+    </p>
+  </footer>
+
+</div>
+
+<style>
+.Home { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+.Hero { padding: 120px 0 80px; }
+.Hero-eyebrow { margin: 0 0 16px; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--vp-c-brand-1); }
+.Hero-title { margin: 0 0 24px; font-size: clamp(2.25rem, 1.5rem + 4vw, 3.75rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.03em; color: var(--vp-c-text-1); }
+.Hero-lead { max-width: 600px; margin: 0 0 36px; font-size: 1.0625rem; line-height: 1.75; color: var(--vp-c-text-2); }
+.Hero-actions { display: flex; align-items: center; gap: 20px; }
+.Hero-cta { display: inline-flex; align-items: center; height: 42px; padding: 0 22px; border-radius: 6px; background: var(--vp-c-brand-1); color: #fff; font-size: 15px; font-weight: 600; text-decoration: none; transition: background 0.15s; }
+.Hero-cta:hover { background: var(--vp-c-brand-2); }
+.Hero-link { font-size: 15px; font-weight: 500; color: var(--vp-c-text-2); text-decoration: none; transition: color 0.15s; }
+.Hero-link:hover { color: var(--vp-c-text-1); }
+.Modules { padding: 0 0 80px; border-top: 1px solid var(--vp-c-divider); padding-top: 64px; }
+.Modules-title { margin: 0 0 32px; font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; }
+.Modules-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin: 0; }
+.Module-item { display: flex; align-items: flex-start; gap: 10px; padding: 14px 12px 14px 0; text-decoration: none !important; border-radius: 5px; transition: background 0.12s; }
+.Module-item:hover { background: var(--vp-c-bg-soft); }
+.Module-num { flex-shrink: 0; width: 24px; text-align: right; font-size: 11px; font-weight: 600; color: var(--vp-c-text-3); padding-top: 2px; font-variant-numeric: tabular-nums; }
+.Module-name { display: block; font-size: 14px; font-weight: 650; color: var(--vp-c-text-1); line-height: 1.3; }
+.Module-desc { display: block; font-size: 12px; color: var(--vp-c-text-3); line-height: 1.4; margin-top: 1px; }
+.Modules-more { margin: 24px 0 0; display: flex; align-items: center; gap: 16px; }
+.Modules-more a { font-size: 14px; font-weight: 600; color: var(--vp-c-brand-1); text-decoration: none; }
+.Modules-more a:hover { text-decoration: underline; }
+.Modules-more-note { font-size: 12px; color: var(--vp-c-text-3); }
+.Case { padding: 0 0 80px; border-top: 1px solid var(--vp-c-divider); padding-top: 64px; }
+.Case-title { margin: 0 0 28px; font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; }
+.Case-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.Case-card { display: flex; flex-direction: column; padding: 28px; border: 1px solid var(--vp-c-divider); border-radius: 6px; text-decoration: none !important; transition: border-color 0.15s, background 0.15s; }
+.Case-card:hover { border-color: var(--vp-c-brand-1); background: var(--vp-c-bg-soft); }
+.Case-label { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--vp-c-text-3); margin-bottom: 10px; }
+.Case-name { font-size: 1.125rem; font-weight: 700; color: var(--vp-c-text-1); margin-bottom: 10px; }
+.Case-desc { margin: 0 0 16px; font-size: 14px; line-height: 1.65; color: var(--vp-c-text-2); flex: 1; }
+.Case-link { font-size: 13px; font-weight: 600; color: var(--vp-c-brand-1); }
+.Foot { padding: 40px 0 60px; border-top: 1px solid var(--vp-c-divider); }
+.Foot p { display: flex; flex-wrap: wrap; gap: 24px; margin: 0; font-size: 13px; color: var(--vp-c-text-3); }
+@media (max-width: 768px) { .Hero { padding: 80px 0 56px; } .Modules-grid { grid-template-columns: repeat(2, 1fr); } .Case-grid { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { .Hero { padding: 56px 0 40px; } .Hero-title { font-size: 1.75rem; } .Hero-actions { flex-direction: column; align-items: flex-start; } .Modules-grid { grid-template-columns: 1fr; } .Foot p { gap: 12px; } }
+</style>
