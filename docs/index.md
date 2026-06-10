@@ -1,149 +1,348 @@
 ---
-layout: home
-title: Agent Engineering Hub — 智能体工程学习枢纽
----
-
-hero:
-  name: "Agent Engineering"
-  text: "系统化智能体工程"
-  tagline: 从 Prompt Engineering 到 Loop Engineering。Skills · MCP · OpenSpec · Harness · Context · Loop — 完整的 Agentic 开发技术栈。
-  image:
-    src: /logo.svg
-    alt: Agent Engineering Hub
-  actions:
-    - theme: brand
-      text: 开始学习
-      link: /guide/
-    - theme: alt
-      text: GitHub
-      link: https://github.com/strings77wzq/agent-engineering-hub
-
-features:
-  - title: Skills
-    details: 将 Prompt 封装为可复用、可测试、可演进的 AI 能力模块。
-    link: /guide/skills/what-is-skill
-  - title: MCP
-    details: 标准化 Agent 与外部工具的通信协议。构建 Server，定义边界。
-    link: /guide/mcp/
-  - title: Harness
-    details: R.E.S.T 模型、场景测试、Mock Server、Evaluator 与回归套件。
-    link: /guide/harness/intro
-  - title: Loop Engineering
-    details: OODA Loop、三阶段退出、指数退避、熔断器与多源反馈。
-    link: /guide/loop-engineering/
+layout: page
+title: Agent Engineering Hub
+titleTemplate: false
 ---
 
 <script setup>
 import { withBase } from 'vitepress'
 </script>
 
-<section class="hub-section">
-  <p class="eyebrow">Learning Pathway</p>
-  <h2>四个核心模块，按顺序学完</h2>
-  <p class="lead">每个模块解决上一层的遗留问题，构成一条完整的 Agentic Engineering 演进路径。其余模块（OpenSpec、Context、Evaluation、Deployment）在 <a :href="withBase('/guide/')">学习地图</a> 中按主题展开。</p>
-  <div class="path-grid">
-    <a class="path-card" :href="withBase('/guide/skills/')">
-      <img class="module-icon" :src="withBase('/icons/skills.svg')" alt="" aria-hidden="true">
-      <span>01 · Prompt → Skill</span>
-      <strong>Skills</strong>
-      <p>从手写 Prompt 到可复用能力模块，建立最小反馈循环。</p>
-    </a>
-    <a class="path-card" :href="withBase('/guide/mcp/')">
-      <img class="module-icon" :src="withBase('/icons/mcp.svg')" alt="" aria-hidden="true">
-      <span>02 · Protocol</span>
-      <strong>MCP</strong>
-      <p>标准化上下文协议，让 Agent 安全地连接外部工具和数据源。</p>
-    </a>
-    <a class="path-card" :href="withBase('/guide/harness/intro')">
-      <img class="module-icon" :src="withBase('/icons/harness.svg')" alt="" aria-hidden="true">
-      <span>03 · Quality Gate</span>
-      <strong>Harness</strong>
-      <p>用测试、Mock、Evaluator 和回归套件验证 AI 输出质量。</p>
-    </a>
-    <a class="path-card" :href="withBase('/guide/loop-engineering/')">
-      <img class="module-icon" :src="withBase('/icons/workflow.svg')" alt="" aria-hidden="true">
-      <span>04 · Feedback Loop</span>
-      <strong>Loop Engineering</strong>
-      <p>OODA 循环、指数退避、熔断器——让 Agent 稳定收敛而非失控。</p>
-    </a>
-  </div>
-</section>
+<div class="Home">
 
-<section class="hub-section">
-  <p class="eyebrow">Production Case Study</p>
-  <h2>golem — 真实生产级 Agent 系统</h2>
-  <p class="lead">golem 是用 Go 实现的生产级 Agent 系统，完整展示 Skills、RAG、MCP 客户端和多 Provider 架构的工程实践。阅读源码是最好的学习方式。</p>
-  <div class="path-grid">
-    <a class="path-card" href="https://github.com/strings77wzq/golem" target="_blank" rel="noopener">
-      <span>Go · Production</span>
-      <strong>golem 源码</strong>
-      <p>完整 Go Agent 系统：MCP 客户端、RAG 系统、多 Provider 支持。</p>
-    </a>
-    <a class="path-card" :href="withBase('/guide/golem-case/')">
-      <span>Case Study</span>
-      <strong>架构解读</strong>
-      <p>深入分析 Skill 系统、RAG 管道、MCP 集成和多 Provider 路由。</p>
-    </a>
-    <a class="path-card" href="https://github.com/code-yeongyu/oh-my-openagent" target="_blank" rel="noopener">
-      <span>OMO Framework</span>
-      <strong>oh-my-openagent</strong>
-      <p>多模型编排系统，11 大 Agent 分类，Category 路由与验证回路。</p>
-    </a>
-    <a class="path-card" :href="withBase('/guide/omo/')">
-      <span>Architecture</span>
-      <strong>OMO 架构</strong>
-      <p>主编排器、Agent 分类、意图路由与任务分发机制详解。</p>
-    </a>
-  </div>
-</section>
+  <section class="Hero">
+    <p class="Hero-eyebrow">Agent Engineering Hub</p>
+    <h1 class="Hero-title">从 Prompt 到 Production Loop<br>系统化学习智能体工程</h1>
+    <p class="Hero-lead">覆盖 Skills · MCP · OpenSpec · Harness · Context · Loop 七大维度。
+    每个模块解决上一层的遗留问题，形成完整的 Agentic Engineering 技术演进路径。</p>
+    <div class="Hero-actions">
+      <a class="Hero-cta" :href="withBase('/guide/')">开始学习</a>
+      <a class="Hero-link" href="https://github.com/strings77wzq/agent-engineering-hub" target="_blank" rel="noopener">GitHub →</a>
+    </div>
+  </section>
 
-<section class="hub-section">
-  <p class="eyebrow">Quality Gates</p>
-  <h2>不只是教程——是工程实践</h2>
-  <p class="lead">所有文档通过自动化质量门禁，零断链、零路由错误、构建无警告。这是文档站本身对自己提的要求。</p>
-  <ul class="quality-list">
-    <li><strong>构建</strong>VitePress build 零错误零警告</li>
-    <li><strong>链接</strong>100+ 页面零断链（AST 解析）</li>
-    <li><strong>路由</strong>侧边栏所有 link 可达</li>
-    <li><strong>前言</strong>所有页面有结构化标题</li>
-    <li><strong>OpenSpec</strong>变更完整归档，无僵尸 spec</li>
-    <li><strong>i18n</strong>中英文导航分离，无错路由</li>
-  </ul>
-</section>
+  <section class="Modules">
+    <h2 class="Modules-title">学习路径</h2>
+    <div class="Modules-grid">
+      <a class="Module-item" :href="withBase('/guide/skills/what-is-skill')">
+        <span class="Module-num">01</span>
+        <div><strong class="Module-name">Skills</strong><span class="Module-desc">可复用 AI 能力模块</span></div>
+      </a>
+      <a class="Module-item" :href="withBase('/guide/mcp/')">
+        <span class="Module-num">02</span>
+        <div><strong class="Module-name">MCP</strong><span class="Module-desc">标准化上下文协议</span></div>
+      </a>
+      <a class="Module-item" :href="withBase('/guide/openspec/concepts')">
+        <span class="Module-num">03</span>
+        <div><strong class="Module-name">OpenSpec</strong><span class="Module-desc">规格驱动开发</span></div>
+      </a>
+      <a class="Module-item" :href="withBase('/guide/harness/intro')">
+        <span class="Module-num">04</span>
+        <div><strong class="Module-name">Harness</strong><span class="Module-desc">AI 输出质量验证</span></div>
+      </a>
+      <a class="Module-item" :href="withBase('/guide/context/')">
+        <span class="Module-num">05</span>
+        <div><strong class="Module-name">Context</strong><span class="Module-desc">上下文窗口设计</span></div>
+      </a>
+      <a class="Module-item" :href="withBase('/guide/loop-engineering/')">
+        <span class="Module-num">06</span>
+        <div><strong class="Module-name">Loop</strong><span class="Module-desc">闭环迭代控制</span></div>
+      </a>
+    </div>
+    <p class="Modules-more">
+      <a :href="withBase('/guide/')">查看完整学习地图 →</a>
+      <span class="Modules-more-note">含部署、评测、工作流编排、OMO、golem 案例等</span>
+    </p>
+  </section>
 
-<style scoped>
-.quality-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px 32px;
-  margin: 24px 0 0;
-  padding: 0;
-  list-style: none;
-  max-width: 720px;
+  <section class="Case">
+    <h2 class="Case-title">实战案例</h2>
+    <div class="Case-grid">
+      <a class="Case-card" href="https://github.com/strings77wzq/golem" target="_blank" rel="noopener">
+        <span class="Case-label">Open Source</span>
+        <strong class="Case-name">golem</strong>
+        <p class="Case-desc">Go 实现的生产级 Agent 系统。Skills · RAG · MCP 客户端 · 多 Provider 适配。核心代码 150-200 行，教学友好。</p>
+        <span class="Case-link">GitHub →</span>
+      </a>
+      <a class="Case-card" :href="withBase('/guide/golem-case/')">
+        <span class="Case-label">Case Study</span>
+        <strong class="Case-name">架构解读</strong>
+        <p class="Case-desc">深入分析 golem 的 Skill 系统设计、RAG 管道实现、MCP 集成模式和多 Provider 路由策略。</p>
+        <span class="Case-link">阅读文档 →</span>
+      </a>
+    </div>
+  </section>
+
+  <footer class="Foot">
+    <p>
+      <span>121 页文档</span>
+      <span>零断链</span>
+      <span>零构建警告</span>
+      <span>中英双语</span>
+      <span>MIT 许可</span>
+    </p>
+  </footer>
+
+</div>
+
+<style>
+/* ===== Homepage Minimal ===== */
+
+.Home {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
-.quality-list li {
-  padding: 12px 0;
-  border-top: 1px solid var(--vp-c-divider);
-  color: var(--vp-c-text-2);
-  font-size: 15px;
-  line-height: 1.5;
+/* ---- Hero ---- */
+
+.Hero {
+  padding: 120px 0 80px;
 }
 
-.quality-list li strong {
-  display: inline-block;
-  min-width: 88px;
-  margin-right: 12px;
-  color: var(--vp-c-text-1);
-  font-weight: 700;
+.Hero-eyebrow {
+  margin: 0 0 16px;
   font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  color: var(--vp-c-brand-1);
 }
 
-@media (max-width: 640px) {
-  .quality-list {
-    grid-template-columns: 1fr;
-  }
+.Hero-title {
+  margin: 0 0 24px;
+  font-size: clamp(2.25rem, 1.5rem + 4vw, 3.75rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--vp-c-text-1);
+}
+
+.Hero-lead {
+  max-width: 600px;
+  margin: 0 0 36px;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--vp-c-text-2);
+}
+
+.Hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.Hero-cta {
+  display: inline-flex;
+  align-items: center;
+  height: 42px;
+  padding: 0 22px;
+  border-radius: 6px;
+  background: var(--vp-c-brand-1);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.Hero-cta:hover {
+  background: var(--vp-c-brand-2);
+}
+
+.Hero-link {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--vp-c-text-2);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.Hero-link:hover {
+  color: var(--vp-c-text-1);
+}
+
+/* ---- Modules ---- */
+
+.Modules {
+  padding: 0 0 80px;
+  border-top: 1px solid var(--vp-c-divider);
+  padding-top: 64px;
+}
+
+.Modules-title {
+  margin: 0 0 32px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.Modules-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin: 0;
+}
+
+.Module-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px 12px 14px 0;
+  text-decoration: none !important;
+  border-radius: 5px;
+  transition: background 0.12s;
+}
+
+.Module-item:hover {
+  background: var(--vp-c-bg-soft);
+}
+
+.Module-num {
+  flex-shrink: 0;
+  width: 24px;
+  text-align: right;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--vp-c-text-3);
+  padding-top: 2px;
+  font-variant-numeric: tabular-nums;
+}
+
+.Module-name {
+  display: block;
+  font-size: 14px;
+  font-weight: 650;
+  color: var(--vp-c-text-1);
+  line-height: 1.3;
+}
+
+.Module-desc {
+  display: block;
+  font-size: 12px;
+  color: var(--vp-c-text-3);
+  line-height: 1.4;
+  margin-top: 1px;
+}
+
+.Modules-more {
+  margin: 24px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.Modules-more a {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--vp-c-brand-1);
+  text-decoration: none;
+}
+
+.Modules-more a:hover {
+  text-decoration: underline;
+}
+
+.Modules-more-note {
+  font-size: 12px;
+  color: var(--vp-c-text-3);
+}
+
+/* ---- Case ---- */
+
+.Case {
+  padding: 0 0 80px;
+  border-top: 1px solid var(--vp-c-divider);
+  padding-top: 64px;
+}
+
+.Case-title {
+  margin: 0 0 28px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.Case-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.Case-card {
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  text-decoration: none !important;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.Case-card:hover {
+  border-color: var(--vp-c-brand-1);
+  background: var(--vp-c-bg-soft);
+}
+
+.Case-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--vp-c-text-3);
+  margin-bottom: 10px;
+}
+
+.Case-name {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--vp-c-text-1);
+  margin-bottom: 10px;
+}
+
+.Case-desc {
+  margin: 0 0 16px;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--vp-c-text-2);
+  flex: 1;
+}
+
+.Case-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--vp-c-brand-1);
+}
+
+/* ---- Foot ---- */
+
+.Foot {
+  padding: 40px 0 60px;
+  border-top: 1px solid var(--vp-c-divider);
+}
+
+.Foot p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin: 0;
+  font-size: 13px;
+  color: var(--vp-c-text-3);
+}
+
+/* ---- Responsive ---- */
+
+@media (max-width: 768px) {
+  .Hero { padding: 80px 0 56px; }
+  .Modules-grid { grid-template-columns: repeat(2, 1fr); }
+  .Case-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .Hero { padding: 56px 0 40px; }
+  .Hero-title { font-size: 1.75rem; }
+  .Hero-actions { flex-direction: column; align-items: flex-start; }
+  .Modules-grid { grid-template-columns: 1fr; }
+  .Foot p { gap: 12px; }
 }
 </style>
