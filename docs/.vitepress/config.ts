@@ -332,7 +332,7 @@ export default defineConfig({
   cleanUrls: false,
 
   themeConfig: {
-    logo: `${repoBase}logo.svg`,
+    logo: `logo.svg`,
     search: {
       provider: 'local',
       options: {
