@@ -184,31 +184,9 @@ const enGuideSidebar = [
       { text: 'Best Practices', link: '/en/guide/harness/best-practices' },
     ],
   },
-  {
-    text: 'OMO Workflow',
-    collapsed: false,
-    items: [
-      { text: 'OMO Overview', link: '/guide/omo/' },
-      { text: 'Architecture', link: '/guide/omo/architecture' },
-      { text: 'Orchestrator', link: '/guide/omo/architecture/orchestrator' },
-      { text: 'Agent Categories', link: '/guide/omo/architecture/agents' },
-      { text: 'Category Routing', link: '/guide/omo/architecture/category' },
-      { text: 'Intent Classification', link: '/guide/omo/workflow/intent' },
-      { text: 'Task Delegation', link: '/guide/omo/workflow/delegation' },
-      { text: 'Verification', link: '/guide/omo/workflow/verification' },
-    ],
-  },
-  {
-    text: 'golem Case Study',
-    collapsed: false,
-    items: [
-      { text: 'Overview', link: '/guide/golem-case/' },
-      { text: 'Skill System', link: '/guide/golem-case/skills-core' },
-      { text: 'RAG Pipeline', link: '/guide/golem-case/rag-core' },
-      { text: 'MCP Client', link: '/guide/golem-case/mcp-core' },
-      { text: 'Multi-Provider', link: '/guide/golem-case/provider-core' },
-    ],
-  },
+  // OMO Workflow & golem Case Study: English translations not yet available.
+  // Removed from EN sidebar to avoid routing English readers to Chinese pages.
+  // Tracked in TODOS.md (S3) — re-enable with /en/ prefix once translated.
   {
     text: 'Agent Engineering',
     collapsed: false,
@@ -290,6 +268,33 @@ export default defineConfig({
 
   themeConfig: {
     logo: `${repoBase}logo.svg`,
+    search: {
+      provider: 'local',
+      options: {
+        locales: {
+          root: {
+            translations: {
+              button: { buttonText: '搜索文档', buttonAriaLabel: '搜索文档' },
+              modal: {
+                noResultsText: '无相关结果',
+                resetButtonTitle: '清除查询',
+                footer: { selectText: '选择', navigateText: '切换', closeText: '关闭' },
+              },
+            },
+          },
+          en: {
+            translations: {
+              button: { buttonText: 'Search docs', buttonAriaLabel: 'Search docs' },
+              modal: {
+                noResultsText: 'No results',
+                resetButtonTitle: 'Reset query',
+                footer: { selectText: 'select', navigateText: 'navigate', closeText: 'close' },
+              },
+            },
+          },
+        },
+      },
+    },
 socialLinks: [
       { icon: 'github', link: 'https://github.com/strings77wzq/agent-engineering-hub' },
     ],
