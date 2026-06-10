@@ -1,285 +1,129 @@
 ---
-layout: home
+layout: page
 title: Agent Engineering Hub
----
-
-hero:
-  name: "Agent Engineering"
-  text: "Systematic Agentic Engineering"
-  tagline: From Prompt Engineering to Loop Engineering, covering the complete Agentic development stack. A structured learning path across seven dimensions: Skills · MCP · OpenSpec · Harness · Context · Loop.
-  image:
-    src: /logo.svg
-    alt: Agent Engineering Hub
-  actions:
-    - theme: brand
-      text: Start Learning
-      link: /en/guide/
-    - theme: alt
-      text: Quick Start
-      link: /en/guide/quickstart
-    - theme: alt
-      text: GitHub
-      link: https://github.com/strings77wzq/agent-engineering-hub
-
-features:
-  - title: Skills
-    details: Encapsulate Prompts into reusable, testable, evolvable AI capability modules. Learn to design, implement, and publish a production-grade Skill.
-    link: /en/guide/skills/what-is-skill
-  - title: MCP (Model Context Protocol)
-    details: Standardized communication protocol between Agents and external tools. Build MCP Servers with well-defined tools, resources, and safety boundaries.
-    link: /en/guide/mcp/
-  - title: OpenSpec
-    details: Spec-Driven Development (SDD). Lock in requirements, scenarios, and acceptance criteria before writing code through proposal + design + tasks.
-    link: /en/guide/openspec/concepts
-  - title: Context Engineering
-    details: Precise layered information injection within limited context windows. Five-layer model: goals, project knowledge, work state, external knowledge, operational evidence.
-    link: /en/guide/context/
-  - title: Harness Engineering
-    details: AI output quality assurance. R.E.S.T model, six design principles, scenario testing, Mock Server, Evaluators, and regression suites.
-    link: /en/guide/harness/intro
-  - title: Loop Engineering
-    details: Agent "plan—execute—reflect" cycle mechanisms. OODA Loop, three-layer exit, exponential backoff retry, circuit breakers, and multi-source feedback.
-    link: /en/guide/loop-engineering/
+titleTemplate: false
 ---
 
 <script setup>
 import { withBase } from 'vitepress'
 </script>
 
-<section class="hub-section">
-  <p class="eyebrow">Learning Pathway</p>
-  <h2>Seven Steps: From Prompt to Production Loop</h2>
-  <p class="lead">Each dimension solves the limitations of the previous one, forming a complete Agentic Engineering evolution path. Sequential learning yields the best results.</p>
-  <div class="path-grid">
-    <a class="path-card" :href="withBase('/en/guide/skills/what-is-skill')">
-      <img class="module-icon" :src="withBase('/icons/skills.svg')" alt="" aria-hidden="true">
-      <span>01 / Prompt → Skill</span>
-      <strong>Skills</strong>
-      <p>From ad-hoc prompts to reusable capability modules. Build your first feedback loop.</p>
-    </a>
-    <a class="path-card" :href="withBase('/en/guide/mcp/')">
-      <img class="module-icon" :src="withBase('/icons/mcp.svg')" alt="" aria-hidden="true">
-      <span>02 / Protocol</span>
-      <strong>MCP</strong>
-      <p>Standardized context protocol for safely connecting Agents to external tools and data.</p>
-    </a>
-    <a class="path-card" :href="withBase('/en/guide/openspec/concepts')">
-      <img class="module-icon" :src="withBase('/icons/openspec.svg')" alt="" aria-hidden="true">
-      <span>03 / Spec-Driven</span>
-      <strong>OpenSpec</strong>
-      <p>Lock requirements in specification documents. Eliminate intent drift in human-AI collaboration.</p>
-    </a>
-    <a class="path-card" :href="withBase('/en/guide/harness/intro')">
-      <img class="module-icon" :src="withBase('/icons/harness.svg')" alt="" aria-hidden="true">
-      <span>04 / Quality Gate</span>
-      <strong>Harness</strong>
-      <p>Validate AI output quality with tests, mocks, evaluators, and regression suites.</p>
-    </a>
-    <a class="path-card" :href="withBase('/en/guide/context/')">
-      <img class="module-icon" :src="withBase('/icons/context.svg')" alt="" aria-hidden="true">
-      <span>05 / Window Mgmt</span>
-      <strong>Context Engineering</strong>
-      <p>Five-layer context model: precise injection that solves the lost-in-the-middle problem.</p>
-    </a>
-    <a class="path-card" :href="withBase('/en/guide/evaluation/')">
-      <img class="module-icon" :src="withBase('/icons/evaluation.svg')" alt="" aria-hidden="true">
-      <span>06 / Release Gate</span>
-      <strong>Evaluation & Release</strong>
-      <p>Turn acceptance criteria into automated regression checks and safe release gates.</p>
-    </a>
-    <a class="path-card" :href="withBase('/en/guide/loop-engineering/')">
-      <img class="module-icon" :src="withBase('/icons/workflow.svg')" alt="" aria-hidden="true">
-      <span>07 / Feedback Loop</span>
-      <strong>Loop Engineering</strong>
-      <p>OODA cycles, exponential backoff, circuit breakers — converge reliably, never spiral.</p>
-    </a>
-  </div>
-</section>
+<div class="Home">
 
-<section class="hub-section split-section">
-  <div>
-    <p class="eyebrow">Production Ready</p>
-    <h2>Not Just Tutorials — Engineering Practice</h2>
-    <p class="lead">Every module includes concepts, step-by-step instructions, exercises, troubleshooting guides, and next-step pointers. All documentation passes build verification, link auditing, and multi-device adaptation.</p>
-  </div>
-  <div class="check-panel">
-    <p>Quality Gates</p>
-    <ul>
-      <li>VitePress build: zero errors</li>
-      <li>Link audit: 100+ pages, zero broken links</li>
-      <li>Route validation: all sidebar links reachable</li>
-      <li>Frontmatter check: all pages have structured titles</li>
-      <li>OpenSpec lifecycle: all changes archived</li>
-      <li>Bilingual: complete CN/EN navigation</li>
-    </ul>
-  </div>
-</section>
+  <section class="Hero">
+    <p class="Hero-eyebrow">Agent Engineering Hub</p>
+    <h1 class="Hero-title">From Prompt to Production Loop<br>A systematic path through Agentic Engineering</h1>
+    <p class="Hero-lead">Seven dimensions: Skills · MCP · OpenSpec · Harness · Context · Loop. Each solves the problems left by the previous — a complete technology evolution path for AI engineering.</p>
+    <div class="Hero-actions">
+      <a class="Hero-cta" :href="withBase('/en/guide/')">Start Learning</a>
+      <a class="Hero-link" href="https://github.com/strings77wzq/agent-engineering-hub" target="_blank" rel="noopener">GitHub →</a>
+    </div>
+  </section>
 
-<section class="hub-section">
-  <p class="eyebrow">Production Case Study</p>
-  <h2>golem — Real-World Production Agent System</h2>
-  <p class="lead">golem is a production-grade Agent system implemented in Go, demonstrating Skills, RAG, MCP client, and multi-Provider architecture. Reading the source code is the best way to learn.</p>
-  <div class="path-grid">
-    <a class="path-card" href="https://github.com/strings77wzq/golem" target="_blank">
-      <span>Go Production</span>
-      <strong>golem Source</strong>
-      <p>Complete Go Agent system with MCP client, RAG pipeline, and multi-Provider support.</p>
-    </a>
-    <a class="path-card" :href="withBase('/guide/golem-case/')">
-      <span>Case Study</span>
-      <strong>Architecture Deep Dive</strong>
-      <p>In-depth analysis of golem's Skill system, RAG pipeline, MCP integration, and Provider routing.</p>
-    </a>
-    <a class="path-card" href="https://github.com/code-yeongyu/oh-my-openagent" target="_blank">
-      <span>OMO Framework</span>
-      <strong>oh-my-openagent</strong>
-      <p>Multi-model orchestration with 11 Agent categories, routing, and verification loops.</p>
-    </a>
-    <a class="path-card" :href="withBase('/guide/omo/')">
-      <span>Architecture</span>
-      <strong>OMO Architecture</strong>
-      <p>Orchestrator design, Agent taxonomy, intent routing, and task delegation mechanisms.</p>
-    </a>
-  </div>
-</section>
+  <section class="Modules">
+    <h2 class="Modules-title">Learning Path</h2>
+    <div class="Modules-grid">
+      <a class="Module-item" :href="withBase('/en/guide/skills/what-is-skill')">
+        <span class="Module-num">01</span>
+        <div><strong class="Module-name">Skills</strong><span class="Module-desc">Reusable AI capability modules</span></div>
+      </a>
+      <a class="Module-item" :href="withBase('/en/guide/mcp/')">
+        <span class="Module-num">02</span>
+        <div><strong class="Module-name">MCP</strong><span class="Module-desc">Standard context protocol</span></div>
+      </a>
+      <a class="Module-item" :href="withBase('/en/guide/openspec/concepts')">
+        <span class="Module-num">03</span>
+        <div><strong class="Module-name">OpenSpec</strong><span class="Module-desc">Spec-driven development</span></div>
+      </a>
+      <a class="Module-item" :href="withBase('/en/guide/harness/intro')">
+        <span class="Module-num">04</span>
+        <div><strong class="Module-name">Harness</strong><span class="Module-desc">AI output quality gates</span></div>
+      </a>
+      <a class="Module-item" :href="withBase('/en/guide/context/')">
+        <span class="Module-num">05</span>
+        <div><strong class="Module-name">Context</strong><span class="Module-desc">Context window design</span></div>
+      </a>
+      <a class="Module-item" :href="withBase('/en/guide/loop-engineering/')">
+        <span class="Module-num">06</span>
+        <div><strong class="Module-name">Loop</strong><span class="Module-desc">Closed-loop iteration control</span></div>
+      </a>
+    </div>
+    <p class="Modules-more">
+      <a :href="withBase('/en/guide/')">Full Learning Map →</a>
+      <span class="Modules-more-note">Including deployment, evaluation, workflows, OMO, golem and more</span>
+    </p>
+  </section>
 
-<style scoped>
-.hub-section {
-  max-width: 1152px;
-  margin: 0 auto;
-  padding: 56px 24px;
-}
+  <section class="Case">
+    <h2 class="Case-title">Case Study</h2>
+    <div class="Case-grid">
+      <a class="Case-card" href="https://github.com/strings77wzq/golem" target="_blank" rel="noopener">
+        <span class="Case-label">Open Source</span>
+        <strong class="Case-name">golem</strong>
+        <p class="Case-desc">A production-grade Go Agent system. Skills · RAG · MCP client · Multi-provider. Core code ~150-200 lines, teaching-friendly.</p>
+        <span class="Case-link">GitHub →</span>
+      </a>
+      <a class="Case-card" :href="withBase('/en/guide/golem-case/')">
+        <span class="Case-label">Case Study</span>
+        <strong class="Case-name">Architecture Deep Dive</strong>
+        <p class="Case-desc">Analyze golem's Skill system design, RAG pipeline, MCP integration patterns, and multi-provider routing.</p>
+        <span class="Case-link">Read Docs →</span>
+      </a>
+    </div>
+  </section>
 
-.hub-section + .hub-section {
-  border-top: 1px solid var(--vp-c-divider);
-}
+  <footer class="Foot">
+    <p>
+      <span>121 pages</span>
+      <span>Zero dead links</span>
+      <span>Zero build warnings</span>
+      <span>CN / EN bilingual</span>
+      <span>MIT licensed</span>
+    </p>
+  </footer>
 
-.hub-section h2 {
-  margin: 0 0 16px;
-  border-top: 0;
-  padding-top: 0;
-  font-size: 32px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-}
+</div>
 
-.eyebrow {
-  margin: 0 0 12px;
-  color: var(--vp-c-brand-1);
-  font-size: 13px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
+<style>
+/* ===== Homepage Minimal ===== */
+.Home { max-width: 800px; margin: 0 auto; padding: 0 24px; }
 
-.lead {
-  max-width: 720px;
-  color: var(--vp-c-text-2);
-  font-size: 17px;
-  line-height: 1.75;
-  margin: 0 0 32px;
-}
+.Hero { padding: 120px 0 80px; }
+.Hero-eyebrow { margin: 0 0 16px; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--vp-c-brand-1); }
+.Hero-title { margin: 0 0 24px; font-size: clamp(2.25rem, 1.5rem + 4vw, 3.75rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.03em; color: var(--vp-c-text-1); }
+.Hero-lead { max-width: 600px; margin: 0 0 36px; font-size: 1.0625rem; line-height: 1.75; color: var(--vp-c-text-2); }
+.Hero-actions { display: flex; align-items: center; gap: 20px; }
+.Hero-cta { display: inline-flex; align-items: center; height: 42px; padding: 0 22px; border-radius: 6px; background: var(--vp-c-brand-1); color: #fff; font-size: 15px; font-weight: 600; text-decoration: none; transition: background 0.15s; }
+.Hero-cta:hover { background: var(--vp-c-brand-2); }
+.Hero-link { font-size: 15px; font-weight: 500; color: var(--vp-c-text-2); text-decoration: none; transition: color 0.15s; }
+.Hero-link:hover { color: var(--vp-c-text-1); }
 
-.path-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
-}
+.Modules { padding: 0 0 80px; border-top: 1px solid var(--vp-c-divider); padding-top: 64px; }
+.Modules-title { margin: 0 0 32px; font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; }
+.Modules-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin: 0; }
+.Module-item { display: flex; align-items: flex-start; gap: 10px; padding: 14px 12px 14px 0; text-decoration: none !important; border-radius: 5px; transition: background 0.12s; }
+.Module-item:hover { background: var(--vp-c-bg-soft); }
+.Module-num { flex-shrink: 0; width: 24px; text-align: right; font-size: 11px; font-weight: 600; color: var(--vp-c-text-3); padding-top: 2px; font-variant-numeric: tabular-nums; }
+.Module-name { display: block; font-size: 14px; font-weight: 650; color: var(--vp-c-text-1); line-height: 1.3; }
+.Module-desc { display: block; font-size: 12px; color: var(--vp-c-text-3); line-height: 1.4; margin-top: 1px; }
+.Modules-more { margin: 24px 0 0; display: flex; align-items: center; gap: 16px; }
+.Modules-more a { font-size: 14px; font-weight: 600; color: var(--vp-c-brand-1); text-decoration: none; }
+.Modules-more a:hover { text-decoration: underline; }
+.Modules-more-note { font-size: 12px; color: var(--vp-c-text-3); }
 
-.path-card {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 22px;
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 10px;
-  background: var(--vp-c-bg-soft);
-  color: var(--vp-c-text-1);
-  text-decoration: none !important;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
-}
+.Case { padding: 0 0 80px; border-top: 1px solid var(--vp-c-divider); padding-top: 64px; }
+.Case-title { margin: 0 0 28px; font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; }
+.Case-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.Case-card { display: flex; flex-direction: column; padding: 28px; border: 1px solid var(--vp-c-divider); border-radius: 6px; text-decoration: none !important; transition: border-color 0.15s, background 0.15s; }
+.Case-card:hover { border-color: var(--vp-c-brand-1); background: var(--vp-c-bg-soft); }
+.Case-label { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--vp-c-text-3); margin-bottom: 10px; }
+.Case-name { font-size: 1.125rem; font-weight: 700; color: var(--vp-c-text-1); margin-bottom: 10px; }
+.Case-desc { margin: 0 0 16px; font-size: 14px; line-height: 1.65; color: var(--vp-c-text-2); flex: 1; }
+.Case-link { font-size: 13px; font-weight: 600; color: var(--vp-c-brand-1); }
 
-.path-card:hover {
-  border-color: var(--vp-c-brand-1);
-  box-shadow: 0 8px 30px -12px var(--vp-c-brand-soft);
-  transform: translateY(-2px);
-}
+.Foot { padding: 40px 0 60px; border-top: 1px solid var(--vp-c-divider); }
+.Foot p { display: flex; flex-wrap: wrap; gap: 24px; margin: 0; font-size: 13px; color: var(--vp-c-text-3); }
 
-.path-card > span:first-of-type {
-  color: var(--vp-c-brand-1);
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.path-card strong {
-  font-size: 17px;
-  font-weight: 700;
-}
-
-.path-card p {
-  margin: 0;
-  color: var(--vp-c-text-2);
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-.module-icon {
-  width: 36px;
-  height: 36px;
-  padding: 6px;
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 8px;
-  background: var(--vp-c-bg);
-}
-
-.split-section {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 32px;
-  align-items: start;
-}
-
-.check-panel {
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 10px;
-  padding: 24px;
-  background: var(--vp-c-bg-soft);
-}
-
-.check-panel p {
-  margin: 0 0 14px;
-  font-weight: 700;
-  font-size: 15px;
-}
-
-.check-panel ul {
-  margin: 0;
-  padding-left: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
-}
-
-.check-panel li {
-  color: var(--vp-c-text-2);
-  font-size: 14px;
-}
-
-.check-panel li::marker {
-  color: var(--vp-c-brand-1);
-}
-
-@media (max-width: 960px) {
-  .path-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .split-section { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 640px) {
-  .hub-section { padding: 40px 16px; }
-  .hub-section h2 { font-size: 26px; }
-  .path-grid { grid-template-columns: 1fr; }
-}
+@media (max-width: 768px) { .Hero { padding: 80px 0 56px; } .Modules-grid { grid-template-columns: repeat(2, 1fr); } .Case-grid { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { .Hero { padding: 56px 0 40px; } .Hero-title { font-size: 1.75rem; } .Hero-actions { flex-direction: column; align-items: flex-start; } .Modules-grid { grid-template-columns: 1fr; } .Foot p { gap: 12px; } }
 </style>
