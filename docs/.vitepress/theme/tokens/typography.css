@@ -2,23 +2,37 @@
  * Typography tokens
  * =================
  *
- * Font weights, sizes, line-heights, and letter-spacing used across the site.
- * Values match the originals from custom.css to preserve zero visual drift.
+ * Anthropic-style display + body pairing. English uses Geist / Inter from
+ * Google Fonts (loaded in config.ts head). Chinese stays on system fonts
+ * (PingFang SC on macOS, Microsoft YaHei on Windows, Source Han Sans on
+ * Linux) — loading remote Chinese fonts costs 5MB+ even with subsetting,
+ * and system Chinese fonts are excellent in modern OS releases.
  *
- * Pairing/family tokens (`--font-display`, `--font-body`) will be added by
- * the next PR (`homepage-anthropic-style-redesign`). For now the site relies
- * on the VitePress default font stack.
+ * Display type scale uses clamp() for responsive sizing without breakpoints.
  */
 
 :root {
+  /* Font families */
+  --font-display: 'Geist', 'Inter', -apple-system, BlinkMacSystemFont,
+    'Source Han Serif SC', 'Songti SC', 'STSong', serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'PingFang SC', 'Microsoft YaHei', 'Source Han Sans SC', sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', 'Consolas', ui-monospace, monospace;
+
   /* Font weights */
+  --font-weight-regular: 400;
   --font-weight-medium: 600;
   --font-weight-semibold: 650;
   --font-weight-bold: 700;
   --font-weight-heavy: 750;
   --font-weight-black: 800;
 
-  /* Type scale (current site values; redesign PR will introduce display scale) */
+  /* Display type scale — for hero, section headings */
+  --text-display-xl: clamp(2.75rem, 1.5rem + 5vw, 5.5rem);   /* hero name */
+  --text-display-lg: clamp(2rem, 1.25rem + 3vw, 3.5rem);     /* section H */
+  --text-display-md: clamp(1.5rem, 1rem + 1.5vw, 2rem);      /* H2 */
+
+  /* Body type scale */
   --text-meta: 12px;
   --text-eyebrow: 13px;
   --text-label: 14px;

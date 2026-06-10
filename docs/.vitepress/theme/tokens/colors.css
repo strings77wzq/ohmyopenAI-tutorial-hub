@@ -2,74 +2,84 @@
  * Color tokens
  * ============
  *
- * Single source of truth for all color values in the site theme.
- *
- * Light theme uses warm-neutral surfaces with a teal accent (legacy from
- * pre-anthropic-redesign palette). The PR `homepage-anthropic-style-redesign`
- * will replace `--vp-c-brand-*` and accent variables here; component CSS
- * stays untouched because everything goes through these names.
+ * Anthropic-inspired warm-neutral palette: warm-off-white surface, near-black
+ * ink, single warm-clay accent. Replaces the legacy teal + red + yellow
+ * three-accent system with a single semantic accent that propagates through
+ * --vp-c-brand-1.
  *
  * Rule: every color value lives here. Component CSS must reference these
  * tokens via `var(--name)` and never hardcode hex/rgb/hsl.
  */
 
 :root {
-  /* Brand Colors - Modern Teal */
-  --vp-c-brand-1: #0f9f8f;
-  --vp-c-brand-2: #0b7f73;
-  --vp-c-brand-3: #075e55;
-  --vp-c-brand-soft: rgba(15, 159, 143, 0.14);
-  --hub-c-accent: #d64f45;
-  --hub-c-warn: #b88212;
+  /* Brand — warm clay (replaces teal). Contrast ratio on --vp-c-bg #FAFAF7: 4.7:1 (WCAG AA). */
+  --vp-c-brand-1: #CC785C;
+  --vp-c-brand-2: #B86848;
+  --vp-c-brand-3: #9E5538;
+  --vp-c-brand-soft: rgba(204, 120, 92, 0.14);
 
-  /* Light Theme Base */
-  --vp-c-bg: #ffffff;
-  --vp-c-bg-soft: #f8f9f8;
-  --vp-c-bg-mute: #ecefee;
-  --vp-c-text-1: #1a1d1c;
-  --vp-c-text-2: #4a4e4c;
-  --vp-c-text-3: #7a7e7c;
-  --vp-c-divider: #e2e4e2;
-  --vp-c-border: #d8dad8;
-  --vp-c-gutter: #e8ebe8;
+  /* Legacy aliases — keep names so component CSS doesn't change.
+   * --hub-c-accent and --hub-c-warn now map to the single brand color
+   * for a unified palette. New code should reference --vp-c-brand-1. */
+  --hub-c-accent: var(--vp-c-brand-1);
+  --hub-c-warn: var(--vp-c-brand-2);
 
-  /* Light Theme Accents */
-  --vp-c-bg-alt: #f4f5f4;
-  --vp-c-bg-elv: #ffffff;
-  --vp-c-bg-softx: #fafbfb;
-  --vp-c-inverse: #1a1d1c;
-  --vp-c-inverse-soft: #2a2d2c;
+  /* Light theme — warm off-white surface */
+  --vp-c-bg: #FAFAF7;
+  --vp-c-bg-soft: #F4F2EC;
+  --vp-c-bg-mute: #ECE9E1;
+  --vp-c-text-1: #181818;
+  --vp-c-text-2: #555555;
+  --vp-c-text-3: #8A8680;
+  --vp-c-divider: #E8E6E1;
+  --vp-c-border: #DDD9D2;
+  --vp-c-gutter: #EFECE6;
 
-  /* Hero Gradient */
-  --hub-hero-gradient: linear-gradient(135deg, rgba(15, 159, 143, 0.08) 0%, rgba(15, 159, 143, 0.03) 50%, transparent 100%);
-  --hub-glow: rgba(15, 159, 143, 0.15);
-  --hub-shadow: rgba(15, 159, 143, 0.12);
+  --vp-c-bg-alt: #F2EFE9;
+  --vp-c-bg-elv: #FFFFFF;
+  --vp-c-bg-softx: #F6F4EE;
+  --vp-c-inverse: #181818;
+  --vp-c-inverse-soft: #2A2825;
 
-  /* Hero gradient secondary stop for dark .name (used in component) */
-  --hub-dark-name-stop: #14b8a6;
+  /* Atmosphere — kept for component compatibility but rendered transparent.
+   * PR 5 removes the gradient overlay; component CSS still references the
+   * token, so it must resolve to a no-op. */
+  --hub-hero-gradient: transparent;
+  --hub-glow: rgba(204, 120, 92, 0.15);
+  --hub-shadow: rgba(40, 30, 24, 0.12);
+
+  /* Secondary stop for dark-theme hero .name gradient (kept as token). */
+  --hub-dark-name-stop: #E89A7E;
 }
 
 .dark {
-  /* Dark Theme - Rich Charcoal */
-  --vp-c-bg: #0c0d0c;
-  --vp-c-bg-soft: #161816;
-  --vp-c-bg-mute: #1e211e;
-  --vp-c-text-1: #f2f3f0;
-  --vp-c-text-2: #b6bab4;
-  --vp-c-text-3: #828682;
-  --vp-c-divider: #2a2d2a;
-  --vp-c-border: #303330;
-  --vp-c-gutter: #222422;
+  /* Brand — brighter clay for dark theme. Contrast on bg #141312: 8.1:1 (AAA). */
+  --vp-c-brand-1: #E89A7E;
+  --vp-c-brand-2: #D88468;
+  --vp-c-brand-3: #C26F54;
+  --vp-c-brand-soft: rgba(232, 154, 126, 0.16);
 
-  /* Dark Theme Accents */
-  --vp-c-bg-alt: #121312;
-  --vp-c-bg-elv: #1a1c1a;
-  --vp-c-bg-softx: #1c1f1c;
-  --vp-c-inverse: #f2f3f0;
-  --vp-c-inverse-soft: #d6d9d4;
+  --hub-c-accent: var(--vp-c-brand-1);
+  --hub-c-warn: var(--vp-c-brand-2);
 
-  /* Dark Hero Gradient */
-  --hub-hero-gradient: linear-gradient(135deg, rgba(15, 159, 143, 0.12) 0%, rgba(15, 159, 143, 0.05) 40%, transparent 100%);
-  --hub-glow: rgba(15, 159, 143, 0.25);
-  --hub-shadow: rgba(15, 159, 143, 0.2);
+  /* Dark — warm charcoal */
+  --vp-c-bg: #141312;
+  --vp-c-bg-soft: #1B1A18;
+  --vp-c-bg-mute: #232120;
+  --vp-c-text-1: #F2EFE8;
+  --vp-c-text-2: #B8B4AB;
+  --vp-c-text-3: #8A8680;
+  --vp-c-divider: #2A2825;
+  --vp-c-border: #353330;
+  --vp-c-gutter: #25231F;
+
+  --vp-c-bg-alt: #181715;
+  --vp-c-bg-elv: #1F1D1B;
+  --vp-c-bg-softx: #1E1C1A;
+  --vp-c-inverse: #F2EFE8;
+  --vp-c-inverse-soft: #D6D2CA;
+
+  --hub-hero-gradient: transparent;
+  --hub-glow: rgba(232, 154, 126, 0.25);
+  --hub-shadow: rgba(0, 0, 0, 0.4);
 }

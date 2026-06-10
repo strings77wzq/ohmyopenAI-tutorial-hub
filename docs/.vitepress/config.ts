@@ -255,11 +255,20 @@ export default defineConfig({
 
   head: [
     ['link', { rel: 'icon', href: `${repoBase}favicon.svg` }],
-    ['meta', { name: 'theme-color', content: '#0f9f8f' }],
+    ['meta', { name: 'theme-color', content: '#CC785C' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:locale', content: 'zh_CN' }],
     ['meta', { property: 'og:title', content: 'Agent Engineering Hub' }],
     ['meta', { property: 'og:description', content: '智能体工程学习枢纽：系统学习 Skills、MCP、OpenSpec、Harness、上下文工程、评测与安全发布' }],
+    // Google Fonts: Geist (display) + Inter (body). Chinese stays on system
+    // fonts (PingFang / Microsoft YaHei / Source Han Sans fallback in
+    // typography.css) to keep payload minimal.
+    ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
+    ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
+    ['link', {
+      rel: 'stylesheet',
+      href: 'https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap',
+    }],
     ['link', { rel: 'stylesheet', href: `${repoBase}custom.css` }],
   ],
 

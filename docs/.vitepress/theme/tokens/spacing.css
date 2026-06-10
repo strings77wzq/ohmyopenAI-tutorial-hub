@@ -3,10 +3,10 @@
  * ==============
  *
  * Layout dimensions: radius, section padding, max-widths, grid gaps.
- * Mirrors the values currently inlined in custom.css selectors.
  *
- * The next PR (`homepage-anthropic-style-redesign`) will widen
- * `--space-section-padding` to 80-120px clamp for anthropic-style whitespace.
+ * Section padding follows anthropic.com's whitespace rhythm: 80-144px
+ * vertical breathing room via clamp(), replacing the legacy 32px compact
+ * layout. Card padding stays denser; only top-level sections widen.
  */
 
 :root {
@@ -15,11 +15,11 @@
   --hub-radius-pill: 6px;
   --hub-radius-card: 12px;
 
-  /* Layout containers */
+  /* Layout containers — anthropic-style breathing room */
   --space-section-max-width: 1120px;
-  --space-section-margin-top: 32px;
-  --space-section-padding: 32px 24px;
-  --space-section-padding-mobile: 24px 16px;
+  --space-section-margin-top: clamp(3rem, 2rem + 4vw, 6rem);
+  --space-section-padding: clamp(4rem, 3rem + 5vw, 9rem) clamp(1.5rem, 1rem + 2vw, 3rem);
+  --space-section-padding-mobile: 3rem 1.25rem;
 
   /* Card / panel padding */
   --space-card-padding: 18px;
