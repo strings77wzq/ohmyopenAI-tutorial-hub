@@ -12,34 +12,32 @@
  */
 
 :root {
-  /* Brand — warm clay (replaces teal). Contrast ratio on --vp-c-bg #FAFAF7: 4.7:1 (WCAG AA). */
-  --vp-c-brand-1: #CC785C;
-  --vp-c-brand-2: #B86848;
-  --vp-c-brand-3: #9E5538;
-  --vp-c-brand-soft: rgba(204, 120, 92, 0.14);
+  /* Brand — refined warm clay. Contrast on bg #FBFAF6: ~5.0:1 (WCAG AA). */
+  --vp-c-brand-1: #C07A5E;
+  --vp-c-brand-2: #A86850;
+  --vp-c-brand-3: #905542;
+  --vp-c-brand-soft: rgba(192, 122, 94, 0.12);
 
-  /* Legacy aliases — keep names so component CSS doesn't change.
-   * --hub-c-accent and --hub-c-warn now map to the single brand color
-   * for a unified palette. New code should reference --vp-c-brand-1. */
+  /* Legacy aliases. */
   --hub-c-accent: var(--vp-c-brand-1);
   --hub-c-warn: var(--vp-c-brand-2);
 
-  /* Light theme — warm off-white surface */
-  --vp-c-bg: #FAFAF7;
-  --vp-c-bg-soft: #F4F2EC;
-  --vp-c-bg-mute: #ECE9E1;
-  --vp-c-text-1: #181818;
-  --vp-c-text-2: #555555;
-  --vp-c-text-3: #8A8680;
-  --vp-c-divider: #E8E6E1;
-  --vp-c-border: #DDD9D2;
-  --vp-c-gutter: #EFECE6;
+  /* Light theme — warm paper surface */
+  --vp-c-bg: #FBFAF6;
+  --vp-c-bg-soft: #F5F2EC;
+  --vp-c-bg-mute: #EDE9E0;
+  --vp-c-text-1: #1A1817;
+  --vp-c-text-2: #5C5854;
+  --vp-c-text-3: #8E8A84;
+  --vp-c-divider: #E9E5DE;
+  --vp-c-border: #DDD8D0;
+  --vp-c-gutter: #F0ECE4;
 
-  --vp-c-bg-alt: #F2EFE9;
+  --vp-c-bg-alt: #F3EFE8;
   --vp-c-bg-elv: #FFFFFF;
-  --vp-c-bg-softx: #F6F4EE;
-  --vp-c-inverse: #181818;
-  --vp-c-inverse-soft: #2A2825;
+  --vp-c-bg-softx: #F7F4EE;
+  --vp-c-inverse: #1A1817;
+  --vp-c-inverse-soft: #2C2824;
 
   /* Atmosphere — kept for component compatibility but rendered transparent.
    * PR 5 removes the gradient overlay; component CSS still references the
@@ -53,33 +51,33 @@
 }
 
 .dark {
-  /* Brand — brighter clay for dark theme. Contrast on bg #141312: 8.1:1 (AAA). */
-  --vp-c-brand-1: #E89A7E;
-  --vp-c-brand-2: #D88468;
-  --vp-c-brand-3: #C26F54;
-  --vp-c-brand-soft: rgba(232, 154, 126, 0.16);
+  /* Brand — refined lighter clay for dark. Contrast on #151311: ~8.5:1 (AAA). */
+  --vp-c-brand-1: #E0987A;
+  --vp-c-brand-2: #D4886A;
+  --vp-c-brand-3: #C07456;
+  --vp-c-brand-soft: rgba(224, 152, 122, 0.14);
 
   --hub-c-accent: var(--vp-c-brand-1);
   --hub-c-warn: var(--vp-c-brand-2);
 
   /* Dark — warm charcoal */
-  --vp-c-bg: #141312;
-  --vp-c-bg-soft: #1B1A18;
-  --vp-c-bg-mute: #232120;
-  --vp-c-text-1: #F2EFE8;
-  --vp-c-text-2: #B8B4AB;
+  --vp-c-bg: #151311;
+  --vp-c-bg-soft: #1C1A17;
+  --vp-c-bg-mute: #24211D;
+  --vp-c-text-1: #F0EDE6;
+  --vp-c-text-2: #B8B4AC;
   --vp-c-text-3: #8A8680;
-  --vp-c-divider: #2A2825;
-  --vp-c-border: #353330;
-  --vp-c-gutter: #25231F;
+  --vp-c-divider: #2B2824;
+  --vp-c-border: #36332E;
+  --vp-c-gutter: #26231E;
 
-  --vp-c-bg-alt: #181715;
-  --vp-c-bg-elv: #1F1D1B;
-  --vp-c-bg-softx: #1E1C1A;
-  --vp-c-inverse: #F2EFE8;
-  --vp-c-inverse-soft: #D6D2CA;
+  --vp-c-bg-alt: #191714;
+  --vp-c-bg-elv: #201D19;
+  --vp-c-bg-softx: #1F1C18;
+  --vp-c-inverse: #F0EDE6;
+  --vp-c-inverse-soft: #D4D0C8;
 
   --hub-hero-gradient: transparent;
-  --hub-glow: rgba(232, 154, 126, 0.25);
+  --hub-glow: rgba(224, 152, 122, 0.22);
   --hub-shadow: rgba(0, 0, 0, 0.4);
 }
