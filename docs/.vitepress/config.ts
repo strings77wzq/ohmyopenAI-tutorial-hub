@@ -115,15 +115,56 @@ const zhGuideSidebar = [
     ],
   },
   {
-    text: 'Agent 工程',
+    text: 'Loop Engineering',
     collapsed: false,
     items: [
-      { text: '上下文工程', link: '/guide/context/' },
-      { text: '工作流编排', link: '/guide/agent-workflows/' },
+      { text: '概述', link: '/guide/loop-engineering/' },
+      { text: 'OODA Loop 与退出机制', link: '/guide/loop-engineering/ooda-loop' },
+      { text: '重试与熔断', link: '/guide/loop-engineering/retry-and-breaker' },
+      { text: '多源反馈', link: '/guide/loop-engineering/multi-source-feedback' },
+    ],
+  },
+  {
+    text: '上下文工程',
+    collapsed: false,
+    items: [
+      { text: '概述', link: '/guide/context/' },
+      { text: '上下文分层模型', link: '/guide/context/layering' },
+      { text: '注入策略', link: '/guide/context/injection-strategy' },
+      { text: '压缩与摘要', link: '/guide/context/compression' },
+      { text: '实战案例', link: '/guide/context/practice' },
+    ],
+  },
+  {
+    text: '评测与质量',
+    collapsed: false,
+    items: [
+      { text: '概述', link: '/guide/evaluation/' },
+      { text: '评测层级', link: '/guide/evaluation/levels' },
+      { text: 'Evaluator 设计', link: '/guide/evaluation/evaluator-design' },
+      { text: '回归套件', link: '/guide/evaluation/regression-suite' },
+      { text: '发布门禁', link: '/guide/evaluation/release-gate' },
+    ],
+  },
+  {
+    text: '部署与安全',
+    collapsed: false,
+    items: [
+      { text: '概述', link: '/guide/deployment/' },
+      { text: '权限模型', link: '/guide/deployment/permission-model' },
+      { text: '密钥治理', link: '/guide/deployment/secret-governance' },
+      { text: '观测与回滚', link: '/guide/deployment/observability-rollback' },
+    ],
+  },
+  {
+    text: 'Agent 工作流',
+    collapsed: false,
+    items: [
+      { text: '概述', link: '/guide/agent-workflows/' },
+      { text: '编排模式', link: '/guide/agent-workflows/orchestration-patterns' },
+      { text: '错误恢复', link: '/guide/agent-workflows/error-recovery' },
+      { text: '多 Agent 协调', link: '/guide/agent-workflows/multi-agent' },
       { text: '检索与知识', link: '/guide/agent-workflows/retrieval' },
-      { text: '评测与质量', link: '/guide/evaluation/' },
-      { text: 'Loop Engineering', link: '/guide/loop-engineering/' },
-      { text: '部署与安全', link: '/guide/deployment/' },
     ],
   },
 ]
@@ -188,21 +229,14 @@ const enGuideSidebar = [
     text: 'OMO Workflow',
     collapsed: false,
     items: [
-      { text: 'OMO Overview', link: '/guide/omo/' },
-      { text: 'Architecture', link: '/guide/omo/architecture' },
-      { text: 'Orchestrator', link: '/guide/omo/architecture/orchestrator' },
-      { text: 'Agent Categories', link: '/guide/omo/architecture/agents' },
-      { text: 'Category Routing', link: '/guide/omo/architecture/category' },
-      { text: 'Intent Classification', link: '/guide/omo/workflow/intent' },
-      { text: 'Task Delegation', link: '/guide/omo/workflow/delegation' },
-      { text: 'Verification', link: '/guide/omo/workflow/verification' },
+      { text: 'OMO Overview', link: '/en/guide/omo/' },
     ],
   },
   {
     text: 'golem Case Study',
     collapsed: false,
     items: [
-      { text: 'Overview', link: '/guide/golem-case/' },
+      { text: 'Overview', link: '/en/guide/golem-case/' },
       { text: 'Skill System', link: '/guide/golem-case/skills-core' },
       { text: 'RAG Pipeline', link: '/guide/golem-case/rag-core' },
       { text: 'MCP Client', link: '/guide/golem-case/mcp-core' },
@@ -213,12 +247,12 @@ const enGuideSidebar = [
     text: 'Agent Engineering',
     collapsed: false,
     items: [
-      { text: 'Context Engineering', link: '/en/guide/context/' },
-      { text: 'Workflow Orchestration', link: '/en/guide/agent-workflows/' },
-      { text: 'Retrieval and Knowledge', link: '/en/guide/agent-workflows/retrieval' },
-      { text: 'Evaluation and Quality', link: '/en/guide/evaluation/' },
       { text: 'Loop Engineering', link: '/en/guide/loop-engineering/' },
-      { text: 'Deployment and Safety', link: '/en/guide/deployment/' },
+      { text: 'Context Engineering', link: '/en/guide/context/' },
+      { text: 'Evaluation & Quality', link: '/en/guide/evaluation/' },
+      { text: 'Deployment & Safety', link: '/en/guide/deployment/' },
+      { text: 'Agent Workflows', link: '/en/guide/agent-workflows/' },
+      { text: 'Retrieval & Knowledge', link: '/en/guide/agent-workflows/retrieval' },
     ],
   },
 ]
@@ -277,11 +311,20 @@ export default defineConfig({
 
   head: [
     ['link', { rel: 'icon', href: `${repoBase}favicon.svg` }],
-    ['meta', { name: 'theme-color', content: '#0f9f8f' }],
+    ['meta', { name: 'theme-color', content: '#CC785C' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:locale', content: 'zh_CN' }],
     ['meta', { property: 'og:title', content: 'Agent Engineering Hub' }],
     ['meta', { property: 'og:description', content: '智能体工程学习枢纽：系统学习 Skills、MCP、OpenSpec、Harness、上下文工程、评测与安全发布' }],
+    // Google Fonts: Geist (display) + Inter (body). Chinese stays on system
+    // fonts (PingFang / Microsoft YaHei / Source Han Sans fallback in
+    // typography.css) to keep payload minimal.
+    ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
+    ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
+    ['link', {
+      rel: 'stylesheet',
+      href: 'https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap',
+    }],
     ['link', { rel: 'stylesheet', href: `${repoBase}custom.css` }],
   ],
 
@@ -289,7 +332,34 @@ export default defineConfig({
   cleanUrls: false,
 
   themeConfig: {
-    logo: `${repoBase}logo.svg`,
+    logo: `logo.svg`,
+    search: {
+      provider: 'local',
+      options: {
+        locales: {
+          root: {
+            translations: {
+              button: { buttonText: '搜索文档', buttonAriaLabel: '搜索文档' },
+              modal: {
+                noResultsText: '无相关结果',
+                resetButtonTitle: '清除查询',
+                footer: { selectText: '选择', navigateText: '切换', closeText: '关闭' },
+              },
+            },
+          },
+          en: {
+            translations: {
+              button: { buttonText: 'Search docs', buttonAriaLabel: 'Search docs' },
+              modal: {
+                noResultsText: 'No results',
+                resetButtonTitle: 'Reset query',
+                footer: { selectText: 'select', navigateText: 'navigate', closeText: 'close' },
+              },
+            },
+          },
+        },
+      },
+    },
 socialLinks: [
       { icon: 'github', link: 'https://github.com/strings77wzq/agent-engineering-hub' },
     ],

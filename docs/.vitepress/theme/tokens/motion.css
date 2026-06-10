@@ -1,0 +1,40 @@
+/**
+ * Motion tokens
+ * =============
+ *
+ * Transition durations, easings, and the global reduced-motion guard.
+ * Component CSS should use `var(--dur-*)` and `var(--ease-default)` instead
+ * of inline values.
+ *
+ * The reduced-motion media query is canonical here; do not duplicate it in
+ * component files. New animated components must scope their hover transforms
+ * inside this query if they animate position.
+ */
+
+:root {
+  --dur-fast: 0.18s;
+  --dur-normal: 0.22s;
+  --dur-slow: 0.4s;
+
+  --ease-default: ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  .VPHero .image-src:hover,
+  .VPButton.brand:hover,
+  .VPFeature:hover,
+  .path-card:hover,
+  .learning-map a:hover,
+  .not-found-grid a:hover {
+    transform: none;
+  }
+}
