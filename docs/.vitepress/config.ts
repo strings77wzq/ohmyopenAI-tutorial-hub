@@ -398,6 +398,12 @@ export default defineConfig({
   lastUpdated: true,
   cleanUrls: false,
 
+  vite: {
+    build: {
+      chunkSizeWarningLimit: 600,
+    },
+  },
+
   themeConfig: {
     logo: `logo.svg`,
     search: {

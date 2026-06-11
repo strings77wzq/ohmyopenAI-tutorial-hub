@@ -1,22 +1,20 @@
-# OMO Workflow
+# OMO Workflow Module
 
-Oh-My-OpenAgent (OMO) is a multi-model orchestration system. This module covers its architecture and workflow design.
+This module provides a deep dive into the workflows and architecture of Oh-My-OpenAgent (OMO).
 
-## Module Content
+## Module Contents
 
-### Architecture
+### Architecture Design
 
-- Orchestrator — Sisyphus, the main orchestrator
-- Agent Categories — 11 specialized agents
-- Category Routing — Domain-based routing to the best model
+- [Orchestrator Design](/guide/omo/architecture/orchestrator) — How the Sisyphus main orchestrator works
+- [Agent Classification and Capabilities](/guide/omo/architecture/agents) — Detailed guide to 11 specialized agents
+- [Category Routing System](/guide/omo/architecture/category) — Automatic routing to the best model by domain
 
-### Workflow
+### Workflow Breakdown
 
-- Intent Classification — Distinguishing simple queries from complex tasks
-- Task Delegation — Serial, parallel, and hybrid patterns
-- Verification Loop — Self-verification, cross-verification, independent verification
-
-> **Language note**: Detailed OMO sub-pages are currently available in [Chinese (简体中文)](/guide/omo/). English translations are planned — track progress in [TODOS.md](https://github.com/strings77wzq/agent-engineering-hub/blob/main/TODOS.md).
+- [Intent Classification](/guide/omo/workflow/intent) — How to distinguish simple queries from complex tasks
+- [Task Delegation](/guide/omo/workflow/delegation) — Serial, parallel, and hybrid modes
+- [Verification Loop](/guide/omo/workflow/verification) — Self-verification, cross-verification, and independent verification
 
 ## Core Concepts
 
@@ -25,24 +23,20 @@ Oh-My-OpenAgent (OMO) is a multi-model orchestration system. This module covers 
 ```
 User Request
      ↓
-[Intent Gate] — classify intent
+[Intent Gate] — Intent classification
      ↓
-[Sisyphus] — main orchestrator
-     ├─→ [Prometheus] — strategic planning
-     ├─→ [Hephaestus] — execution engine
-     ├─→ [Atlas] — todo orchestration
-     ├─→ [Oracle] — architecture consulting
-     ├─→ [Librarian] — documentation search
-     └─→ [Explore] — code exploration
+[Sisyphus] — Main orchestrator
+     ├─→ [Prometheus] — Strategic planning
+     ├─→ [Hephaestus] — Execution engine
+     ├─→ [Atlas] — Todo orchestration
+     ├─→ [Oracle] — Architecture consultation
+     ├─→ [Librarian] — Documentation search
+     └─→ [Explore] — Code exploration
 ```
 
 ### Work Modes
 
 | Mode | Command | Description |
-|------|---------|-------------|
-| **Ultrawork** | `ulw` | Full-force autonomous execution |
+|------|------|------|
+| **Ultrawork** | `ulw` | One-click full-speed execution |
 | **Prometheus** | Tab key | Interview-style planning |
-
-## Next Step
-
-Read about [golem Case Study](/guide/golem-case/) for a real production Agent system, or see the [full OMO docs in Chinese](/guide/omo/).
