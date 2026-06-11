@@ -21,22 +21,22 @@
 > **Language note**: Detailed golem case-study pages are currently available in [Chinese (简体中文)](/guide/golem-case/). English translations are planned — track progress in [TODOS.md](https://github.com/strings77wzq/agent-engineering-hub/blob/main/TODOS.md).
 
 <div class="path-grid" style="grid-template-columns: repeat(2, 1fr);">
-  <a class="path-card" href="/guide/golem-case/skills-core">
+  <a class="path-card" href="/agent-engineering-hub/en/guide/golem-case/skills-core">
     <span>01</span>
     <strong>Skill System</strong>
     <p>Design and implementation of reusable Agent capability units</p>
   </a>
-  <a class="path-card" href="/guide/golem-case/rag-core">
+  <a class="path-card" href="/agent-engineering-hub/en/guide/golem-case/rag-core">
     <span>02</span>
     <strong>RAG Pipeline</strong>
     <p>Retrieval-Augmented Generation from ingestion to query</p>
   </a>
-  <a class="path-card" href="/guide/golem-case/mcp-core">
+  <a class="path-card" href="/agent-engineering-hub/en/guide/golem-case/mcp-core">
     <span>03</span>
     <strong>MCP Client</strong>
     <p>Connecting and invoking external tool protocols</p>
   </a>
-  <a class="path-card" href="/guide/golem-case/provider-core">
+  <a class="path-card" href="/agent-engineering-hub/en/guide/golem-case/provider-core">
     <span>04</span>
     <strong>Multi-Provider</strong>
     <p>LLM interface abstraction and multi-model adaptation</p>
@@ -56,7 +56,7 @@ Each case includes: architecture diagram + concise code + design notes.
 
 ## Next Step
 
-Read the [Skill System](/guide/golem-case/skills-core) chapter in Chinese, or return to the [Learning Map](/en/guide/).
+Read the [Skill System](/en/guide/golem-case/skills-core) chapter, or return to the [Learning Map](/en/guide/).
 
 <style>
 .github-btn {

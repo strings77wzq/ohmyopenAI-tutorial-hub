@@ -45,13 +45,13 @@
 ## 学习路径
 
 <div class="learning-map">
-  <a href="/guide/quickstart"><strong>快速开始</strong><span>5 分钟建立第一个 Skill</span></a>
-  <a href="/guide/skills/what-is-skill"><strong>Skills</strong><span>可复用能力模块</span></a>
-  <a href="/guide/mcp/"><strong>MCP</strong><span>标准化上下文协议</span></a>
-  <a href="/guide/openspec/concepts"><strong>OpenSpec</strong><span>规格驱动开发</span></a>
-  <a href="/guide/context/"><strong>Context Engineering</strong><span>上下文窗口设计</span></a>
-  <a href="/guide/harness/intro"><strong>Harness</strong><span>AI 输出质量验证</span></a>
-  <a href="/guide/loop-engineering/"><strong>Loop Engineering</strong><span>闭环迭代控制</span></a>
+  <a href="/agent-engineering-hub/guide/quickstart"><strong>快速开始</strong><span>5 分钟建立第一个 Skill</span></a>
+  <a href="/agent-engineering-hub/guide/skills/what-is-skill"><strong>Skills</strong><span>可复用能力模块</span></a>
+  <a href="/agent-engineering-hub/guide/mcp/"><strong>MCP</strong><span>标准化上下文协议</span></a>
+  <a href="/agent-engineering-hub/guide/openspec/concepts"><strong>OpenSpec</strong><span>规格驱动开发</span></a>
+  <a href="/agent-engineering-hub/guide/context/"><strong>Context Engineering</strong><span>上下文窗口设计</span></a>
+  <a href="/agent-engineering-hub/guide/harness/intro"><strong>Harness</strong><span>AI 输出质量验证</span></a>
+  <a href="/agent-engineering-hub/guide/loop-engineering/"><strong>Loop Engineering</strong><span>闭环迭代控制</span></a>
   <a href="https://github.com/strings77wzq/golem" target="_blank"><strong>golem</strong><span>生产级实战 → GitHub</span></a>
 </div>
 

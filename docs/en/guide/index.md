@@ -45,13 +45,13 @@
 ## Learning Paths
 
 <div class="learning-map">
-  <a href="/en/guide/quickstart"><strong>Quick Start</strong><span>Create your first Skill in 5 minutes</span></a>
-  <a href="/en/guide/skills/what-is-skill"><strong>Skills</strong><span>Reusable capability modules</span></a>
-  <a href="/en/guide/mcp/"><strong>MCP</strong><span>Standardized context protocol</span></a>
-  <a href="/en/guide/openspec/concepts"><strong>OpenSpec</strong><span>Spec-Driven Development</span></a>
-  <a href="/en/guide/context/"><strong>Context Engineering</strong><span>Context window design</span></a>
-  <a href="/en/guide/harness/intro"><strong>Harness</strong><span>AI output quality verification</span></a>
-  <a href="/en/guide/loop-engineering/"><strong>Loop Engineering</strong><span>Closed-loop iteration control</span></a>
+  <a href="/agent-engineering-hub/en/guide/quickstart"><strong>Quick Start</strong><span>Create your first Skill in 5 minutes</span></a>
+  <a href="/agent-engineering-hub/en/guide/skills/what-is-skill"><strong>Skills</strong><span>Reusable capability modules</span></a>
+  <a href="/agent-engineering-hub/en/guide/mcp/"><strong>MCP</strong><span>Standardized context protocol</span></a>
+  <a href="/agent-engineering-hub/en/guide/openspec/concepts"><strong>OpenSpec</strong><span>Spec-Driven Development</span></a>
+  <a href="/agent-engineering-hub/en/guide/context/"><strong>Context Engineering</strong><span>Context window design</span></a>
+  <a href="/agent-engineering-hub/en/guide/harness/intro"><strong>Harness</strong><span>AI output quality verification</span></a>
+  <a href="/agent-engineering-hub/en/guide/loop-engineering/"><strong>Loop Engineering</strong><span>Closed-loop iteration control</span></a>
   <a href="https://github.com/strings77wzq/golem" target="_blank"><strong>golem</strong><span>Production case study → GitHub</span></a>
 </div>
 
