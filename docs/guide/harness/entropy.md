@@ -48,14 +48,14 @@ async function docGardener() {
 npx ast-grep --pattern 'console.log($MSG)' --fix
 ```
 
-## 在 OMO 中的应用
+## 实际应用
 
-OMO 内置熵管理：
+在生产级 Agent 系统中，熵管理通常包含：
 
 | 机制 | 功能 |
 |------|------|
 | 定期清理 | 后台任务扫描代码偏差 |
-| 文档同步 | Doc-gardening Agent |
+| 文档同步 | 自动检查文档与代码的一致性 |
 | 持续改进 | 每次迭代附带优化 |
 
 ## 技术债务清单

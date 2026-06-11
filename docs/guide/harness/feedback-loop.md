@@ -39,21 +39,21 @@ if (!validate(result)) {
 Hephaestus 写代码 → 另一个 Hephaestus 验证
 ```
 
-## 在 OMO 中的应用
+## 实际应用
 
-OMO 的验证回路就是反馈循环的实现：
+一个典型的多层验证回路：
 
 ```markdown
-## OMO 验证回路
+## 验证回路设计
 
 ### 1. 自验证
 - Agent 完成后自己检查
 
 ### 2. 交叉验证  
-- @oracle 架构审查
+- 独立 Agent 架构审查
 
 ### 3. 独立验证
-- Hephaestus 验证 Hephaestus
+- 第三方验证者确认结果
 ```
 
 ## 行业实践
