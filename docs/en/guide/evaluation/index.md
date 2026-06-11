@@ -1,65 +1,44 @@
-# Evaluation & Quality
+# Evaluation and Quality
 
-The goal of evaluation is not to assign an abstract score to AI output — it's to determine whether the output meets **shippable acceptance criteria**.
+The goal of evaluation is not to assign an abstract score to AI output, but to determine whether it meets publishable acceptance criteria.
 
-## Why Structured Evaluation?
+## Evaluation Levels
 
-Single-dimension evaluation ("code quality score: 7/10") tells you nothing actionable. Four-layer evaluation gives you specific, fixable failure signals at every stage of the development workflow.
+| Level | Question | Common Evidence |
+| --- | --- | --- |
+| Unit Check | Does a single input produce the correct output? | Fixture, snapshot, assertion |
+| Scenario Check | Is a complete workflow end-to-end? | Harness scenario, trace |
+| Regression Check | Has existing behavior been broken? | Test suite, link audit |
+| Release Check | Is it ready for public release? | Build, accessibility, content review |
 
-## The Four Evaluation Levels
+## Evaluator Design
 
-```
-┌─────────────────────────────────────────────────────────┐
-│ L1 Unit Check — "Did this one input produce correct output?" │
-│ Tools: fixtures, snapshots, assertions                    │
-│ Frequency: after every tool call                           │
-│ Feedback latency: seconds                                  │
-├─────────────────────────────────────────────────────────┤
-│ L2 Scenario Check — "Does a complete workflow work end-to-end?" │
-│ Tools: Harness scenarios, traces, e2e tests               │
-│ Frequency: after each sub-task                             │
-│ Feedback latency: minutes                                  │
-├─────────────────────────────────────────────────────────┤
-│ L3 Regression Check — "Did this change break existing behavior?" │
-│ Tools: test suites, link audits, snapshot diffs            │
-│ Frequency: before each PR                                  │
-│ Feedback latency: minutes to hours                         │
-├─────────────────────────────────────────────────────────┤
-│ L4 Release Gate — "Is this change ready for public release?" │
-│ Tools: build verification, a11y audit, perf test, content review │
-│ Frequency: before each release                             │
-│ Feedback latency: minutes to hours                         │
-└─────────────────────────────────────────────────────────┘
-```
+A good evaluator should:
 
-## Module Content
+- Assess exactly one clear criterion.
+- Explain the reason for failure, not just a score.
+- Handle edge-case inputs.
+- Align with human acceptance criteria.
+- Remain stable across model or prompt changes.
 
-| Chapter | Content |
-|---------|---------|
-| [Evaluation Levels](/guide/evaluation/levels) | Deep dive into the four levels: what to check, with what tools, at what frequency |
-| [Evaluator Design](/guide/evaluation/evaluator-design) | Five principles: single-criterion, failure reasons, boundary inputs, alignment, stability |
-| [Regression Suite](/guide/evaluation/regression-suite) | Organizing evaluators into fast/standard/full gates; golden dataset management; drift detection |
-| [Release Gate](/guide/evaluation/release-gate) | Turning evaluations into a go/no-go decision; automated vs manual gates; rollback criteria |
+## Documentation Site Quality Gates
 
-> **Language note**: Detailed sub-pages are currently in [Chinese (简体中文)](/guide/evaluation/). English translations are planned.
-
-## Quality Gates for This Site
-
-Every change to this documentation site must pass:
+Publishing documentation in this project requires at minimum:
 
 ```bash
-npm run docs:build         # VitePress build — zero errors, zero warnings
-npm run docs:check-links   # AST-parsed link audit — 121+ pages, zero dead links
-npm run docs:check-routes  # Sidebar route verification — all entries reachable
-npm run docs:check-frontmatter  # All pages have structured titles
+npm run docs:build
+npm run docs:check-links
 ```
 
-Plus manual checks: homepage clarity, mobile overflow, bilingual nav completeness, new page quality.
+Manual checks are also needed:
 
-## Practice
+- Whether the homepage hero section is clear.
+- Whether there is horizontal overflow on mobile.
+- Whether the Chinese and English navigation are both complete.
+- Whether new pages include concepts, steps, exercises, troubleshooting, and next steps.
 
-For a PR "add a new MCP tutorial page", write 5 acceptance criteria and turn 2 of them into automated checks.
+## Exercise
 
-## Next Step
+Write five acceptance criteria for a PR that adds a new MCP tutorial page, then convert two of them into automated checks.
 
-Start with [Evaluation Levels](/guide/evaluation/levels) (Chinese) to understand what each layer checks.
+Next: read [Deployment and Security](/guide/deployment/).

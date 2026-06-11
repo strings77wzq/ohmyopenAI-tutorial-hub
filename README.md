@@ -1,171 +1,127 @@
 # Agent Engineering Hub 🤖
 
+> A systematic learning path for AI Agent engineering — from concepts to production.
+>
 > 智能体工程学习系统：从概念到实战，从工具到架构
 
-## 技术发展历程
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![Docs](https://img.shields.io/badge/docs-121%20pages-brightgreen)](https://strings77wzq.github.io/agent-engineering-hub/)
+[![Bilingual](https://img.shields.io/badge/CN%2FEN-bilingual-blue)](https://strings77wzq.github.io/agent-engineering-hub/en/)
+
+## Technology Evolution
 
 ```
 Prompt Engineering                    Skills (oh-my-openagent)
        ↓                                  ↓
- 解决Prompt冗余问题              可复用能力模块
+ Solves prompt redundancy            Reusable capability modules
        ↓                                  ↓
 MCP (Model Context Protocol)     OpenSpec (Spec-Driven)
        ↓                                  ↓
-标准化上下文协议                规格驱动开发
+Standardized context protocol     Spec-driven development
        ↓                                  ↓
-Harness Engineering            golem (生产级实战)
+Harness Engineering            golem (production-grade)
        ↓
-AI输出质量保障
+AI output quality assurance
 ```
 
-## 核心模块
+## Core Modules
 
-| 模块 | 内容 | GitHub |
-|------|------|-------|
-| **OMO工作流** | 多模型编排系统，11大Agent | [oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent) |
-| **golem案例** | 生产级Go Agent项目 | [golem](https://github.com/strings77wzq/golem) |
-| **Skills** | 可复用AI能力模块 | [skills.sh](https://skills.sh) |
-| **MCP** | 标准化上下文协议 | [modelcontextprotocol.io](https://modelcontextprotocol.io) |
-| **OpenSpec** | 规格驱动开发SDD | [openspec](https://github.com/code-yeongyu/openspec) |
-| **Harness** | AI输出质量保障 | R.E.S.T模型 |
+| Module | Description | GitHub |
+|--------|-------------|--------|
+| **OMO Workflow** | Multi-model orchestration, 11 agents | [oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent) |
+| **golem** | Production-grade Go Agent system | [golem](https://github.com/strings77wzq/golem) |
+| **Skills** | Reusable AI capability modules | [skills.sh](https://skills.sh) |
+| **MCP** | Standardized context protocol | [modelcontextprotocol.io](https://modelcontextprotocol.io) |
+| **OpenSpec** | Spec-driven development (SDD) | [openspec](https://github.com/code-yeongyu/openspec) |
+| **Harness** | AI output quality assurance | R.E.S.T model |
 
-## 快速开始
+## Quick Start
 
-### 学习路径
-- [快速开始](./docs/guide/quickstart.md) - 5分钟建立第一个Skill
-- [学习地图](./docs/guide/) - 完整技术演进路径
-- [OMO工作流](./docs/guide/omo/) - 多模型编排系统
-- [golem案例](./docs/guide/golem-case/) - 生产级实战
+**[Online Tutorial](https://strings77wzq.github.io/agent-engineering-hub/)** · **[GitHub →](https://github.com/strings77wzq/agent-engineering-hub)**
 
-## 为什么学习这个？
+### Choose Your Path
 
-1. **体系化**：从Prompt到生产级Agent系统的完整路径
-2. **实战导向**：基于golem真实生产项目教学
-3. **质量保障**：Harness工程确保AI输出可靠
+| Role | Path | Start → |
+|------|------|---------|
+| **Full-stack Developer** | Quick start → Tools → Projects | [Begin →](https://strings77wzq.github.io/agent-engineering-hub/guide/quickstart.html) |
+| **Architect** | Deep dive → OpenSpec → Harness | [Explore →](https://strings77wzq.github.io/agent-engineering-hub/guide/openspec/concepts.html) |
+| **Student** | Concepts → Progressive → Practice | [Learn →](https://strings77wzq.github.io/agent-engineering-hub/guide/) |
 
-## 相关链接
+## Tutorial Modules
 
-- 🌐 **在线教程**: https://strings77wzq.github.io/agent-engineering-hub/
-- 📚 **OMO工作流**: https://github.com/code-yeongyu/oh-my-openagent
-- 💻 **golem项目**: https://github.com/strings77wzq/golem
-- 🛠️ **Skills社区**: https://skills.sh
-- 📖 **MCP协议**: https://modelcontextprotocol.io
+### Skills
+Learn to create and use reusable AI capability modules.
 
-## 快速开始
+1. [What is a Skill](https://strings77wzq.github.io/agent-engineering-hub/guide/skills/what-is-skill.html) — Core concepts
+2. [Create Your First Skill](https://strings77wzq.github.io/agent-engineering-hub/guide/skills/first-skill.html) — Step-by-step guide
+3. [Skill Components](https://strings77wzq.github.io/agent-engineering-hub/guide/skills/components.html) — name, description, prompt, examples
+4. [Advanced Patterns](https://strings77wzq.github.io/agent-engineering-hub/guide/skills/advanced.html) — Conditionals, variables, tool calls
+5. [Practice](https://strings77wzq.github.io/agent-engineering-hub/guide/skills/practice.html) — Code review Skill example
 
-### 选择你的角色
+### MCP
+Expose tools, resources, and context to agents via a standard protocol.
 
-<div class="role-cards">
+1. [MCP Introduction](https://strings77wzq.github.io/agent-engineering-hub/guide/mcp/) — Protocol roles and boundaries
+2. [Core Concepts](https://strings77wzq.github.io/agent-engineering-hub/guide/mcp/concepts.html) — tools, resources, prompts
+3. [Build an MCP Server](https://strings77wzq.github.io/agent-engineering-hub/guide/mcp/server.html) — Testable interface design
+4. [Practice](https://strings77wzq.github.io/agent-engineering-hub/guide/mcp/practice.html) — Document search tool
+5. [Safety Boundaries](https://strings77wzq.github.io/agent-engineering-hub/guide/mcp/safety.html) — Permissions, secrets, dangerous ops
 
-#### Full-stack Developer
-快速上手 → 工具使用 → 实战项目
+### OpenSpec
+Master the spec-driven development workflow.
 
-[开始开发之旅](./guide/quickstart.html)
+1. [Core Concepts](https://strings77wzq.github.io/agent-engineering-hub/guide/openspec/concepts.html) — SDD intro, OpenSpec philosophy
+2. [Commands](https://strings77wzq.github.io/agent-engineering-hub/guide/openspec/commands.html) — `/opsx:` command reference
+3. [Workflow](https://strings77wzq.github.io/agent-engineering-hub/guide/openspec/workflow.html) — propose → apply → archive
+4. [Writing Specs](https://strings77wzq.github.io/agent-engineering-hub/guide/openspec/writing-specs.html) — Tips and patterns
+5. [Practice](https://strings77wzq.github.io/agent-engineering-hub/guide/openspec/practice.html) — E-commerce scenario
 
-#### Architect
-架构深入 → OpenSpec → Harness
+### Harness
+Build quality infrastructure for AI engineering.
 
-[深入架构设计](./guide/openspec/concepts.html)
+1. [Testing Infrastructure](https://strings77wzq.github.io/agent-engineering-hub/guide/harness/intro.html) — Harness core concepts
+2. [Writing Tests](https://strings77wzq.github.io/agent-engineering-hub/guide/harness/writing-tests.html) — Test case design
+3. [Evaluators](https://strings77wzq.github.io/agent-engineering-hub/guide/harness/evaluators.html) — Output quality evaluation
+4. [Mock Server](https://strings77wzq.github.io/agent-engineering-hub/guide/harness/mock-server.html) — Zero-cost testing
+5. [Practice](https://strings77wzq.github.io/agent-engineering-hub/guide/harness/practice.html) — Complete test workflow
 
-#### Student
-概念入门 → 逐步深入 → 练习
+## Why Learn This?
 
-[从零开始学习](./guide/)
+1. **Systematic** — Complete path from prompts to production-grade agent systems
+2. **Hands-on** — Built around the real golem production project
+3. **Quality-driven** — Harness engineering ensures reliable AI output
 
-</div>
+## Related Links
 
-## 教程模块
+- 🌐 **Tutorial**: https://strings77wzq.github.io/agent-engineering-hub/
+- 📚 **OMO Workflow**: https://github.com/code-yeongyu/oh-my-openagent
+- 💻 **golem**: https://github.com/strings77wzq/golem
+- 🛠️ **Skills**: https://skills.sh
+- 📖 **MCP Protocol**: https://modelcontextprotocol.io
 
-### Skills 教程
+## Quality Gates
 
-学习如何创建和使用 AI Skills：
+Every change passes automated checks:
 
-1. [什么是 Skill](./guide/skills/what-is-skill.md) - 理解 Skill 的核心概念
-2. [创建你的第一个 Skill](./guide/skills/first-skill.md) - 手把手教学
-3. [Skill 核心组件](./guide/skills/components.md) - name、description、prompt、examples
-4. [高级模式](./guide/skills/advanced.md) - 条件判断、变量、工具调用
-5. [实战案例](./guide/skills/practice.md) - 代码审查 Skill 完整示例
-
-### OpenSpec 教程
-
-掌握规范驱动开发的完整工作流：
-
-1. [核心概念](./guide/openspec/concepts.md) - SDD 介绍、OpenSpec 哲学
-2. [命令参考](./guide/openspec/commands.md) - `/opsx:` 命令完整列表
-3. [完整工作流](./guide/openspec/workflow.md) - propose → apply → archive
-4. [编写高质量 Spec](./guide/openspec/writing-specs.md) - 技巧与模式
-5. [实战案例](./guide/openspec/practice.md) - 电商场景规范驱动开发
-
-### MCP 教程
-
-学习如何把工具、资源和上下文以标准协议暴露给 Agent：
-
-1. [MCP 入门](./guide/mcp/index.md) - 理解协议角色和能力边界
-2. [核心概念](./guide/mcp/concepts.md) - tools、resources、prompts
-3. [构建 MCP Server](./guide/mcp/server.md) - 设计可测试接口
-4. [实战练习](./guide/mcp/practice.md) - 设计文档搜索 tool
-5. [安全边界](./guide/mcp/safety.md) - 权限、密钥和危险操作
-
-### Harness 教程
-
-构建智能体工程的质量基础设施：
-
-1. [测试基础设施](./guide/harness/intro.md) - Harness 核心概念
-2. [编写测试场景](./guide/harness/writing-tests.md) - 测试用例设计
-3. [Evaluators](./guide/harness/evaluators.md) - 输出质量评估
-4. [Mock Server](./guide/harness/mock-server.md) - 无成本测试
-5. [实战案例](./guide/harness/practice.md) - 完整测试工作流
-
-## 示例项目
-
-- [电商 MVP (Node.js)](./examples/ecommerce-nodejs.md)
-- [电商 MVP (Python)](./examples/ecommerce-python.md)
-
-## 质量门禁
-
-每次变更自动通过以下检查：
-
-| 检查项 | 工具 | 状态 |
-|--------|------|------|
-| 链接审计 | `npm run docs:check-links` | ✅ 121 页面，零断链 |
-| 路由验证 | `npm run docs:check-routes` | ✅ 所有侧边栏 link 可达 |
-| 前言检查 | `npm run docs:check-frontmatter` | ✅ 所有页面有结构化标题 |
-| 构建验证 | `npm run docs:build` | ✅ ~7s，零警告 |
-| 僵尸变更 | `npm run docs:check-stale` | ✅ 零活跃 openspec 变更 |
-| 本地搜索 | VitePress local search | ✅ 中英双语 |
+| Check | Tool | Status |
+|-------|------|--------|
+| Link audit | `npm run docs:check-links` | ✅ 121 pages, zero dead links |
+| Route validation | `npm run docs:check-routes` | ✅ All sidebar links reachable |
+| Frontmatter | `npm run docs:check-frontmatter` | ✅ All pages have structured titles |
+| Build | `npm run docs:build` | ✅ ~7s, zero warnings |
+| Stale changes | `npm run docs:check-stale` | ✅ Zero active openspec changes |
+| Search | VitePress local search | ✅ CN/EN bilingual |
 
 ```bash
-npm test              # 运行全部自动化检查
-npm run docs:build    # 生产构建验证
-npm run test:all      # 全量检查 + 构建
+npm test              # Run all automated checks
+npm run docs:build    # Production build verification
+npm run test:all      # Full checks + build
 ```
 
-## 贡献
+## Contributing
 
-欢迎贡献！请查看[贡献指南](./contributing.md)。
+Contributions welcome! See [Contributing Guide](./contributing.md).
 
-## 许可
+## License
 
 [MIT](./LICENSE)
-
-## OpenSpec 项目隔离说明
-
-本项目使用**项目内本地 OpenSpec**：
-
-```text
-ai-tutorial-hub/
-  openspec/
-    config.yaml
-    changes/
-    specs/
-```
-
-请在项目目录内执行 OpenSpec 命令：
-
-```bash
-cd ai-tutorial-hub
-openspec list --json
-openspec status --change tutorial-doc-site
-```
-
-这样当 `~/md` 下有多个项目时，每个项目的规范互不影响。

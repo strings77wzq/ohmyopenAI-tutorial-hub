@@ -1,43 +1,32 @@
 # Context Engineering
 
-Context Engineering addresses one core question: **within a limited context window, what should the Agent see, ignore, remember, and verify — and how do you prove these choices didn't compromise task quality?**
+Context engineering focuses on a core question: within a finite context window, what should an Agent see, ignore, and remember — and how do we verify these choices don't compromise task quality?
 
-## Why Context Engineering?
+## Context Layering
 
-An Agent's context window is both its workspace and its bottleneck. Fill it with noise and the Agent loses focus. Fill it with only the goal and the Agent lacks the knowledge to execute. Context Engineering is the discipline of making these tradeoffs explicit, measurable, and repeatable.
+| Layer | Contents | Maintenance |
+| --- | --- | --- |
+| Goal | User task, acceptance criteria, constraints | OpenSpec or task list |
+| Project Knowledge | Architecture, conventions, runtime | README, AGENTS, project memory |
+| Working State | Current assumptions, completed steps, failed outputs | notepad, trace, task list |
+| External Knowledge | Docs, APIs, search results | MCP resource or retrieval system |
+| Operational Evidence | Tests, builds, logs, screenshots | Harness and verification reports |
 
-## The Five-Layer Model
+## Design Principles
 
-| Layer | Content | Maintained By | Refresh |
-|-------|---------|---------------|---------|
-| **L1 Goal** | User task, acceptance criteria, constraints, invariants | User / OpenSpec | Stable for task duration |
-| **L2 Project Knowledge** | Architecture, conventions, tech stack, dependencies | README, AGENTS.md, project memory | Load on demand, cache unchanged parts |
-| **L3 Working State** | Current hypotheses, completed steps, failure outputs, tried approaches | Agent / notepad / trace | Updated after every iteration |
-| **L4 External Knowledge** | API docs, search results, library source, best practices | MCP resource / retrieval system | Query on demand, cache for task duration |
-| **L5 Operational Evidence** | Test results, build logs, screenshots, Lighthouse reports | Harness / toolchain | Updated after every tool call |
+- Information closer to the task goal gets higher priority.
+- Large blocks of context should be summarized before injection.
+- Never pass secrets, personal data, or irrelevant logs to the model.
+- Conclusions from each tool call must be traceable back to the task state.
+- Critical assumptions must be backed by tests, documentation, or sources.
 
-Layer priority: **L1 > L2 > L3 > L4 > L5**. When layers conflict, the higher layer wins.
+## Exercise
 
-## Module Content
+Design a context package for an Agent task to "fix 404s on the docs site":
 
-| Chapter | Content |
-|---------|---------|
-| [Layering Model](/guide/context/layering) | Deep dive into the five-layer architecture, priority rules, and design principles |
-| [Injection Strategy](/guide/context/injection-strategy) | Progressive disclosure, pre-injection vs lazy injection, token budget allocation |
-| [Compression](/guide/context/compression) | Extractive vs abstractive vs structural compression; when NOT to compress |
-| [Practice](/guide/context/practice) | Full worked example: designing a context pack for fixing docs site 404s |
+1. What files must be included?
+2. Which logs only need a summary?
+3. Which external information needs to be re-verified?
+4. What content should not enter the context?
 
-> **Language note**: Detailed sub-pages are currently in [Chinese (简体中文)](/guide/context/). English translations are planned.
-
-## Practice Exercise
-
-Design a context pack for an Agent task "add a new MCP tutorial page":
-
-1. L1 Goal: what goes in the acceptance criteria?
-2. L2 Project Knowledge: which files should be cached?
-3. L3 Working State: how does it change during the task?
-4. What role do L4 and L5 play in this task?
-
-## Next Step
-
-Start with the [Layering Model](/guide/context/layering) (Chinese) to understand how the five-layer architecture works.
+Next, read [Workflow Orchestration](/guide/agent-workflows/).

@@ -237,21 +237,41 @@ const enGuideSidebar = [
     collapsed: false,
     items: [
       { text: 'Overview', link: '/en/guide/golem-case/' },
-      { text: 'Skill System', link: '/guide/golem-case/skills-core' },
-      { text: 'RAG Pipeline', link: '/guide/golem-case/rag-core' },
-      { text: 'MCP Client', link: '/guide/golem-case/mcp-core' },
-      { text: 'Multi-Provider', link: '/guide/golem-case/provider-core' },
     ],
   },
   {
-    text: 'Agent Engineering',
+    text: 'Loop Engineering',
     collapsed: false,
     items: [
-      { text: 'Loop Engineering', link: '/en/guide/loop-engineering/' },
-      { text: 'Context Engineering', link: '/en/guide/context/' },
-      { text: 'Evaluation & Quality', link: '/en/guide/evaluation/' },
-      { text: 'Deployment & Safety', link: '/en/guide/deployment/' },
-      { text: 'Agent Workflows', link: '/en/guide/agent-workflows/' },
+      { text: 'Overview', link: '/en/guide/loop-engineering/' },
+    ],
+  },
+  {
+    text: 'Context Engineering',
+    collapsed: false,
+    items: [
+      { text: 'Overview', link: '/en/guide/context/' },
+    ],
+  },
+  {
+    text: 'Evaluation & Quality',
+    collapsed: false,
+    items: [
+      { text: 'Overview', link: '/en/guide/evaluation/' },
+    ],
+  },
+  {
+    text: 'Deployment & Safety',
+    collapsed: false,
+    items: [
+      { text: 'Overview', link: '/en/guide/deployment/' },
+    ],
+  },
+  {
+    text: 'Agent Workflows',
+    collapsed: false,
+    items: [
+      { text: 'Overview', link: '/en/guide/agent-workflows/' },
       { text: 'Retrieval & Knowledge', link: '/en/guide/agent-workflows/retrieval' },
     ],
   },
@@ -325,7 +345,6 @@ export default defineConfig({
       rel: 'stylesheet',
       href: 'https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap',
     }],
-    ['link', { rel: 'stylesheet', href: `${repoBase}custom.css` }],
   ],
 
   lastUpdated: true,

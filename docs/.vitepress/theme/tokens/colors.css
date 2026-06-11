@@ -45,9 +45,6 @@
   --hub-hero-gradient: transparent;
   --hub-glow: rgba(204, 120, 92, 0.15);
   --hub-shadow: rgba(40, 30, 24, 0.12);
-
-  /* Secondary stop for dark-theme hero .name gradient (kept as token). */
-  --hub-dark-name-stop: #E89A7E;
 }
 
 .dark {
