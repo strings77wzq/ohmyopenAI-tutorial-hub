@@ -41,10 +41,45 @@ const zhGuideSidebar = [
     ],
   },
   {
-    text: 'Skills 教程',
+    text: '🔧 基础层 Foundation',
     collapsed: false,
     items: [
-      { text: '什么是 Skill', link: '/guide/skills/what-is-skill' },
+      { text: 'Prompt Engineering', link: '/guide/prompt-engineering/' },
+      { text: '提示词设计模式', link: '/guide/prompt-engineering/design-patterns' },
+      { text: '结构化提示词', link: '/guide/prompt-engineering/structured' },
+      { text: '调试与迭代', link: '/guide/prompt-engineering/debugging' },
+      { text: '实战：构建 Prompt 库', link: '/guide/prompt-engineering/practice' },
+      { text: '最佳实践与反模式', link: '/guide/prompt-engineering/best-practices' },
+    ],
+  },
+  {
+    text: 'Tool Use',
+    collapsed: false,
+    items: [
+      { text: '什么是 Tool Use', link: '/guide/tool-use/' },
+      { text: '工具定义与描述', link: '/guide/tool-use/tool-definition' },
+      { text: '工具选择与编排', link: '/guide/tool-use/orchestration' },
+      { text: '错误处理与重试', link: '/guide/tool-use/error-handling' },
+      { text: '实战：构建工具集', link: '/guide/tool-use/practice' },
+      { text: '安全边界', link: '/guide/tool-use/safety' },
+    ],
+  },
+  {
+    text: 'Context Engineering',
+    collapsed: false,
+    items: [
+      { text: '概述', link: '/guide/context/' },
+      { text: '上下文分层模型', link: '/guide/context/layering' },
+      { text: '注入策略', link: '/guide/context/injection-strategy' },
+      { text: '压缩与摘要', link: '/guide/context/compression' },
+      { text: '实战案例', link: '/guide/context/practice' },
+    ],
+  },
+  {
+    text: '🏗️ 构建层 Build',
+    collapsed: false,
+    items: [
+      { text: 'Skills', link: '/guide/skills/what-is-skill' },
       { text: '创建你的第一个 Skill', link: '/guide/skills/first-skill' },
       { text: 'Skill 核心组件', link: '/guide/skills/components' },
       { text: '高级模式', link: '/guide/skills/advanced' },
@@ -53,7 +88,7 @@ const zhGuideSidebar = [
     ],
   },
   {
-    text: 'MCP 教程',
+    text: 'MCP',
     collapsed: false,
     items: [
       { text: 'MCP 入门', link: '/guide/mcp/' },
@@ -64,7 +99,7 @@ const zhGuideSidebar = [
     ],
   },
   {
-    text: 'OpenSpec 教程',
+    text: 'OpenSpec',
     collapsed: false,
     items: [
       { text: '核心概念', link: '/guide/openspec/concepts' },
@@ -76,10 +111,10 @@ const zhGuideSidebar = [
     ],
   },
   {
-    text: 'Harness Engineering',
+    text: '✅ 质量层 Quality',
     collapsed: false,
     items: [
-      { text: '测试基础设施', link: '/guide/harness/intro' },
+      { text: 'Harness Engineering', link: '/guide/harness/intro' },
       { text: '编写测试场景', link: '/guide/harness/writing-tests' },
       { text: 'Evaluators', link: '/guide/harness/evaluators' },
       { text: 'Mock Server', link: '/guide/harness/mock-server' },
@@ -87,6 +122,38 @@ const zhGuideSidebar = [
       { text: '最佳实践', link: '/guide/harness/best-practices' },
       { text: '反馈循环', link: '/guide/harness/feedback-loop' },
       { text: '熵管理', link: '/guide/harness/entropy' },
+    ],
+  },
+  {
+    text: 'Evaluation',
+    collapsed: false,
+    items: [
+      { text: '概述', link: '/guide/evaluation/' },
+      { text: '评测层级', link: '/guide/evaluation/levels' },
+      { text: 'Evaluator 设计', link: '/guide/evaluation/evaluator-design' },
+      { text: '回归套件', link: '/guide/evaluation/regression-suite' },
+      { text: '发布门禁', link: '/guide/evaluation/release-gate' },
+    ],
+  },
+  {
+    text: 'Loop Engineering',
+    collapsed: false,
+    items: [
+      { text: '概述', link: '/guide/loop-engineering/' },
+      { text: 'OODA Loop 与退出机制', link: '/guide/loop-engineering/ooda-loop' },
+      { text: '重试与熔断', link: '/guide/loop-engineering/retry-and-breaker' },
+      { text: '多源反馈', link: '/guide/loop-engineering/multi-source-feedback' },
+    ],
+  },
+  {
+    text: '🚀 实战',
+    collapsed: false,
+    items: [
+      { text: 'golem 案例', link: '/guide/golem-case/' },
+      { text: 'Skill 系统', link: '/guide/golem-case/skills-core' },
+      { text: 'RAG 流程', link: '/guide/golem-case/rag-core' },
+      { text: 'MCP 客户端', link: '/guide/golem-case/mcp-core' },
+      { text: '多 Provider', link: '/guide/golem-case/provider-core' },
     ],
   },
   {
@@ -104,46 +171,14 @@ const zhGuideSidebar = [
     ],
   },
   {
-    text: 'golem 案例',
+    text: 'Agent 工作流',
     collapsed: false,
     items: [
-      { text: '案例概述', link: '/guide/golem-case/' },
-      { text: 'Skill 系统', link: '/guide/golem-case/skills-core' },
-      { text: 'RAG 流程', link: '/guide/golem-case/rag-core' },
-      { text: 'MCP 客户端', link: '/guide/golem-case/mcp-core' },
-      { text: '多 Provider', link: '/guide/golem-case/provider-core' },
-    ],
-  },
-  {
-    text: 'Loop Engineering',
-    collapsed: false,
-    items: [
-      { text: '概述', link: '/guide/loop-engineering/' },
-      { text: 'OODA Loop 与退出机制', link: '/guide/loop-engineering/ooda-loop' },
-      { text: '重试与熔断', link: '/guide/loop-engineering/retry-and-breaker' },
-      { text: '多源反馈', link: '/guide/loop-engineering/multi-source-feedback' },
-    ],
-  },
-  {
-    text: '上下文工程',
-    collapsed: false,
-    items: [
-      { text: '概述', link: '/guide/context/' },
-      { text: '上下文分层模型', link: '/guide/context/layering' },
-      { text: '注入策略', link: '/guide/context/injection-strategy' },
-      { text: '压缩与摘要', link: '/guide/context/compression' },
-      { text: '实战案例', link: '/guide/context/practice' },
-    ],
-  },
-  {
-    text: '评测与质量',
-    collapsed: false,
-    items: [
-      { text: '概述', link: '/guide/evaluation/' },
-      { text: '评测层级', link: '/guide/evaluation/levels' },
-      { text: 'Evaluator 设计', link: '/guide/evaluation/evaluator-design' },
-      { text: '回归套件', link: '/guide/evaluation/regression-suite' },
-      { text: '发布门禁', link: '/guide/evaluation/release-gate' },
+      { text: '概述', link: '/guide/agent-workflows/' },
+      { text: '编排模式', link: '/guide/agent-workflows/orchestration-patterns' },
+      { text: '错误恢复', link: '/guide/agent-workflows/error-recovery' },
+      { text: '多 Agent 协调', link: '/guide/agent-workflows/multi-agent' },
+      { text: '检索与知识', link: '/guide/agent-workflows/retrieval' },
     ],
   },
   {
@@ -154,17 +189,6 @@ const zhGuideSidebar = [
       { text: '权限模型', link: '/guide/deployment/permission-model' },
       { text: '密钥治理', link: '/guide/deployment/secret-governance' },
       { text: '观测与回滚', link: '/guide/deployment/observability-rollback' },
-    ],
-  },
-  {
-    text: 'Agent 工作流',
-    collapsed: false,
-    items: [
-      { text: '概述', link: '/guide/agent-workflows/' },
-      { text: '编排模式', link: '/guide/agent-workflows/orchestration-patterns' },
-      { text: '错误恢复', link: '/guide/agent-workflows/error-recovery' },
-      { text: '多 Agent 协调', link: '/guide/agent-workflows/multi-agent' },
-      { text: '检索与知识', link: '/guide/agent-workflows/retrieval' },
     ],
   },
 ]
@@ -179,10 +203,41 @@ const enGuideSidebar = [
     ],
   },
   {
-    text: 'Skills Tutorial',
+    text: '🔧 Foundation',
     collapsed: false,
     items: [
-      { text: 'What is Skill', link: '/en/guide/skills/what-is-skill' },
+      { text: 'Prompt Engineering', link: '/en/guide/prompt-engineering/' },
+      { text: 'Design Patterns', link: '/en/guide/prompt-engineering/design-patterns' },
+      { text: 'Structured Prompts', link: '/en/guide/prompt-engineering/structured' },
+      { text: 'Debugging & Iteration', link: '/en/guide/prompt-engineering/debugging' },
+      { text: 'Practice', link: '/en/guide/prompt-engineering/practice' },
+      { text: 'Best Practices', link: '/en/guide/prompt-engineering/best-practices' },
+    ],
+  },
+  {
+    text: 'Tool Use',
+    collapsed: false,
+    items: [
+      { text: 'What is Tool Use', link: '/en/guide/tool-use/' },
+      { text: 'Tool Definition', link: '/en/guide/tool-use/tool-definition' },
+      { text: 'Orchestration', link: '/en/guide/tool-use/orchestration' },
+      { text: 'Error Handling', link: '/en/guide/tool-use/error-handling' },
+      { text: 'Practice', link: '/en/guide/tool-use/practice' },
+      { text: 'Safety', link: '/en/guide/tool-use/safety' },
+    ],
+  },
+  {
+    text: 'Context Engineering',
+    collapsed: false,
+    items: [
+      { text: 'Overview', link: '/en/guide/context/' },
+    ],
+  },
+  {
+    text: '🏗️ Build',
+    collapsed: false,
+    items: [
+      { text: 'Skills', link: '/en/guide/skills/what-is-skill' },
       { text: 'Create Your First Skill', link: '/en/guide/skills/first-skill' },
       { text: 'Skill Components', link: '/en/guide/skills/components' },
       { text: 'Advanced Patterns', link: '/en/guide/skills/advanced' },
@@ -191,7 +246,7 @@ const enGuideSidebar = [
     ],
   },
   {
-    text: 'MCP Tutorial',
+    text: 'MCP',
     collapsed: false,
     items: [
       { text: 'MCP Introduction', link: '/en/guide/mcp/' },
@@ -202,7 +257,7 @@ const enGuideSidebar = [
     ],
   },
   {
-    text: 'OpenSpec Tutorial',
+    text: 'OpenSpec',
     collapsed: false,
     items: [
       { text: 'Core Concepts', link: '/en/guide/openspec/concepts' },
@@ -214,10 +269,10 @@ const enGuideSidebar = [
     ],
   },
   {
-    text: 'Harness Engineering',
+    text: '✅ Quality',
     collapsed: false,
     items: [
-      { text: 'Testing Infrastructure', link: '/en/guide/harness/intro' },
+      { text: 'Harness Engineering', link: '/en/guide/harness/intro' },
       { text: 'Writing Tests', link: '/en/guide/harness/writing-tests' },
       { text: 'Evaluators', link: '/en/guide/harness/evaluators' },
       { text: 'Mock Server', link: '/en/guide/harness/mock-server' },
@@ -226,17 +281,10 @@ const enGuideSidebar = [
     ],
   },
   {
-    text: 'OMO Workflow',
+    text: 'Evaluation',
     collapsed: false,
     items: [
-      { text: 'OMO Overview', link: '/en/guide/omo/' },
-    ],
-  },
-  {
-    text: 'golem Case Study',
-    collapsed: false,
-    items: [
-      { text: 'Overview', link: '/en/guide/golem-case/' },
+      { text: 'Overview', link: '/en/guide/evaluation/' },
     ],
   },
   {
@@ -247,24 +295,17 @@ const enGuideSidebar = [
     ],
   },
   {
-    text: 'Context Engineering',
+    text: '🚀 Case Studies',
     collapsed: false,
     items: [
-      { text: 'Overview', link: '/en/guide/context/' },
+      { text: 'golem Overview', link: '/en/guide/golem-case/' },
     ],
   },
   {
-    text: 'Evaluation & Quality',
+    text: 'OMO Workflow',
     collapsed: false,
     items: [
-      { text: 'Overview', link: '/en/guide/evaluation/' },
-    ],
-  },
-  {
-    text: 'Deployment & Safety',
-    collapsed: false,
-    items: [
-      { text: 'Overview', link: '/en/guide/deployment/' },
+      { text: 'OMO Overview', link: '/en/guide/omo/' },
     ],
   },
   {
@@ -273,6 +314,13 @@ const enGuideSidebar = [
     items: [
       { text: 'Overview', link: '/en/guide/agent-workflows/' },
       { text: 'Retrieval & Knowledge', link: '/en/guide/agent-workflows/retrieval' },
+    ],
+  },
+  {
+    text: 'Deployment & Safety',
+    collapsed: false,
+    items: [
+      { text: 'Overview', link: '/en/guide/deployment/' },
     ],
   },
 ]
