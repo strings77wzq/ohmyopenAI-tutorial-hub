@@ -73,3 +73,18 @@ golem agent --rag ./docs
 | Vector database | TF-IDF + Embedding |
 | Complex pipelines | Simplified implementation |
 | Cloud-first | Local-first |
+
+## Source Code Reference
+
+Where the concepts covered in this chapter are implemented in the golem project:
+
+| Concept | Code Location |
+|---------|---------------|
+| RAG Pipeline main flow | `feature/rag/pipeline.go` |
+| Document chunker | `feature/rag/chunker.go` |
+| Embedder interface | `feature/rag/embedder.go` |
+| OpenAI Embedder implementation | `feature/rag/openai_embedder.go` |
+| VectorStore | `feature/rag/vectorstore.go` |
+| Retriever | `feature/rag/retriever.go` |
+
+> 📂 Full source: [feature/rag/](https://github.com/strings77wzq/golem/tree/main/feature/rag)

@@ -65,3 +65,16 @@ var Builtins = []Skill{
 | Format | Go struct | YAML/Skill file |
 | Execution | Function | Agent + Prompt |
 | Use case | Fixed functionality | Flexible workflows |
+
+## Source Code Reference
+
+Where the concepts covered in this chapter are implemented in the golem project:
+
+| Concept | Code Location |
+|---------|---------------|
+| Skill struct | `feature/skills/skill.go` |
+| Registry | `feature/skills/registry.go` |
+| Built-in Skills (summarize, code-review) | `feature/skills/builtins/builtins.go` |
+| Skill loader | `feature/skills/loader.go` |
+
+> 📂 Full source: [feature/skills/](https://github.com/strings77wzq/golem/tree/main/feature/skills)

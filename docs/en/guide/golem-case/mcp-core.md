@@ -74,3 +74,16 @@ golem agent --mcp '[{"command": "python", "args": ["path/to/mcp-server.py"]}]'
 | Format | Function call | JSON-RPC |
 | Protocol | Proprietary | Standard |
 | Extensibility | Limited | Standardized |
+
+## Source Code Reference
+
+Where the concepts covered in this chapter are implemented in the golem project:
+
+| Concept | Code Location |
+|---------|---------------|
+| MCP Client | `feature/mcp/client.go` |
+| MCP Manager (connection lifecycle) | `feature/mcp/manager.go` |
+| Transport abstraction | `feature/mcp/transport.go` |
+| MCP type definitions | `feature/mcp/types.go` |
+
+> 📂 Full source: [feature/mcp/](https://github.com/strings77wzq/golem/tree/main/feature/mcp)

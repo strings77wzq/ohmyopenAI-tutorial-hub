@@ -13,7 +13,7 @@
     "docs:check-frontmatter": "node scripts/check-frontmatter.mjs",
     "docs:check-stale": "node scripts/check-stale-changes.mjs",
     "docs:audit-lighthouse": "node scripts/audit-lighthouse.mjs",
-    "test": "npm run docs:check-links && npm run docs:check-routes && npm run docs:check-frontmatter",
+    "test": "npm run docs:check-links && npm run docs:check-routes && npm run docs:check-frontmatter && npm run docs:check-stale",
     "test:all": "npm test && npm run docs:check-stale && npm run docs:build"
   },
   "keywords": [
@@ -28,6 +28,9 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "chrome-launcher": "^1.2.1",
+    "lighthouse": "^13.4.0",
+    "puppeteer-core": "^25.1.0",
     "vitepress": "^1.6.4"
   }
 }

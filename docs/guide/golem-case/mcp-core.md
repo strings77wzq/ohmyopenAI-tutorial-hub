@@ -74,3 +74,16 @@ golem agent --mcp '[{"command": "python", "args": ["path/to/mcp-server.py"]}]'
 | 格式 | 函数调用 | JSON-RPC |
 | 协议 | 私有 | 标准 |
 | 扩展性 | 受限 | 标准化 |
+
+## 真实代码位置
+
+本章讲解的概念在 golem 项目中的具体实现位置：
+
+| 概念 | 代码位置 |
+|------|----------|
+| MCP Client 客户端 | `feature/mcp/client.go` |
+| MCP Manager 连接管理 | `feature/mcp/manager.go` |
+| Transport 传输层抽象 | `feature/mcp/transport.go` |
+| MCP 类型定义 | `feature/mcp/types.go` |
+
+> 📂 完整代码：[feature/mcp/](https://github.com/strings77wzq/golem/tree/main/feature/mcp)

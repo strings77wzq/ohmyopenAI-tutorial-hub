@@ -73,3 +73,18 @@ golem agent --rag ./docs
 | 矢量数据库 | TF-IDF + Embedding |
 | 复杂管道 | 简化实现 |
 | 云服务优先 | 本地优先 |
+
+## 真实代码位置
+
+本章讲解的概念在 golem 项目中的具体实现位置：
+
+| 概念 | 代码位置 |
+|------|----------|
+| RAG Pipeline 主流程 | `feature/rag/pipeline.go` |
+| 文档分块器（Chunker） | `feature/rag/chunker.go` |
+| Embedder 向量嵌入接口 | `feature/rag/embedder.go` |
+| OpenAI Embedder 实现 | `feature/rag/openai_embedder.go` |
+| VectorStore 向量存储 | `feature/rag/vectorstore.go` |
+| Retriever 检索器 | `feature/rag/retriever.go` |
+
+> 📂 完整代码：[feature/rag/](https://github.com/strings77wzq/golem/tree/main/feature/rag)

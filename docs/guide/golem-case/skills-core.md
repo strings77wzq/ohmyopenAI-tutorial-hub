@@ -65,3 +65,16 @@ var Builtins = []Skill{
 | 格式 | Go struct | YAML/Skill 文件 |
 | 执行 | Function | Agent + Prompt |
 | 场景 | 固定功能 | 灵活工作流 |
+
+## 真实代码位置
+
+本章讲解的概念在 golem 项目中的具体实现位置：
+
+| 概念 | 代码位置 |
+|------|----------|
+| Skill 结构体 | `feature/skills/skill.go` |
+| Registry 注册中心 | `feature/skills/registry.go` |
+| 内置 Skills（summarize、code-review） | `feature/skills/builtins/builtins.go` |
+| Skill 加载器 | `feature/skills/loader.go` |
+
+> 📂 完整代码：[feature/skills/](https://github.com/strings77wzq/golem/tree/main/feature/skills)

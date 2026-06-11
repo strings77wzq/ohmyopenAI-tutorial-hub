@@ -64,3 +64,17 @@ func NewProvider(provider string, apiKey string) (Provider, error) {
 | Switching method | Config file | Category routing |
 | Model selection | Single model | Multi-model parallel |
 | Cost control | Manual | Automatic cost-effectiveness selection |
+
+## Source Code Reference
+
+Where the concepts covered in this chapter are implemented in the golem project:
+
+| Concept | Code Location |
+|---------|---------------|
+| Provider interface definition | `core/providers/types.go` |
+| Provider factory | `core/providers/factory.go` |
+| OpenAI Provider implementation | `core/providers/openai/openai.go` |
+| Anthropic Provider implementation | `core/providers/anthropic/anthropic.go` |
+| Mock Provider (testing) | `core/providers/mock.go` |
+
+> 📂 Full source: [core/providers/](https://github.com/strings77wzq/golem/tree/main/core/providers)

@@ -64,3 +64,17 @@ func NewProvider(provider string, apiKey string) (Provider, error) {
 | 切换方式 | 配置文件 | Category 路由 |
 | 模型选择 | 单模型 | 多模型并行 |
 | 成本控制 | 手动 | 自动选择性价比 |
+
+## 真实代码位置
+
+本章讲解的概念在 golem 项目中的具体实现位置：
+
+| 概念 | 代码位置 |
+|------|----------|
+| Provider 接口定义 | `core/providers/types.go` |
+| Provider 工厂函数 | `core/providers/factory.go` |
+| OpenAI Provider 实现 | `core/providers/openai/openai.go` |
+| Anthropic Provider 实现 | `core/providers/anthropic/anthropic.go` |
+| Mock Provider（测试用） | `core/providers/mock.go` |
+
+> 📂 完整代码：[core/providers/](https://github.com/strings77wzq/golem/tree/main/core/providers)
