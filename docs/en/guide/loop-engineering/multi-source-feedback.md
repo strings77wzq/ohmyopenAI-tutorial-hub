@@ -131,7 +131,7 @@ Golem's verification loop is an engineering implementation of three-layer feedba
               ┌───────────────┼───────────────┐
               ▼               ▼               ▼
      ┌────────────┐  ┌────────────┐  ┌────────────┐
-     │ Self-      │  │ @oracle    │  │ Independent│
+     │ Self-      │  │ Cross-     │  │ Independent│
      │ verify     │  │ review     │  │ verify     │
      │ (internal) │  │ (human)    │  │ (external) │
      └─────┬──────┘  └─────┬──────┘  └─────┬──────┘

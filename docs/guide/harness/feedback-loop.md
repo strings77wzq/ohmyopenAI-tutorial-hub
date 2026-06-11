@@ -27,8 +27,8 @@ if (!validate(result)) {
 另一个 Agent 审核结果：
 
 ```typescript
-// 让 Oracle 验证 Hephaestus 的代码
-@oracle 审查这个设计的架构合理性
+// 让另一个 Agent 审查架构合理性
+reviewAgent.analyze(design)
 ```
 
 ### 3. 独立验证
