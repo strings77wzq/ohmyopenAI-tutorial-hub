@@ -315,6 +315,17 @@ if metrics.avg("production_quality", window="1h") < 0.8:
 
 这个流程不是一次性的，而是一个持续运行的循环。每次代码变更、Prompt 调整、模型更新都会重新走过这个流程。这就是 Harness 的核心价值：**把 AI 系统的迭代从"盲人摸象"变成"数据驱动"**。
 
+## 真实世界的 Harness 案例
+
+| 项目 | Stars | Harness 核心机制 |
+|------|-------|------------------|
+| [learn-claude-code](https://github.com/shareAI-lab/learn-claude-code) | 66k | 从 0 到 1 构建 Agent Harness：agent loop + tools + permissions + hooks + context compaction + memory |
+| [superpowers](https://github.com/obra/superpowers) | 225k | Agent 技能框架：将能力模块化为可复用的 skill，按需加载 |
+| [oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent) | 62k | 复杂代码库的 Agent Harness：多模型编排 + 11 个专业 Agent |
+| [everything-claude-code](https://github.com/WorldFlowAI/everything-claude-code) | 1k+ | Claude Code 完整配置集：agents, skills, hooks, rules, MCPs |
+
+这些项目的共同点：**它们都没有试图让 LLM 变聪明——LLM 已经聪明了。它们做的是构建 Harness，给 LLM 提供工具、知识、上下文和权限边界。**
+
 ## 下一步
 
 理解了 Harness 的全貌之后，下一步是学习如何设计具体的测试场景。

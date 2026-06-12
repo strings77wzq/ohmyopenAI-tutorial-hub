@@ -57,13 +57,73 @@
 
 检查点的实现：
 
-```typescript
-interface Checkpoint {
-  step: string
-  completedFiles: string[]     // 已成功创建/修改的文件
-  pendingTasks: string[]       // 尚未执行的任务
-  state: Record<string, any>   // 任意状态数据
-  timestamp: number
+```go
+package main
+
+import (
+	"encoding/json"
+	"fmt"
+	"os"
+	"time"
+)
+
+// Checkpoint 保存工作流在某个步骤完成后的状态快照
+type Checkpoint struct {
+	Step           string            `json:"step"`
+	CompletedFiles []string          `json:"completed_files"` // 已成功创建/修改的文件
+	PendingTasks   []string          `json:"pending_tasks"`   // 尚未执行的任务
+	State          map[string]string `json:"state"`           // 任意状态数据
+	Timestamp      time.Time         `json:"timestamp"`
+}
+
+// SaveCheckpoint 将检查点持久化到文件
+func SaveCheckpoint(cp Checkpoint, path string) error {
+	data, err := json.MarshalIndent(cp, "", "  ")
+	if err != nil {
+		return fmt.Errorf("marshal checkpoint: %w", err)
+	}
+	return os.WriteFile(path, data, 0644)
+}
+
+// LoadCheckpoint 从文件恢复最近的检查点
+func LoadCheckpoint(path string) (Checkpoint, error) {
+	var cp Checkpoint
+	data, err := os.ReadFile(path)
+	if err != nil {
+		return cp, fmt.Errorf("read checkpoint: %w", err)
+	}
+	if err := json.Unmarshal(data, &cp); err != nil {
+		return cp, fmt.Errorf("unmarshal checkpoint: %w", err)
+	}
+	return cp, nil
+}
+
+func main() {
+	// 创建检查点
+	cp := Checkpoint{
+		Step:           "write-content",
+		CompletedFiles: []string{"layering.md", "injection-strategy.md", "compression.md"},
+		PendingTasks:   []string{"practice.md", "update-sidebar", "verify-links"},
+		State:          map[string]string{"branch": "feat/add-context"},
+		Timestamp:      time.Now(),
+	}
+
+	// 保存
+	if err := SaveCheckpoint(cp, "/tmp/cp_step2.json"); err != nil {
+		fmt.Printf("save error: %v\n", err)
+		return
+	}
+	fmt.Println("✓ Checkpoint saved")
+
+	// 恢复
+	restored, err := LoadCheckpoint("/tmp/cp_step2.json")
+	if err != nil {
+		fmt.Printf("load error: %v\n", err)
+		return
+	}
+	fmt.Printf("✓ Restored from step: %s\n", restored.Step)
+	fmt.Printf("  Completed: %v\n", restored.CompletedFiles)
+	fmt.Printf("  Pending: %v\n", restored.PendingTasks)
 }
 ```
 
@@ -84,6 +144,118 @@ Step 3: npm run docs:build → FAIL (构建失败)
 
 不是所有步骤都需要或可以有补偿操作。只读操作（检查链接、读取文件）没有副作用，不需要补偿。写操作且影响范围可控的（新建分支、新建文件）可以做补偿。影响到外部的写操作（创建了 PR、推送了 commit）的补偿更复杂——可能需要关闭 PR、force push。
 
+#### Go 实现：补偿栈（Compensating Stack）
+
+```go
+package main
+
+import (
+	"fmt"
+	"regexp"
+	"strings"
+)
+
+// Compensator 是一个补偿函数：执行反向操作来撤销副作用
+type Compensator func() error
+
+// CompensatingStack 维护一个 LIFO 补偿栈，按反序执行补偿
+type CompensatingStack struct {
+	compensators []Compensator
+	actions      []string // 记录每个动作的描述，便于调试
+}
+
+// Push 记录一个补偿函数（在成功步骤后调用）
+func (cs *CompensatingStack) Push(action string, compensator Compensator) {
+	cs.actions = append(cs.actions, action)
+	cs.compensators = append(cs.compensators, compensator)
+}
+
+// CompensateAll 按 LIFO 顺序执行所有补偿（最晚的操作最先撤销）
+func (cs *CompensatingStack) CompensateAll() error {
+	for i := len(cs.compensators) - 1; i >= 0; i-- {
+		fmt.Printf("  补偿: %s\n", cs.actions[i])
+		if err := cs.compensators[i](); err != nil {
+			return fmt.Errorf("compensation failed for %s: %w", cs.actions[i], err)
+		}
+	}
+	return nil
+}
+
+// simulatedFile 模拟文件系统操作
+type simulatedFile struct {
+	name    string
+	content string
+}
+
+var fileSystem = make(map[string]*simulatedFile)
+
+// 模拟步骤函数
+func createFile(name, content string) error {
+	fileSystem[name] = &simulatedFile{name: name, content: content}
+	fmt.Printf("  创建文件: %s\n", name)
+	return nil
+}
+
+func readFile(name string) (string, error) {
+	if f, ok := fileSystem[name]; ok {
+		return f.content, nil
+	}
+	return "", fmt.Errorf("file %s not found", name)
+}
+
+func deleteFile(name string) error {
+	delete(fileSystem, name)
+	return nil
+}
+
+func buildProject() error {
+	// 模拟构建失败（检查文件内容）
+	for name, f := range fileSystem {
+		if strings.Contains(f.content, "ERROR") {
+			return fmt.Errorf("build failed: %s contains invalid content", name)
+		}
+	}
+	return nil
+}
+
+func main() {
+	cs := &CompensatingStack{}
+	success := false
+
+	// Step 1: 创建文件
+	if err := createFile("docs/module-a.md", "# Module A"); err != nil {
+		fmt.Printf("Step 1 failed: %v\n", err)
+		cs.CompensateAll()
+		return
+	}
+	cs.Push("删除 docs/module-a.md", func() error { return deleteFile("docs/module-a.md") })
+
+	// Step 2: 创建第二个文件
+	if err := createFile("docs/module-b.md", "ERROR content"); err != nil {
+		fmt.Printf("Step 2 failed: %v\n", err)
+		cs.CompensateAll()
+		return
+	}
+	cs.Push("删除 docs/module-b.md", func() error { return deleteFile("docs/module-b.md") })
+
+	// Step 3: 构建（会因为 ERROR 内容失败）
+	if err := buildProject(); err != nil {
+		fmt.Printf("Step 3 failed: %v\n", err)
+		cs.CompensateAll()
+		return
+	}
+
+	success = true
+	_ = success
+	fmt.Println("✓ 所有步骤成功")
+}
+```
+
+**要点**：
+- 补偿栈是 LIFO：最后执行的步骤最先被补偿
+- 每个步骤成功后立即注册补偿函数，保证失败时总能回滚
+- 补偿函数应该是幂等的——多次执行结果相同
+
 ### 策略 3：部分完成降级（Graceful Partial Completion）
 
 当部分步骤成功、部分失败时，交付已经完成的部分，标记未完成的部分。
@@ -103,6 +275,111 @@ Step 2: 修复链接 #9   → 失败（目标页面不存在，且不应创建�
     "recommendation": "#9 指向的页面不存在，需要人工决定：创建页面或更新引用"
   }
 ```
+
+#### Go 实现：批量任务的部分完成追踪
+
+```go
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+// BatchResult 追踪批量任务中每个项目的执行结果
+type BatchResult struct {
+	Completed  int
+	Failed     int
+	Remaining  int
+	Errors     []TaskError
+}
+
+// TaskError 记录单个失败任务的信息
+type TaskError struct {
+	Index  int
+	Name   string
+	Reason string
+}
+
+// BatchProcessor 逐个处理任务，支持部分完成降级
+type BatchProcessor struct {
+	maxRetries int
+}
+
+// ProcessItem 处理单个项目，返回是否成功
+func (bp *BatchProcessor) ProcessItem(item string) error {
+	// 模拟：包含 "unfixable" 的项目会失败
+	if strings.Contains(item, "unfixable") {
+		return fmt.Errorf("目标页面不存在，需要人工决定")
+	}
+	return nil
+}
+
+// RunBatch 批量处理任务，失败时跳过继续，最终返回汇总
+func (bp *BatchProcessor) RunBatch(items []string) BatchResult {
+	result := BatchResult{
+		Errors: make([]TaskError, 0),
+	}
+
+	for i, item := range items {
+		err := bp.ProcessItem(item)
+		if err != nil {
+			result.Failed++
+			result.Errors = append(result.Errors, TaskError{
+				Index:  i,
+				Name:   item,
+				Reason: err.Error(),
+			})
+			continue
+		}
+		result.Completed++
+	}
+
+	result.Remaining = 0 // 在这个简化模型中，所有项都被尝试了
+	return result
+}
+
+// Summary 生成可读的汇总报告
+func (br BatchResult) Summary() string {
+	lines := []string{
+		fmt.Sprintf("Status: %s", br.status()),
+		fmt.Sprintf("Completed: %d", br.Completed),
+		fmt.Sprintf("Failed: %d", br.Failed),
+	}
+	for _, e := range br.Errors {
+		lines = append(lines, fmt.Sprintf("  [%d] %s: %s", e.Index, e.Name, e.Reason))
+	}
+	return strings.Join(lines, "\n")
+}
+
+func (br BatchResult) status() string {
+	if br.Failed == 0 {
+		return "PASS"
+	}
+	if br.Completed > 0 {
+		return "PARTIAL"
+	}
+	return "FAIL"
+}
+
+func main() {
+	processor := &BatchProcessor{maxRetries: 1}
+
+	items := []string{
+		"link-1", "link-2", "link-3",
+		"unfixable-link", // 这个会失败
+		"link-5",
+	}
+
+	result := processor.RunBatch(items)
+	fmt.Println(result.Summary())
+}
+```
+
+**要点**：
+- 失败的项目被记录但不阻塞后续项目
+- 最终报告区分 PASS / PARTIAL / FAIL 三种状态
+- 适合"批量修复"场景：修了 8 个，2 个需要人工处理
 
 ## 示例：工作流失败恢复流程
 
@@ -161,6 +438,99 @@ Step 4: npm run docs:build → FAIL
 ```
 
 死信队列的价值：**不阻塞主流程，但不丢弃失败的任务**。它把"暂时无法自动处理"的任务从"完成"和"放弃"之间分出来。
+
+#### Go 实现：带重试和死信队列的任务处理器
+
+```go
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+// DeadLetter 保存一个反复失败的任务及其上下文
+type DeadLetter struct {
+	Task       string
+	Error      string
+	RetryCount int
+	MaxRetries int
+}
+
+// RetryWithDeadLetter 为失败任务实现指数退避重试，超过阈值放入死信队列
+func RetryWithDeadLetter(task string, fn func(string) error, maxRetries int) (string, error) {
+	var lastErr error
+	for attempt := 0; attempt <= maxRetries; attempt++ {
+		if err := fn(task); err != nil {
+			lastErr = err
+			fmt.Printf("  [retry %d/%d] %s failed: %v\n", attempt+1, maxRetries, task, err)
+			continue
+		}
+		return fmt.Sprintf("%s: 完成", task), nil
+	}
+
+	// 所有重试耗尽
+	dl := DeadLetter{
+		Task:       task,
+		Error:      lastErr.Error(),
+		RetryCount: maxRetries + 1,
+		MaxRetries: maxRetries,
+	}
+	return "", fmt.Errorf("dead letter: %s", formatDeadLetter(dl))
+}
+
+// formatDeadLetter 格式化死信信息
+func formatDeadLetter(dl DeadLetter) string {
+	return fmt.Sprintf("[%s] %s after %d retries", dl.Task, dl.Error, dl.RetryCount)
+}
+
+// unstableTask 模拟一个总是失败的任务
+func unstableTask(task string) error {
+	if strings.Contains(task, "broken") {
+		return fmt.Errorf("ASCII 图表丢失，翻译质量不合格")
+	}
+	return nil
+}
+
+func main() {
+	tasks := []string{
+		"translate-greeting",
+		"translate-intro",
+		"broken-translate-advanced", // 这个会失败
+		"translate-conclusion",
+	}
+
+	deadLetters := []DeadLetter{}
+
+	for _, task := range tasks {
+		result, err := RetryWithDeadLetter(task, unstableTask, 2)
+		if err != nil {
+			// 提取死信信息
+			dl := DeadLetter{
+				Task:       task,
+				Error:      err.Error(),
+				RetryCount: 3,
+				MaxRetries: 2,
+			}
+			deadLetters = append(deadLetters, dl)
+		} else {
+			fmt.Printf("  ✓ %s\n", result)
+		}
+	}
+
+	if len(deadLetters) > 0 {
+		fmt.Printf("\nDead Letter Queue (%d items):\n", len(deadLetters))
+		for _, dl := range deadLetters {
+			fmt.Printf("  - %s: %s\n", dl.Task, dl.Error)
+		}
+	}
+}
+```
+
+**要点**：
+- 重试次数有上限，超过后任务进入死信队列而不是无限循环
+- 死信队列保存了失败原因和上下文，便于后续人工处理
+- 主流程不受单个任务失败影响，继续处理其他任务
 
 ## 练习
 

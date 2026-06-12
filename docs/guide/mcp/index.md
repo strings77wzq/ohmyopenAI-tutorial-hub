@@ -204,6 +204,16 @@ Agent 不直接和外部系统打交道，而是通过 MCP Client 发现和调�
 - **可组合**：多个 Server 可以同时工作，Agent 自由组合能力。
 - **可测试**：每个 Server 的接口都有明确的输入输出契约。
 
+## 真实世界的 MCP 集成
+
+MCP 已被主流 Agent 框架广泛采用：
+
+| 项目 | MCP 使用方式 |
+|------|-------------|
+| [learn-claude-code](https://github.com/shareAI-lab/learn-claude-code) | s19 章节专门讲解 MCP Plugin：多传输层 + 通道路由 + 工具池组装 |
+| [everything-claude-code](https://github.com/WorldFlowAI/everything-claude-code) | 内置 MCP 配置，一键连接外部工具 |
+| Claude Code / Cursor / Codex | 原生 MCP 支持，工具通过标准协议暴露给 Agent |
+
 ## 设计 MCP 能力的五步法
 
 1. **定义边界**：这个能力解决什么问题，不解决什么问题。

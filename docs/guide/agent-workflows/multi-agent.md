@@ -67,6 +67,104 @@
 **优点**：Agent 之间可以看到彼此的进度
 **缺点**：状态文件本身可能成为瓶颈（两个 Agent 同时写入）
 
+#### Go 实现：sync.Mutex 保护的共享状态
+
+```go
+package main
+
+import (
+	"fmt"
+	"sync"
+)
+
+// TaskStatus 描述单个任务的当前状态
+type TaskStatus struct {
+	Module string
+	State  string // "pending", "in_progress", "complete", "failed"
+}
+
+// SharedState 用互斥锁保护的任务状态表，支持多 Agent 并发读写
+type SharedState struct {
+	mu    sync.RWMutex
+	tasks map[string]*TaskStatus
+}
+
+// NewSharedState 创建初始化好的共享状态
+func NewSharedState() *SharedState {
+	return &SharedState{
+		tasks: map[string]*TaskStatus{
+			"context": {Module: "context", State: "pending"},
+			"eval":    {Module: "eval", State: "pending"},
+			"loop":    {Module: "loop", State: "pending"},
+		},
+	}
+}
+
+// UpdateState 原子地更新某个模块的状态
+func (s *SharedState) UpdateState(module, newState string) {
+	s.mu.Lock()
+	defer s.mu.Unlock()
+
+	if task, ok := s.tasks[module]; ok {
+		task.State = newState
+		fmt.Printf("  [%s] → %s\n", module, newState)
+	}
+}
+
+// GetState 读取某个模块的状态（读锁，不阻塞并发读）
+func (s *SharedState) GetState(module string) string {
+	s.mu.RLock()
+	defer s.mu.RUnlock()
+
+	if task, ok := s.tasks[module]; ok {
+		return task.State
+	}
+	return "unknown"
+}
+
+// Summary 返回所有模块的当前状态快照
+func (s *SharedState) Summary() map[string]string {
+	s.mu.RLock()
+	defer s.mu.RUnlock()
+
+	summary := make(map[string]string, len(s.tasks))
+	for name, task := range s.tasks {
+		summary[name] = task.State
+	}
+	return summary
+}
+
+// simulateAgent 模拟一个 Agent 的工作：更新状态 → 工作 → 更新完成
+func simulateAgent(state *SharedState, module string, wg *sync.WaitGroup) {
+	defer wg.Done()
+	state.UpdateState(module, "in_progress")
+	// 模拟工作耗时
+	state.UpdateState(module, "complete")
+}
+
+func main() {
+	state := NewSharedState()
+	var wg sync.WaitGroup
+
+	// 三个 Agent 并发更新各自的模块状态
+	for _, mod := range []string{"context", "eval", "loop"} {
+		wg.Add(1)
+		go simulateAgent(state, mod, &wg)
+	}
+	wg.Wait()
+
+	fmt.Println("\nFinal state:")
+	for name, s := range state.Summary() {
+		fmt.Printf("  %s: %s\n", name, s)
+	}
+}
+```
+
+**要点**：
+- `sync.RWMutex` 区分读写锁：多个读操作可以并发，写操作独占
+- `UpdateState` 是原子操作，不会出现"读到一半被写"的脏读
+- 适合需要全局进度可见的场景，但锁竞争会成为瓶颈
+
 ### 模式 B：消息传递（Message Passing）
 
 Agent 之间通过明确的消息通信，不共享文件。
@@ -79,6 +177,122 @@ Agent C: 收到了 2 条完成消息 → 开始合并和验证
 
 **优点**：无共享状态竞争
 **缺点**：Agent 需要知道"发给谁"
+
+#### Go 实现：Channel 驱动的 Agent 消息传递
+
+```go
+package main
+
+import (
+	"fmt"
+	"sync"
+)
+
+// AgentMessage 是 Agent 之间传递的消息格式
+type AgentMessage struct {
+	From    string
+	Content string
+	Type    string // "task_complete", "task_failed", "merge_ready"
+}
+
+// MessageBus 是 Agent 之间的消息总线，支持多生产者和多消费者
+type MessageBus struct {
+	mu          sync.RWMutex
+	subscribers map[string][]chan AgentMessage
+}
+
+// NewMessageBus 创建消息总线
+func NewMessageBus() *MessageBus {
+	return &MessageBus{
+		subscribers: make(map[string][]chan AgentMessage),
+	}
+}
+
+// Subscribe 注册一个 Agent 监听特定类型的消息
+func (mb *MessageBus) Subscribe(agentID string, bufferSize int) <-chan AgentMessage {
+	ch := make(chan AgentMessage, bufferSize)
+	mb.mu.Lock()
+	defer mb.mu.Unlock()
+	mb.subscribers[agentID] = append(mb.subscribers[agentID], ch)
+	return ch
+}
+
+// Publish 向所有订阅者广播消息
+func (mb *MessageBus) Publish(msg AgentMessage) {
+	mb.mu.RLock()
+	defer mb.mu.RUnlock()
+
+	for _, ch := range mb.subscribers[msg.From] {
+		select {
+		case ch <- msg:
+		default:
+			// 缓冲满，跳过避免阻塞发送者
+		}
+	}
+	for id, ch := range mb.subscribers {
+		if id != msg.From {
+			select {
+			case ch <- msg:
+			default:
+			}
+		}
+	}
+}
+
+// agentA 模拟一个写文档的 Agent，完成后发送消息
+func agentA(bus *MessageBus, wg *sync.WaitGroup) {
+	defer wg.Done()
+	fmt.Println("Agent A: 开始写 context 模块...")
+	// 模拟工作
+	bus.Publish(AgentMessage{From: "agentA", Content: "context 模块完成，4 个文件就绪", Type: "task_complete"})
+	fmt.Println("Agent A: 完成")
+}
+
+// agentB 模拟另一个写文档的 Agent
+func agentB(bus *MessageBus, wg *sync.WaitGroup) {
+	defer wg.Done()
+	fmt.Println("Agent B: 开始写 eval 模块...")
+	// 模拟工作
+	bus.Publish(AgentMessage{From: "agentB", Content: "eval 模块完成，4 个文件就绪", Type: "task_complete"})
+	fmt.Println("Agent B: 完成")
+}
+
+// agentC 是编排者，等待所有任务完成后汇总
+func agentC(bus *MessageBus, wg *sync.WaitGroup) {
+	defer wg.Done()
+	ch := bus.Subscribe("agentC", 10)
+	completed := 0
+	total := 2 // 等待 agentA 和 agentB
+
+	for completed < total {
+		msg := <-ch
+		if msg.Type == "task_complete" {
+			fmt.Printf("Agent C 收到: %s\n", msg.Content)
+			completed++
+		}
+	}
+	fmt.Println("Agent C: 所有模块就绪，开始合并验证")
+}
+
+func main() {
+	bus := NewMessageBus()
+	var wg sync.WaitGroup
+
+	// agentC 先启动监听，agentA/B 并行执行
+	wg.Add(3)
+	go agentC(bus, &wg)
+	go agentA(bus, &wg)
+	go agentB(bus, &wg)
+
+	wg.Wait()
+	fmt.Println("所有 Agent 完成")
+}
+```
+
+**要点**：
+- Channel 天然保证消息的有序性（对单个接收者）
+- `Subscribe` + `Publish` 实现了发布-订阅模式，Agent 不需要知道彼此的存在
+- 缓冲 channel 防止发送者被慢消费者阻塞
 
 ### 模式 C：编排者（Orchestrator）
 
@@ -105,6 +319,125 @@ Agent C: 收到了 2 条完成消息 → 开始合并和验证
 
 **优点**：中心化控制，容易追踪进度和诊断问题
 **缺点**：Orchestrator 是单点——如果它逻辑错误，整个流程受影响
+
+#### Go 实现：Orchestrator + Worker 模式
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"sync"
+)
+
+// Worker 定义一个可被 Orchestrator 调度的 Agent
+type Worker struct {
+	ID      string
+	WorkFn  func(ctx context.Context) (string, error)
+	Result  string
+	Err     error
+}
+
+// Orchestrator 管理多个 Worker 的生命周期：分派 → 等待 → 汇总
+type Orchestrator struct {
+	workers []*Worker
+	mu      sync.Mutex
+}
+
+// NewOrchestrator 创建编排者
+func NewOrchestrator() *Orchestrator {
+	return &Orchestrator{}
+}
+
+// Assign 添加一个 Worker
+func (o *Orchestrator) Assign(w *Worker) {
+	o.mu.Lock()
+	defer o.mu.Unlock()
+	o.workers = append(o.workers, w)
+}
+
+// RunAll 并行启动所有 Worker，等待全部完成后收集结果
+func (o *Orchestrator) RunAll(ctx context.Context) []WorkerResult {
+	var wg sync.WaitGroup
+
+	for _, w := range o.workers {
+		wg.Add(1)
+		go func(worker *Worker) {
+			defer wg.Done()
+			worker.Result, worker.Err = worker.WorkFn(ctx)
+		}(w)
+	}
+	wg.Wait()
+
+	return o.collect()
+}
+
+// WorkerResult 是 Orchestrator 汇总后的结构化结果
+type WorkerResult struct {
+	ID     string
+	Result string
+	Err    error
+}
+
+// collect 从所有 Worker 收集结果
+func (o *Orchestrator) collect() []WorkerResult {
+	results := make([]WorkerResult, len(o.workers))
+	for i, w := range o.workers {
+		results[i] = WorkerResult{ID: w.ID, Result: w.Result, Err: w.Err}
+	}
+	return results
+}
+
+// Summary 打印汇总报告
+func (o *Orchestrator) Summary(results []WorkerResult) {
+	passed, failed := 0, 0
+	for _, r := range results {
+		if r.Err != nil {
+			fmt.Printf("  ✗ %s: %v\n", r.ID, r.Err)
+			failed++
+		} else {
+			fmt.Printf("  ✓ %s: %s\n", r.ID, r.Result)
+			passed++
+		}
+	}
+	fmt.Printf("\n汇总: %d 成功, %d 失败\n", passed, failed)
+}
+
+func main() {
+	ctx := context.Background()
+	orch := NewOrchestrator()
+
+	// 分配三个 Agent
+	orch.Assign(&Worker{
+		ID: "context-writer",
+		WorkFn: func(_ context.Context) (string, error) {
+			return "context 模块: 4 文件已写入", nil
+		},
+	})
+	orch.Assign(&Worker{
+		ID: "eval-writer",
+		WorkFn: func(_ context.Context) (string, error) {
+			return "eval 模块: 4 文件已写入", nil
+		},
+	})
+	orch.Assign(&Worker{
+		ID: "sidebar-updater",
+		WorkFn: func(_ context.Context) (string, error) {
+			return "sidebar: 8 个新条目已添加", nil
+		},
+	})
+
+	// 并行执行，收集结果
+	results := orch.RunAll(ctx)
+	orch.Summary(results)
+}
+```
+
+**要点**：
+- Orchestrator 是唯一知道所有 Worker 存在的组件
+- Worker 之间没有直接通信，降低了耦合
+- 适合"分派 → 收集"的模式，Orchestrator 负责所有协调逻辑
 
 ## 反模式：多 Agent 常见陷阱
 

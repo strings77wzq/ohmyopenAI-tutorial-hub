@@ -121,6 +121,14 @@ Loop Engineering 是所有其他维度的"指挥家"——它决定了何时调�
 
 **4. 失败时必须输出上下文。** 熔断或超时退出时，不能只说"失败了"，必须输出：做了什么、为什么失败、已经尝试了什么、建议下一步怎么做。
 
+## 真实世界的 Loop 实现
+
+| 项目 | Loop 机制 |
+|------|----------|
+| [learn-claude-code](https://github.com/shareAI-lab/learn-claude-code) | while True + stop_reason：最简洁的 agent loop，20 章渐进式构建 |
+| [oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent) | OODA Loop + 多 Agent 验证回路：observe→orient→decide→act + 交叉验证 |
+| [superpowers](https://github.com/obra/superpowers) | Skill 驱动的 loop：Agent 加载 Skill → 执行 → 验证 → 下一个 Skill |
+
 ## 本模块内容
 
 | 章节 | 内容 | 核心概念 |

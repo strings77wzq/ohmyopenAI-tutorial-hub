@@ -291,6 +291,14 @@ Response: { success: boolean, message: string }
    保存完整历史
 ```
 
+## 真实世界的 Spec 驱动开发
+
+| 项目 | Spec 机制 |
+|------|----------|
+| [openspec](https://github.com/code-yeongyu/openspec) | propose → apply → archive：用规格文档固定需求，Agent 按 Spec 实现 |
+| [learn-claude-code](https://github.com/shareAI-lab/learn-claude-code) | s05 TodoWrite：计划先行，步骤列表驱动执行 |
+| [superpowers](https://github.com/obra/superpowers) | Skill Spec：每个 Skill 有明确的输入/输出/约束定义 |
+
 ## 常见误区
 
 ### 误区 1：OpenSpec 太繁琐

@@ -168,6 +168,14 @@ AI: [自动生成标准格式文档]
 
 Skill 是标准格式，可以在社区分享和复用。
 
+## 真实世界的 Skill 系统
+
+| 项目 | Skill 机制 |
+|------|-----------|
+| [superpowers](https://github.com/obra/superpowers) | Skill 即文件：一个 .md 文件定义一个能力，Agent 按需加载 |
+| [everything-claude-code](https://github.com/WorldFlowAI/everything-claude-code) | Skill + Rule + Hook 三件套：能力 + 约束 + 扩展点 |
+| [oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent) | 11 个专业 Agent 各有独立 Skill，通过 Category 路由分发 |
+
 ## 常见误区
 
 ### ❌ 误区 1：Skill 越复杂越好
