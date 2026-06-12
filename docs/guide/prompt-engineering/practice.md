@@ -230,3 +230,12 @@ const rendered = renderPrompt(template, { ...defaultVars, ...userVars })
 最后，了解全局的最佳实践和常见反模式：
 
 → [最佳实践与反模式](/guide/prompt-engineering/best-practices)
+
+## 完整代码示例
+
+本模块的完整可运行 Go 代码：[`examples/go/prompt-engineering/`](https://github.com/strings77wzq/agent-engineering-hub/tree/main/examples/go/prompt-engineering)
+
+```bash
+cd examples/go/prompt-engineering
+go run *.go
+```

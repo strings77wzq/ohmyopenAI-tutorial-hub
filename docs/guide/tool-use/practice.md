@@ -363,3 +363,12 @@ async def safe_tool_call(tool_name, params, fallback=None):
 ## 下一步
 
 → [安全边界与权限控制](/guide/tool-use/safety)
+
+## 完整代码示例
+
+本模块的完整可运行 Go 代码：[`examples/go/tool-use/`](https://github.com/strings77wzq/agent-engineering-hub/tree/main/examples/go/tool-use)
+
+```bash
+cd examples/go/tool-use
+go run *.go
+```

@@ -437,3 +437,12 @@ harness/
 掌握了实战技巧之后，接下来学习在生产环境中验证过的设计准则。
 
 → [Harness 最佳实践](/guide/harness/best-practices)
+
+## 完整代码示例
+
+本模块的完整可运行 Go 代码：[`examples/go/harness/`](https://github.com/strings77wzq/agent-engineering-hub/tree/main/examples/go/harness)
+
+```bash
+cd examples/go/harness
+go run *.go
+```

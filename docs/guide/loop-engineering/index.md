@@ -129,6 +129,15 @@ Loop Engineering 是所有其他维度的"指挥家"——它决定了何时调�
 | [重试与熔断](./retry-and-breaker) | 指数退避、错误分类路由、熔断器设计 | 指数退避、熔断器、错误分类 |
 | [多源反馈](./multi-source-feedback) | 内部/外部/人工三条反馈通道 | 反馈融合、信噪比、升级机制 |
 
+## 完整代码示例
+
+本模块的完整可运行 Go 代码：[`examples/go/loop-engineering/`](https://github.com/strings77wzq/agent-engineering-hub/tree/main/examples/go/loop-engineering)
+
+```bash
+cd examples/go/loop-engineering
+go run agent_loop.go
+```
+
 ## 下一步
 
 从 [OODA Loop 与退出机制](./ooda-loop) 开始，深入理解 Agent 如何观察、判断、决策和行动，以及如何设计可靠的退出条件。

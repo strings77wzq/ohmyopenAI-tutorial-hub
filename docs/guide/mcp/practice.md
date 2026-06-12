@@ -512,3 +512,12 @@ describe('knowledge-base MCP server', () => {
 ## 下一步
 
 阅读 [MCP 安全边界](/guide/mcp/safety)，学习如何为 MCP Server 设置安全防线。
+
+## 完整代码示例
+
+本模块的完整可运行 Go 代码：[`examples/go/mcp/`](https://github.com/strings77wzq/agent-engineering-hub/tree/main/examples/go/mcp)
+
+```bash
+cd examples/go/mcp
+go run *.go
+```
