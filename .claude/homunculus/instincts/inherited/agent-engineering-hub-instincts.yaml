@@ -1,0 +1,455 @@
+# Instincts generated from https://github.com/strings77wzq/agent-engineering-hub
+# Generated: 2026-06-10T02:17:14.759Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: agent-engineering-hub-commit-conventional
+trigger: "when writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: https://github.com/strings77wzq/agent-engineering-hub
+---
+
+# Agent Engineering Hub Commit Conventional
+
+## Action
+
+Use conventional commit format with prefixes: fix, docs, feat, chore, spec
+
+## Evidence
+
+- 9 commits analyzed
+- Detected conventional commit pattern
+- Examples: fix(i18n): 修复 EN sidebar 路由 bug + 启用 VitePress local search, docs: 新建 TODOS.md + ROADMAP.md
+
+---
+id: agent-engineering-hub-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/strings77wzq/agent-engineering-hub
+---
+
+# Agent Engineering Hub Commit Length
+
+## Action
+
+Write moderate-length commit messages (~53 characters)
+
+## Evidence
+
+- Average commit message length: 53 chars
+- Based on 9 commits
+
+---
+id: agent-engineering-hub-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/strings77wzq/agent-engineering-hub
+---
+
+# Agent Engineering Hub Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: agent-engineering-hub-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/strings77wzq/agent-engineering-hub
+---
+
+# Agent Engineering Hub Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: agent-engineering-hub-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/strings77wzq/agent-engineering-hub
+---
+
+# Agent Engineering Hub Export Style
+
+## Action
+
+Prefer default exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: default
+
+---
+id: agent-engineering-hub-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/strings77wzq/agent-engineering-hub
+---
+
+# Agent Engineering Hub Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: agent-engineering-hub-workflow-content-module-expansion
+trigger: "when doing content module expansion"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/strings77wzq/agent-engineering-hub
+---
+
+# Agent Engineering Hub Workflow Content Module Expansion
+
+## Action
+
+Follow the content-module-expansion workflow:
+1. Create new .md files for each subpage under docs/guide/<module>/
+2. Update docs/.vitepress/config.ts to reflect new sidebar structure and navigation
+3. If applicable, create or update English versions under docs/en/guide/<module>/
+4. Run tests to validate links, routes, and frontmatter
+5. Build docs to ensure no warnings or errors
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: docs/guide/*/*.md, docs/.vitepress/config.ts, docs/en/guide/*/*.md
+
+---
+id: agent-engineering-hub-workflow-design-spec-to-implementation-and-archive
+trigger: "when doing design spec to implementation and archive"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/strings77wzq/agent-engineering-hub
+---
+
+# Agent Engineering Hub Workflow Design Spec To Implementation And Archive
+
+## Action
+
+Follow the design-spec-to-implementation-and-archive workflow:
+1. Draft spec, proposal, and tasks under openspec/changes/<change-name>/
+2. Implement changes in code or theme files (e.g., CSS refactor, color/typography/spacing/motion tokens, homepage redesign)
+3. Validate changes via tests and build
+4. Archive completed spec/proposal/tasks to openspec/changes/archive/
+5. Update openspec/specs/ as needed
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: openspec/changes/*/design.md, openspec/changes/*/proposal.md, openspec/changes/*/tasks.md
+
+---
+id: agent-engineering-hub-workflow-project-roadmap-and-todos-update
+trigger: "when doing project roadmap and todos update"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/strings77wzq/agent-engineering-hub
+---
+
+# Agent Engineering Hub Workflow Project Roadmap And Todos Update
+
+## Action
+
+Follow the project-roadmap-and-todos-update workflow:
+1. Create or update TODOS.md and/or ROADMAP.md with grouped tasks, priorities, and completion status
+2. Reference CEO plan or other high-level planning sources
+3. Mark completed items and update week/PR groupings
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: TODOS.md, ROADMAP.md
+
+---
+id: agent-engineering-hub-instinct-camelcase-files
+trigger: "When creating or renaming a file in the codebase"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: strings77wzq/agent-engineering-hub
+---
+
+# Agent Engineering Hub Instinct Camelcase Files
+
+## Action
+
+Name the file using camelCase convention
+
+## Evidence
+
+- Pattern in namingConventions.files: camelCase
+
+---
+id: agent-engineering-hub-instinct-camelcase-functions
+trigger: "When defining a function"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: strings77wzq/agent-engineering-hub
+---
+
+# Agent Engineering Hub Instinct Camelcase Functions
+
+## Action
+
+Name the function using camelCase convention
+
+## Evidence
+
+- Pattern in namingConventions.functions: camelCase
+
+---
+id: agent-engineering-hub-instinct-pascalcase-classes
+trigger: "When defining a class"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: strings77wzq/agent-engineering-hub
+---
+
+# Agent Engineering Hub Instinct Pascalcase Classes
+
+## Action
+
+Name the class using PascalCase convention
+
+## Evidence
+
+- Pattern in namingConventions.classes: PascalCase
+
+---
+id: agent-engineering-hub-instinct-screaming-constants
+trigger: "When declaring a constant"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: strings77wzq/agent-engineering-hub
+---
+
+# Agent Engineering Hub Instinct Screaming Constants
+
+## Action
+
+Name the constant using SCREAMING_SNAKE_CASE
+
+## Evidence
+
+- Pattern in namingConventions.constants: SCREAMING_SNAKE_CASE
+
+---
+id: agent-engineering-hub-instinct-relative-imports
+trigger: "When importing modules in TypeScript"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: strings77wzq/agent-engineering-hub
+---
+
+# Agent Engineering Hub Instinct Relative Imports
+
+## Action
+
+Use relative import paths
+
+## Evidence
+
+- Pattern in importStyle: relative
+
+---
+id: agent-engineering-hub-instinct-default-exports
+trigger: "When exporting modules or components"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: strings77wzq/agent-engineering-hub
+---
+
+# Agent Engineering Hub Instinct Default Exports
+
+## Action
+
+Use default exports
+
+## Evidence
+
+- Pattern in exportStyle: default
+
+---
+id: agent-engineering-hub-instinct-test-location-separate
+trigger: "When adding or organizing tests"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: strings77wzq/agent-engineering-hub
+---
+
+# Agent Engineering Hub Instinct Test Location Separate
+
+## Action
+
+Place tests in a separate location from source code
+
+## Evidence
+
+- Pattern in architecture.folderStructure.testLocation: separate
+
+---
+id: agent-engineering-hub-instinct-test-links-frontmatter
+trigger: "When adding or updating documentation content"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: strings77wzq/agent-engineering-hub
+---
+
+# Agent Engineering Hub Instinct Test Links Frontmatter
+
+## Action
+
+Run tests to validate links, routes, and frontmatter in documentation
+
+## Evidence
+
+- Step in content-module-expansion workflow
+- Commit sequence: Run tests to validate links, routes, and frontmatter
+
+---
+id: agent-engineering-hub-instinct-conventional-commits
+trigger: "When writing a commit message"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: strings77wzq/agent-engineering-hub
+---
+
+# Agent Engineering Hub Instinct Conventional Commits
+
+## Action
+
+Use conventional commit prefixes (fix, docs, feat, chore, spec, refactor) followed by a short description
+
+## Evidence
+
+- Pattern in commits.prefixes
+- Examples: fix(i18n): 修复 EN sidebar 路由 bug + 启用 VitePress local search
+
+---
+id: agent-engineering-hub-instinct-commit-length
+trigger: "When writing a commit message"
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: strings77wzq/agent-engineering-hub
+---
+
+# Agent Engineering Hub Instinct Commit Length
+
+## Action
+
+Keep commit messages concise (around 53 characters on average)
+
+## Evidence
+
+- Pattern in commits.averageLength: 53
+
+---
+id: agent-engineering-hub-instinct-content-module-expansion
+trigger: "When someone wants to add new learning modules or expand existing ones in the documentation"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: strings77wzq/agent-engineering-hub
+---
+
+# Agent Engineering Hub Instinct Content Module Expansion
+
+## Action
+
+Create new .md files under docs/guide/<module>/, update docs/.vitepress/config.ts, update or create English versions, run tests for links/routes/frontmatter, and build docs to ensure no errors
+
+## Evidence
+
+- Workflow: content-module-expansion
+- Commit sequence and files: docs/guide/*/*.md, docs/.vitepress/config.ts, docs/en/guide/*/*.md
+
+---
+id: agent-engineering-hub-instinct-design-spec-implementation-archive
+trigger: "When someone wants to make a significant design or theme change that requires planning, implementation, and documentation"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: strings77wzq/agent-engineering-hub
+---
+
+# Agent Engineering Hub Instinct Design Spec Implementation Archive
+
+## Action
+
+Draft spec/proposal/tasks under openspec/changes/<change-name>/, implement changes, validate via tests/build, archive completed spec/proposal/tasks, update openspec/specs/ as needed
+
+## Evidence
+
+- Workflow: design-spec-to-implementation-and-archive
+- Commit sequence and files: openspec/changes/*/design.md, openspec/changes/*/proposal.md, openspec/changes/*/tasks.md, openspec/changes/*/specs/*/spec.md, openspec/changes/archive/*, openspec/specs/*, docs/.vitepress/theme/custom.css, docs/.vitepress/theme/tokens/*.css, docs/.vitepress/config.ts, docs/index.md
+
+---
+id: agent-engineering-hub-instinct-project-roadmap-todos-update
+trigger: "When someone wants to clarify project status, next steps, or document completed/planned work for visibility"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: strings77wzq/agent-engineering-hub
+---
+
+# Agent Engineering Hub Instinct Project Roadmap Todos Update
+
+## Action
+
+Create or update TODOS.md and/or ROADMAP.md with grouped tasks, priorities, and completion status; reference CEO plan or high-level sources; mark completed items and update week/PR groupings
+
+## Evidence
+
+- Workflow: project-roadmap-and-todos-update
+- Commit sequence and files: TODOS.md, ROADMAP.md
+
